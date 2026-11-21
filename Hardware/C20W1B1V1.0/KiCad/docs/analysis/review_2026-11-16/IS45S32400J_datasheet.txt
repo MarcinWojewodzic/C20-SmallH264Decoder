@@ -1,0 +1,3241 @@
+
+PAGE 1
+IS42S32400J
+IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 1
+Rev. A
+09/16/2024
+Copyright © 2024 Integrated Silicon Solution, Inc.  All rights reserved.  ISSI reserves the right to make changes to this specification and its products at any time with-
+out notice.   ISSI assumes no liability arising out of the application or use of any information, products or services described herein. Customers are advised to obtain 
+the latest version of this device specification before relying on any published information and before placing orders for products.  
+ 
+Integrated Silicon Solution, Inc. does not recommend the use of any of its products in life support applications where the failure or malfunction of the product can 
+reasonably be expected to cause failure of the life support system or to significantly affect its safety or effectiveness. Products are not authorized for use in such ap-
+plications unless Integrated Silicon Solution, Inc. receives written assurance to its satisfaction, that:
+a.) the risk of injury or damage has been minimized;
+b.) the user assume all such risks; and
+c.) potential liability of Integrated Silicon Solution, Inc is adequately protected under the circumstances
+4M x 32 
+128Mb SYNCHRONOUS DRAM SEPTEMBER 2024
+FEATURES
+• Clock frequency: 200, 166, 143 MHz
+• Fully synchronous; all signals referenced to a 
+positive clock edge
+• Internal bank for hiding row access/precharge
+• Single Power supply: 3.3V + 0.3V
+• LVTTL interface
+• Programmable burst length  
+– (1, 2, 4, 8, full page)
+• Programmable burst sequence:  
+Sequential/Interleave 
+• Auto Refresh (CBR)
+• Self Refresh
+• 4096 refresh cycles every 16ms (A2 grade) or 
+64 ms (Commercial, Industrial, A1 grade)
+• Random column address every clock cycle
+• Programmable CAS latency (2, 3 clocks)
+• Burst read/write and burst read/single write  
+operations capability
+• Burst termination by burst stop and precharge 
+command
+OPTIONS
+• Green Package:  
+86-pin TSOP-II  
+90-ball TF-BGA
+• Operating Temperature Range: 
+Commercial (0oC to +70oC) 
+Industrial (-40oC to +85oC) 
+Automotive Grade, A1 (-40oC to +85oC) 
+Automotive Grade, A2 (-40oC to +105oC)
+OVERVIEW
+ISSI's 128Mb Synchronous DRAM  achieves high-speed 
+data transfer using pipeline architecture.  All inputs and 
+outputs signals refer  to the rising edge of the clock input.
+The 128Mb SDRAM is organized in 1Meg x 32 bit x 4 
+Banks. 
+KEY TIMING PARAMETERS
+Parameter -5 -6 -7 Unit
+Clk Cycle Time      
+ CAS Latency = 3 5 6 7 ns 
+ CAS Latency = 2 10 7.5 7.5 ns
+Clk Frequency      
+ CAS Latency = 3 200 166 143 Mhz 
+  CAS Latency = 2 100 133 133 Mhz
+Access Time  from Clock     
+ CAS Latency = 3 4.8 5.4 5.4 ns 
+ CAS Latency = 2 6.5 5.5 5.5 ns
+ADDRESS TABLE
+Parameter 4M x 32
+Configuration 1M x 32 x 4 banks
+Refresh Count Com./Ind.
+A1
+A2
+4K / 64ms
+4K / 64ms
+4K / 16ms
+Row Addresses A0 – A11
+Column 
+Addresses
+A0 – A7
+Bank Address 
+Pins
+BA0, BA1
+Autoprecharge 
+Pins
+A10/AP
+
+PAGE 2
+2 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DEVICE OVERVIEW
+The 128Mb SDRAM is a high speed CMOS, dynamic 
+random-access memory designed to operate in 3.3V Vdd 
+and 3.3V Vddq memory systems containing 134,217,728 
+bits.  Internally configured as a quad-bank DRAM with a 
+synchronous interface.  Each 33,554,432-bit bank is orga-
+nized as 4,096 rows by 256 columns by 32 bits.
+The 128Mb SDRAM includes an AUTO REFRESH MODE, 
+and a power-saving, power-down mode. All signals are 
+registered on the positive edge of the clock signal, CLK.  
+All inputs and outputs are LVTTL compatible.
+The 128Mb SDRAM has the ability to synchronously burst 
+data at a high data rate with automatic column-address 
+generation, the ability to interleave between internal banks 
+to hide precharge time and the capability to randomly 
+change column addresses on each clock cycle during 
+burst access.
+A self-timed row precharge initiated at the end of the burst 
+sequence is available with the AUTO PRECHARGE function 
+enabled. Precharge one bank while accessing one of the 
+other three banks will hide the precharge cycles and provide 
+seamless, high-speed, random-access operation.
+SDRAM read and write accesses are burst oriented starting 
+at a selected location and continuing for a programmed 
+number of locations in a programmed sequence.  The 
+registration of an ACTIVE command begins accesses, 
+followed by a READ or WRITE command. The ACTIVE 
+command in conjunction with address bits registered are 
+used to select the bank and row to be accessed (BA0, 
+BA1 select the bank; A0-A11 select the row).  The READ 
+or WRITE commands in conjunction with address bits 
+registered are used to select the starting column location 
+for the burst access.
+Programmable READ or WRITE burst lengths consist of 
+1, 2, 4 and 8 locations or full page, with a burst terminate 
+option. 
+CLK
+CKE
+CS
+RAS
+CAS
+WE
+A9
+A8
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+BA0
+BA1
+A10
+COMMAND
+DECODER
+&
+CLOCK
+GENERATOR MODE
+REGISTER
+REFRESH
+CONTROLLER
+REFRESH
+COUNTER
+ SELF
+REFRESH
+CONTROLLER
+ROW
+ADDRESS
+LATCH
+MULTIPLEXER
+COLUMN
+ADDRESS LATCH
+BURST COUNTER
+COLUMN
+ADDRESS BUFFER
+COLUMN DECODER
+DATA IN
+BUFFER
+DATA OUT
+BUFFER
+DQM0 - DQM3
+DQ 0-31
+VDD/VDDQ
+Vss/VssQ
+12
+12
+8
+12
+12
+8
+32
+32 32
+32
+256
+(x 32)
+4096
+4096
+4096
+ROW DECODER
+4096
+MEMORY CELL
+ARRAY
+BANK 0
+SENSE AMP I/O GATE
+BANK CONTROL LOGIC
+ROW
+ADDRESS
+BUFFER
+A11
+4
+FUNCTIONAL BLOCK DIAGRAM (FOR 1MX32X4 BANKS)
+
+PAGE 3
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 3
+Rev. A
+09/16/2024
+PIN CONFIGURATIONS
+86 pin TSOP - Type II  for x32
+PIN DESCRIPTIONS
+A0-A11  Row Address Input
+A0-A7  Column Address Input
+BA0, BA1 Bank Select Address
+DQ0 to DQ31 Data I/O
+CLK  System Clock Input
+CKE  Clock Enable
+CS  Chip Select
+RAS  Row Address Strobe Command
+CAS  Column Address Strobe Command
+VDD
+DQ0
+VDDQ
+DQ1
+DQ2
+VSSQ
+DQ3
+DQ4
+VDDQ
+DQ5
+DQ6
+VSSQ
+DQ7
+NC
+VDD
+DQM0
+WE
+CAS
+RAS
+CS
+A11
+BA0
+BA1
+A10
+A0
+A1
+A2
+DQM2
+VDD
+NC
+DQ16
+VSSQ
+DQ17 
+DQ18 
+VDDQ 
+DQ19 
+DQ20 
+VSSQ 
+DQ21 
+DQ22 
+VDDQ
+DQ23
+VDD
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28 
+29 
+30 
+31 
+32 
+33 
+34 
+35 
+36 
+37 
+38 
+39 
+40 
+41 
+42 
+43
+86
+85
+84
+83
+82
+81
+80
+79
+78
+77
+76
+75
+74
+73
+72
+71
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60 
+59 
+58 
+57 
+56 
+55 
+54 
+53 
+52 
+51 
+50 
+49 
+48 
+47 
+46 
+45 
+44
+VSS
+DQ15
+VSSQ 
+DQ14 
+DQ13 
+VDDQ
+DQ12
+DQ11
+VSSQ
+DQ10
+DQ9
+VDDQ
+DQ8 
+NC
+VSS
+DQM1
+NC
+NC
+CLK
+CKE 
+A9 
+A8
+A7 
+A6
+A5
+A4
+A3
+DQM3
+VSS
+NC 
+DQ31 
+VDDQ 
+DQ30 
+DQ29 
+VSSQ 
+DQ28 
+DQ27
+VDDQ 
+DQ26 
+DQ25 
+VSSQ 
+DQ24 
+VSS
+WE  Write Enable
+DQM0-DQM3 x32 Input/Output Mask
+Vdd  Power
+Vss  Ground
+Vddq  Power Supply for I/O Pin
+Vssq  Ground for I/O Pin
+NC  No Connection
+
+PAGE 4
+4 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+PIN CONFIGURATION
+PACKAGE CODE: B  90 BALL TF-BGA (Top View) (8.00 mm x 13.00 mm Body, 0.8 mm Ball Pitch)
+  1 2 3 4 5 6 7 8 9
+A
+B
+C
+D
+E
+F
+G
+H
+J
+K
+L
+M
+N
+P
+R
+DQ26
+DQ28
+VSSQ
+VSSQ
+VDDQ
+VSS
+A4
+A7
+CLK
+DQM1
+VDDQ
+VSSQ
+VSSQ
+DQ11
+DQ13
+DQ24
+VDDQ
+DQ27
+DQ29
+DQ31
+DQM3
+A5
+A8
+CKE
+NC
+DQ8
+DQ10
+DQ12
+VDDQ
+DQ15
+VSS
+VSSQ
+DQ25
+DQ30
+NC
+A3
+A6
+NC
+A9
+NC
+VSS
+DQ9
+DQ14
+VSSQ
+VSS
+VDD
+VDDQ
+DQ22
+DQ17
+NC
+A2
+A10
+NC
+BA0
+CAS
+VDD
+DQ6
+DQ1
+VDDQ
+VDD
+DQ23
+VSSQ
+DQ20
+DQ18
+DQ16
+DQM2
+A0
+BA1
+CS
+WE
+DQ7
+DQ5
+DQ3
+VSSQ
+DQ0
+DQ21
+DQ19
+VDDQ
+VDDQ
+VSSQ
+VDD
+A1
+A11
+RAS
+DQM0
+VSSQ
+VDDQ
+VDDQ
+DQ4
+DQ2
+PIN DESCRIPTIONS
+A0-A11  Row Address Input
+A0-A7  Column Address Input
+BA0, BA1 Bank Select Address
+DQ0 to DQ31 Data I/O
+CLK  System Clock Input
+CKE  Clock Enable
+CS  Chip Select
+RAS  Row Address Strobe Command
+CAS  Column Address Strobe Command
+WE  Write Enable
+DQM0-DQM3 x32 Input/Output Mask
+Vdd  Power
+Vss  Ground
+Vddq  Power Supply for I/O Pin
+Vssq  Ground for I/O Pin
+NC  No Connection
+
+PAGE 5
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 5
+Rev. A
+09/16/2024
+PIN FUNCTIONS
+ Symbol  Type Function (In Detail)
+ A0-A11  Input Pin Address Inputs: A0-A11 are sampled during the ACTIVE
+    command (row-address A0-A11) and READ/WRITE command (column address 
+A0-A7), with A10 defining auto precharge) to select one location out of the memory 
+array in the respective bank. A10 is sampled during a PRECHARGE command to 
+determine if all banks are to be precharged (A10 HIGH) or bank selected by 
+BA0, BA1 (LOW). The address inputs also provide the op-code during a LOAD 
+MODE REGISTER command.
+ BA0, BA1  Input Pin Bank Select Address: BA0 and BA1 defines which bank the ACTIVE, READ, WRITE 
+or PRECHARGE command is being applied.
+ CAS  Input Pin CAS, in conjunction with the RAS and  WE, forms the device command. See the 
+"Command Truth Table" for details on device commands. 
+ CKE  Input Pin The CKE input determines whether the CLK input is enabled. The next rising edge 
+of the CLK signal will be valid when is CKE HIGH and invalid when LOW. When CKE 
+is LOW, the device will be in either power-down mode, clock suspend mode, or self 
+refresh mode. CKE is an asynchronous input.
+ CLK  Input Pin CLK is the master clock input for this device. Except for CKE, all inputs to this device 
+are acquired in synchronization with the rising edge of this pin.
+ CS  Input Pin The CS input determines whether command input is enabled within the device. 
+Command input is enabled when CS is LOW, and disabled with CS is HIGH. The 
+device remains in the previous state when CS is HIGH.
+ DQM0-DQM3  Input Pin DQM0 - DQM3 control the four bytes of the I/O buffers (DQ0-DQ31). In read
+    mode, DQMn control the output buffer. When DQMn is LOW, the corresponding buf-
+fer byte is enabled, and when HIGH, disabled. The outputs go to the HIGH imped-
+ance state whenDQMn is HIGH. This function corresponds to OE in conventional 
+DRAMs. In write mode, DQMn control the input buffer. When DQMn is LOW, the 
+corresponding buffer byte is enabled, and data can be written to the device. When 
+DQMn is HIGH, input data is masked and cannot be written to the device.
+DQ0-DQ31  Input/Output Pin Data on the Data Bus is latched on these pins during Write commands, and buffered after 
+Read commands.
+ RAS  Input Pin RAS, in conjunction with CAS and WE, forms the device command. See the "Com-
+mand Truth Table" item for details on device commands.
+ WE   Input Pin WE, in conjunction with RAS and CAS, forms the device command. See the "Com-
+mand Truth Table" item for details on device commands. 
+ V ddq  Power Supply Pin V ddq is the output buffer power supply.
+ V dd  Power Supply Pin V dd is the device internal power supply.
+ V ssq  Power Supply Pin V ssq is the output buffer ground.
+ V ss  Power Supply Pin V ss is the device internal ground.
+
+PAGE 6
+6 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+GENERAL DESCRIPTION
+READ
+The READ command selects the bank from BA0, BA1 inputs 
+and starts a burst read access to an active row.  Inputs 
+A0-A7 provides the starting column location.  When A10 is 
+HIGH, this command functions as an AUTO PRECHARGE 
+command.  When the auto precharge is selected, the row 
+being accessed will be precharged at the end of the READ 
+burst. The row will remain open for subsequent accesses 
+when AUTO PRECHARGE is not selected.  DQ’s read 
+data is subject to the logic level on the DQM inputs two 
+clocks earlier. When a given DQM signal was registered 
+HIGH, the corresponding DQ’s will be High-Z two clocks 
+later. DQ’s will provide valid data when the DQM signal 
+was registered LOW.
+WRITE
+A burst write access to an active row is initiated with the 
+WRITE command.  BA0, BA1 inputs selects the bank, 
+and the starting column location is provided by inputs 
+A0-A7. Whether or not AUTO-PRECHARGE is used is 
+determined by A10.
+The row being accessed will be precharged at the end of 
+the WRITE burst, if AUTO PRECHARGE is selected. If 
+AUTO PRECHARGE is not selected, the row will remain 
+open for subsequent accesses.
+A memory array is written with corresponding input data 
+on DQ’s and DQM input logic level appearing at the same 
+time.  Data will be written to memory when DQM signal is 
+LOW.  When DQM is HIGH, the corresponding data inputs 
+will be ignored, and a WRITE will not be executed to that 
+byte/column location.
+PRECHARGE
+The PRECHARGE command is used to deactivate the 
+open row in a particular bank or the open row in all banks.  
+BA0, BA1 can be used to select which bank is precharged 
+or they are treated as “Don’t Care”.  A10 determined 
+whether one or all banks are precharged. After execut-
+ing this command, the next command for the selected 
+bank(s) is executed after passage of the period tRP, which 
+is the period required for bank precharging.   Once a bank 
+has been precharged, it is in the idle state and must be 
+activated prior to any READ or WRITE commands being 
+issued to that bank.
+AUTO PRECHARGE
+The AUTO PRECHARGE function ensures that the pre-
+charge is initiated at the earliest valid stage within a burst.  
+This function allows for individual-bank precharge without 
+requiring an explicit command. A10 to enable the AUTO 
+PRECHARGE function in conjunction with a specific READ 
+or WRITE command.  For each individual READ or WRITE 
+command, auto precharge is either enabled or disabled. 
+AUTO PRECHARGE does not apply to full-page burst 
+mode. Upon completion of the READ or WRITE burst, a 
+precharge of the bank/row that is addressed is automati-
+cally performed.
+AUTO REFRESH COMMAND
+This command executes the AUTO REFRESH operation.  
+The row address and bank to be refreshed are automatically 
+generated during this operation. The stipulated period (trc) is 
+required for a single refresh operation, and no other com-
+mands can be executed during this period. This command 
+is executed at least 4096 times for every T ref. During an 
+AUTO REFRESH command, address bits are “Don’t Care”.  
+This command corresponds to CBR Auto-refresh.
+SELF REFRESH
+During the SELF REFRESH operation, the row address to 
+be refreshed, the bank, and the refresh interval are gen-
+erated automatically internally.  SELF REFRESH can be 
+used to retain data in the SDRAM without external clocking, 
+even if the rest of the system is powered down. The SELF 
+REFRESH operation is started by dropping the CKE pin 
+from HIGH to LOW. During the SELF REFRESH operation 
+all other inputs to the SDRAM become “Don’t Care”.The 
+device must remain in self refresh mode for a minimum 
+period equal to t ras or may remain in self refresh mode 
+for an indefinite period beyond that.The SELF-REFRESH 
+operation continues as long as the CKE pin remains LOW 
+and there is no need for external control of any other pins.
+The next command cannot be executed until the device 
+internal recovery period (t rc) has elapsed. Once CKE 
+goes HIGH, the NOP command must be issued (minimum 
+of two clocks)  to provide time for the completion of any 
+internal refresh in progress. After the self-refresh, since it 
+is impossible to determine the address of the last row to 
+be refreshed, an AUTO-REFRESH should immediately be 
+performed for all addresses.
+BURST TERMINATE
+The BURST TERMINATE command forcibly terminates 
+the burst read and write operations by truncating either 
+fixed-length or full-page bursts and the most recently 
+registered READ or WRITE command prior to the BURST 
+TERMINATE.
+
+PAGE 7
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 7
+Rev. A
+09/16/2024
+COMMAND INHIBIT
+COMMAND INHIBIT prevents new commands from being 
+executed. Operations in progress are not affected, apart 
+from whether the CLK signal is enabled
+NO OPERATION 
+When CS is low, the NOP command prevents unwanted 
+commands from being registered during idle or wait states.
+LOAD MODE REGISTER
+During the LOAD MODE REGISTER command the mode 
+register is loaded from A0-A11.  This command can only 
+be issued when all banks are idle. 
+ACTIVE COMMAND
+When the ACTIVE COMMAND is activated, BA0, BA1 inputs 
+selects a bank to be accessed, and the address inputs on 
+A0-A11 selects the row.   Until a PRECHARGE command 
+is issued to the bank, the row remains open for accesses.
+
+PAGE 8
+8 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+   CKE    DQM
+Function    n-1  n  U  L    
+Data write / output enable     H   ×   L   L
+Data mask / output disable      H   ×   H   H
+Upper byte write enable / output enable     H   ×   L   ×
+Lower byte write enable / output enable     H   ×   ×   L
+Upper byte write inhibit / output disable     H   ×   H   ×
+Lower byte write inhibit / output disable     H   ×   ×   H
+     CKE         A11
+Function    n – 1  n  CS  RAS  CAS  WE  BA1  BA0  A10  A9 - A0
+Device deselect (DESL)  H  ×  H  ×  ×  ×  ×  ×  ×  ×
+No operation (NOP)  H  ×  L  H  H  H ×  × × ×
+Burst stop (BST)   H  ×  L  H  H  L  ×  ×  ×  ×
+Read    H  ×  L  H  L  H V  V  L  V 
+Read with auto precharge  H  ×  L  H  L  H  V  V  H V 
+Write     H  ×  L H L  L  V  V L V
+Write with auto precharge  H × L  H L L  V  V H  V
+Bank activate (ACT)   H  × L L  H H  V  V  V  V
+Precharge select bank (PRE) H  ×  L L  H  L  V  V L  ×
+Precharge all banks (PALL) H  ×  L L H L ×  × H ×
+CBR Auto-Refresh (REF) H  H  L L L H ×  × × ×
+Self-Refresh (SELF)  H  L  L L L H ×  × × ×
+Mode register set (MRS)  H  ×  L  L  L  L  L  L  L V 
+COMMAND TRUTH TABLE
+DQM TRUTH TABLE
+Note:  H=Vih, L=Vil x= Vih or Vil, V = Valid Data.
+Note:  H=Vih, L=Vil x= Vih or Vil, V = Valid Data.
+
+PAGE 9
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 9
+Rev. A
+09/16/2024
+  CKE
+Current State /Function   n – 1  n  CS  RAS  CAS  WE   Address
+Activating Clock suspend mode entry   H  L  × ×  ×  ×  ×
+Any Clock suspend mode   L  L ×  ×  × ×  ×
+Clock suspend mode exit   L  H  ×  × ×  ×  ×
+Auto refresh command Idle (REF)   H  H L L L  H ×
+Self refresh entry Idle (SELF)   H  L L  L  L  H  ×
+Power down entry Idle   H  L  ×  ×  ×  ×  ×  
+Self refresh exit   L  H  L  H  H  H  ×   
+  L  H  H  ×  ×  ×  ×
+Power down exit  L  H  ×  × ×  ×  ×  
+Note:  H=Vih, L=Vil x= Vih or Vil, V = Valid Data.
+CKE TRUTH TABLE
+
+PAGE 10
+10 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+Current State CS  RAS  CAS WE  Address  Command   Action   
+Idle H  X X X X DESL   Nop or Power Down(2)
+ L  H  H  H  X NOP   Nop or Power Down(2)
+ L  H  H  L  X BST  Nop or Power Down
+ L  H L  H  BA, CA, A10  READ/READA   ILLEGAL (3)
+ L  H  L  L  A, CA, A10  WRIT/ WRITA   ILLEGAL(3)
+ L L  H  H  BA, RA  ACT   Row activating
+ L  L  H  L  BA, A10  PRE/PALL   Nop
+ L L L H  X REF/SELF   Auto refresh or Self-refresh(4)
+ L L L L  OC, BA1=L  MRS   Mode register set
+Row Active H  X X X X DESL   Nop
+  L  H  H H  X NOP   Nop
+  L  H  H L  X BST  Nop
+ L  H L  H  BA, CA, A10  READ/READA   Begin read (5)
+ L H  L L  BA, CA, A10  WRIT/ WRITA   Begin write (5)
+ L L H  H BA, RA  ACT   ILLEGAL (3)
+ L L  H L  BA, A10  PRE/PALL   Precharge   
+        Precharge all banks(6) 
+ L L L  H  X REF/SELF   ILLEGAL
+ L L L  L  OC, BA  MRS   ILLEGAL
+Read H  X X X X DESL   Continue burst to end to   
+        Row active
+ L H  H H  X NOP   Continue burst to end  Row  
+        Row  active
+ L H  H L  X BST   Burst stop,  Row active
+ L H  L H  BA, CA, A10  READ/READA   Terminate burst,    
+        begin new read (7)
+ L H  L L  BA, CA, A10  WRIT/WRITA   Terminate  burst,    
+        begin write (7,8)
+ L L  H  H BA, RA  ACT   ILLEGAL (3)
+ L L H L  BA, A10  PRE/PALL   Terminate burst     
+        Precharging
+ L L  L  H  X REF/SELF   ILLEGAL
+ L L L L  OC, BA  MRS   ILLEGAL
+Write H X X X X DESL   Continue burst to end    
+         Write recovering
+ L  H  H H  X NOP   Continue burst to end    
+        Write recovering
+ L H  H L  X BST   Burst stop,  Row active
+ L H  L H  BA, CA, A10  READ/READA   Terminate burst, start read :  
+        Determine AP (7,8)
+ L H  L L  BA, CA, A10  WRIT/WRITA   Terminate burst, new write :  
+        Determine AP (7)  
+ L  L  H  H BA, RA RA ACT   ILLEGAL (3)
+ L L  H L  BA, A10  PRE/PALL   Terminate burst Precharging (9)
+ L L  L  H  X REF/SELF   ILLEGAL
+ L L  L L  OC, BA  MRS   ILLEGAL
+FUNCTIONAL TRUTH TABLE 
+Note: H=Vih, L=Vil x= Vih or Vil, V = Valid Data, BA= Bank Address, CA+Column Address, RA=Row Address, OC= Op-Code
+
+PAGE 11
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 11
+Rev. A
+09/16/2024
+Current State CS  RAS  CAS  WE  Address  Command  Action   
+Read with auto H  ×  ×  ×   ×  DESL Continue burst to end, Precharge  
+Precharging
+ L H H H x NOP  Continue burst to end, Precharge
+ L H  H L  ×  BST  ILLEGAL
+ L H L  H  BA, CA, A10  READ/READA  ILLEGAL (11)
+ L H  L L  BA, CA, A10  WRIT/ WRITA  ILLEGAL (11)
+ L L  H  H BA, RA  ACT  ILLEGAL (3)
+ L L  H L  BA, A10  PRE/PALL  ILLEGAL (11)
+ L L  L  H  ×  REF/SELF  ILLEGAL
+ L L  L L  OC, BA  MRS  ILLEGAL
+Write with Auto H  ×  ×  ×  ×  DESL  Continue burst to end, Write   
+Precharge       recovering with auto precharge
+ L H  H H  ×  NOP  Continue burst to end, Write   
+       recovering with auto precharge
+ L H  H L  ×  BST  ILLEGAL
+ L  H  L H  BA, CA, A10  READ/READA  ILLEGAL(11)
+ L  H  L L  BA, CA, A10  WRIT/ WRITA  ILLEGAL (11)
+ L L H  H BA, RA  ACT ILLEGAL (3,11)
+ L L  H L  BA, A10  PRE/PALL  ILLEGAL (3,11)
+ L L  L H  ×  REF/SELF  ILLEGAL
+ L  L L  L  OC, BA  MRS  ILLEGAL
+Precharging H  ×  × ×  ×  DESL  Nop, Enter idle after tRP
+ L  H  H H  ×  NOP  Nop, Enter idle after tRP
+ L  H  H L  ×  BST  Nop, Enter idle after tRP
+ L  H  L H  BA, CA, A10  READ/READA  ILLEGAL (3)
+ L  H  L  L  BA, CA, A10  WRIT/WRITA  ILLEGAL (3)
+ L L H  H BA, RA  ACT  ILLEGAL(3)
+ L L H  L  BA, A10  PRE/PALL  Nop  Enter idle after tRP
+ L L  L H  ×  REF/SELF  ILLEGAL
+ L L  L L  OC, BA  MRS  ILLEGAL
+Row Activating H  ×  ×  ×  ×  DESL  Nop, Enter bank active after tRCD
+ L  H  H H  ×  NOP  Nop, Enter bank active after tRCD
+ L  H  H L  ×  BST  Nop, Enter bank active after tRCD
+ L H L H  BA, CA, A10  READ/READA  ILLEGAL (3)
+ L H  L  L  BA, CA, A10  WRIT/WRITA  ILLEGAL (3)
+ L L  H  H BA, RA  ACT  ILLEGAL (3,9)
+ L L  H L  BA, A10  PRE/PALL  ILLEGAL (3)
+ L L  L  H  ×  REF/SELF  ILLEGAL
+ L L L  L  OC, BA  MRS  ILLEGAL
+FUNCTIONAL TRUTH TABLE Continued:
+Note: H=Vih, L=Vil x= Vih or Vil, V = Valid Data, BA= Bank Address, CA+Column Address, RA=Row Address, OC= Op-Code
+
+PAGE 12
+12 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+Current State CS  RAS  CAS  WE  Address  Command  Action   
+Write Recovering H  ×  ×  ×  ×  DESL  Nop, Enter row active after tDPL
+ L  H  H H  ×  NOP  Nop, Enter row active after tDPL
+ L H  H L  ×  BST  Nop, Enter row active after tDPL
+ L H L H  BA, CA, A10 READ/READA  Begin read (8)
+ L  H L L  BA, CA, A10 WRIT/ WRITA  Begin new write
+ L L  H  H BA, RA  ACT  ILLEGAL (3)
+ L L  H L  BA, A10  PRE/PALL  ILLEGAL (3)
+ L L L  H  ×  REF/SELF  ILLEGAL
+ L L  L L  OC, BA  MRS  ILLEGAL
+Write Recovering H ×  ×  ×  ×  DESL  Nop, Enter precharge after tDPL
+with Auto L  H  H H  ×  NOP  Nop, Enter precharge after tDPL
+Precharge L  H  H L  ×  BST  Nop, Enter row active after tDPL
+ L  H L  H BA, CA, A10  READ/READA  ILLEGAL(3,8,11)
+ L  H  L  L  BA, CA, A10  WRIT/WRITA  ILLEGAL (3,11)
+ L  L H  H BA, RA  ACT  ILLEGAL (3,11)
+ L  L H L  BA, A10  PRE/PALL  ILLEGAL (3,11)
+ L  L L  H  ×  REF/SELF  ILLEGAL
+ L  L L L  OC, BA  MRS  ILLEGAL
+Refresh H  ×  ×  ×  ×  DESL    Nop, Enter idle after tRC
+ L  H  H  ×  ×  NOP/BST Nop, Enter idle after tRC
+ L  H  L H  BA, CA, A10  READ/READA  ILLEGAL
+ L H L L  BA, CA, A10  WRIT/WRITA  ILLEGAL
+ L  L  H  H BA, RA  ACT  ILLEGAL
+ L  L H L  BA, A10  PRE/PALL  ILLEGAL
+ L L L  H  ×  REF/SELF  ILLEGAL
+ L L  L L  OC, BA  MRS  ILLEGAL
+Mode Register H  ×  ×  ×  ×  DESL  Nop, Enter idle after 2 clocks
+Accessing L H  H H  ×  NOP Nop, Enter idle after 2 clocks
+ L H  H L  ×  BST  ILLEGAL
+ L  H L  ×   BA, CA, A10  READ/WRITE  ILLEGAL
+ L L ×   ×  BA, RA  ACT/PRE/PALL  ILLEGAL    
+      REF/MRS 
+FUNCTIONAL TRUTH TABLE Continued:
+Note: H=Vih, L=Vil x= Vih or Vil, V = Valid Data, BA= Bank Address, CA+Column Address, RA=Row Address, OC= Op-Code
+Notes: 
+1. All entries assume that CKE is active (CKEn-1=CKEn=H).
+2. If both banks are idle, and CKE is inactive (Low), the device will enter Power Down mode. All input buffers except CKE will be 
+disabled.
+3. Illegal to bank in specified states; Function may be legal in the bank indicated by Bank Address (BA), depending on the state of 
+that bank.
+4. If both banks are idle, and CKE is inactive (Low), the device will enter Self-Refresh mode. All input buffers except CKE will be 
+disabled.
+5. Illegal if tRCD is not satisfied.
+6. Illegal if tRAS is not satisfied.
+7. Must satisfy burst interrupt condition.
+8. Must satisfy bus contention, bus turn around, and/or write recovery requirements.
+9. Must mask preceding data which don’t satisfy tDPL.
+10. Illegal if tRRD is not satisfied.
+11. Illegal for single bank, but legal for other banks.
+
+PAGE 13
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 13
+Rev. A
+09/16/2024
+CKE RELATED COMMAND TRUTH TABLE(1)        
+                        CKE      
+Current State Operation n-1 n CS RAS CAS WE Address
+Self-Refresh (S.R.) INVALID, CLK (n - 1) would exit S.R. H X X X X X X
+ Self-Refresh Recovery(2) L H H X X X X
+ Self-Refresh Recovery(2) L H L H H X X
+ Illegal L H L H L X X
+ Illegal L H L L X X X
+ Maintain S.R. L L X X X X X
+Self-Refresh Recovery Idle After  trc H H H X X X X
+ Idle After  trc H H L H H X X
+ Illegal H H L H L X X
+ Illegal H H L L X X X
+ Begin clock suspend next cycle(5) H L H X X X X
+ Begin clock suspend next cycle(5) H L L H H X X
+ Illegal H L L H L X X
+ Illegal H L L L X X X
+ Exit clock suspend next cycle(2) L H X X X X X
+ Maintain clock suspend L L X X X X X
+Power-Down (P.D.) INVALID, CLK (n - 1) would exit P.D. H X X X X X —
+ EXIT P.D. --> Idle(2) L H X X X X X
+ Maintain power down mode L L X X X X X
+Both Banks Idle Refer to operations in Operative Command Table H H H X X X —
+ Refer to operations in Operative Command Table H H L H X X —
+ Refer to operations in Operative Command Table H H L L H X —
+ Auto-Refresh H H L L L H X
+ Refer to operations in Operative Command Table H H L L L L Op - Code
+ Refer to operations in Operative Command Table H L H X X X —
+ Refer to operations in Operative Command Table H L L H X X —
+ Refer to operations in Operative Command Table H L L L H X —
+ Self-Refresh (3) H L L L L H X
+ Refer to operations in Operative Command Table H L L L L L Op - Code
+ Power-Down (3) L X X X X X X
+Any state Refer to operations in Operative Command Table H H X X X X X
+other than Begin clock suspend next cycle(4) H L X X X X X
+listed above Exit clock suspend next cycle L H X X X X X
+ Maintain clock suspend L L X X X X X
+Notes:
+1. H : High level, L : low level, X : High or low level (Don’t care).
+2. CKE Low to High transition will re-enable CLK and other inputs asynchronously. A minimum setup 
+time must be satisfied
+ before any command other than EXIT.
+3. Power down and Self refresh can be entered only from the both banks idle state.
+4. Must be legal command as defined in Operative Command Table.
+5. Illegal if txsr is not satisfied.
+
+PAGE 14
+14 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+Mode
+Register
+Set
+IDLE
+Self
+Refresh
+CBR (Auto)
+Refresh
+Row
+Active
+Active
+Power
+Down
+Power
+Down
+WRITE
+WRITE
+SUSPEND READ READ SUSPEND
+WRITEA
+SUSPEND WRITEA READA READA SUSPEND
+POWER
+ON 
+Precharge
+Automatic sequence
+Manual Input
+SELF
+SELF exit
+REF
+MRS
+ACT
+CKE
+CKE
+CKE
+CKE
+BST
+Read
+Write
+Write
+Precharge
+RRE (Prec
+harge termination)
+PRE (Precharge te
+rmination)
+Write with
+Auto Precharge
+Read with
+Auto Prech
+arge
+Read
+Write
+BST
+CKE
+CKECKE
+CKE
+CKE
+CKECKE
+CKE
+Read
+STATE DIAGRAM
+
+PAGE 15
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 15
+Rev. A
+09/16/2024
+ABSOLUTE MAXIMUM RATINGS(1)
+ Symbol Parameters  Rating Unit
+ V dd max Maximum Supply Voltage  -0.5 to +4.6 V
+ V ddq max Maximum Supply Voltage for Output Buffer -0.5 to +4.6 V
+ V in Input Voltage  -0.5 to Vdd + 0.5 V
+ V out Output Voltage  -1.0 to Vddq + 0.5 V
+ P d max Allowable Power Dissipation  1 W
+ I cs output Shorted Current  50 mA
+ T opr operating Temperature Com. 0 to +70 °C   
+   Ind. -40 to +85    
+   A1 -40 to +85  
+   A2 -40 to +105
+ T stg Storage Temperature  -65 to +150 °C
+DC RECOMMENDED OPERATING CONDITIONS  
+(Ta = 0oC to +70oC for Com. grade. Ta = -40oC to +85oC for Ind. and A1 grade.  Ta = -40oC to +105oC for A2 grade.) 
+           
+ Symbol Parameter  Min. Typ. Max. Unit
+ V dd  Supply Voltage  3.0 3.3 3.6 V
+ Vddq I/O Supply Voltage  3.0 3.3 3.6 V
+ V ih(1) Input High Voltage  2.0 — Vddq + 0.3 V
+ V il(2) Input Low Voltage  -0.3 — +0.8 V
+CAPACITANCE CHARACTERISTICS (At Ta = 0 to +25°C, Vdd = Vddq = 3.3 ± 0.3V)
+ Symbol Parameter Min.  Max.  Unit 
+ C in1 Input Capacitance: CLK 2  4  pF
+ C in2 Input Capacitance:All other input pins 1.3  3  pF
+ C i/o Data Input/Output Capacitance:I/Os 2  5  pF
+Note: 
+1.  Vih (max) = Vddq +1.2V (pulse width < 3ns).
+2.  Vil (min)  = -1.2V (pulse width < 3ns).
+3. All voltages are referenced to Vss.
+Notes:
+1. Stress greater than those listed under ABSOLUTE MAXIMUM RATINGS may cause permanent damage to 
+the device. This is a stress rating only and functional operation of the device at these or any other conditions 
+above those indicated in the operational sections of this specification is not implied. Exposure to absolute 
+maximum rating conditions for extended periods may affect reliability.
+2. All voltages are referenced to Vss.
+Package Substrate Theta-ja
+(Airflow = 0m/s)
+Theta-ja
+(Airflow = 1m/s)
+Theta-ja
+(Airflow = 2m/s)
+Theta-jc Units
+TSOP2(86) 4-layer 79.2 63.9 62.5 14.5 C/W
+BGA(90) 4-layer 67.2 54.2 52.0 16.3 C/W
+THERMAL RESISTANCE
+
+PAGE 16
+16 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DC ELECTRICAL CHARACTERISTICS 1 (Recommended Operation Conditions unless otherwise noted.)
+ Symbol Parameter Test Condition  -5 -6 -7  Unit
+ idd1(1) Operating Current One bank active, CL = 3, BL = 1,         120 120 100  mA
+   tclk = tclk (min), trc = trc (min)  
+ idd2p(2,3) Precharge Standby Current CKE ≤ Vil  (max), tck = 15ns  3 3 3  mA 
+  (In Power-Down Mode)
+ idd2ps(3) Precharge Standby Current CKE ≤ Vil  (max), CLK ≤ Vil  (max) 3 3 3  mA 
+  (In Power-Down Mode)      
+ idd2n(2) Precharge Standby Current CS  ≥ Vdd - 0.2V, CKE ≥  Vih  (min) 25 25 25  mA
+  (In Non Power-Down Mode)  tck = 15ns 
+ Idd2ns Precharge Standby Current CS  ≥ Vdd - 0.2V, CKE ≥  Vih  (min) or 20 20 20  mA
+  (In Non Power-Down Mode) CKE ≤ Vil  (max), All inputs stable   
+ idd3n(1,2) Active Standby Current CS  ≥ Vdd - 0.2V, CKE ≥  Vih  (min) 40 40 40  mA
+  (In Non Power-Down Mode)  tck = 15ns
+ Idd3ns(1) Active Standby Current CS  ≥ Vdd - 0.2V, CKE ≥  Vih  (min) or 25 25 25  mA
+  (In Non Power-Down Mode) CKE ≤ Vil  (max), All inputs stable
+ Idd3p(1) Active Standby Current CKE ≤ Vil  (max), tck = 15ns  8 8 8  mA
+  (Power-Down Mode) 
+Idd3ps(1) Active Standby Current CKE ≤ Vil  (max), CLK ≤ Vil  (max) 8 8 8  mA
+  (Power-Down Mode) 
+ idd4(1) Operating Current All  banks active, BL = 4, CL = 3,         150 150 100  mA
+   tck = tck (min)  
+ idd5(1) Auto-Refresh Current trc = trc (min), tclk = tclk (min)        150 150 130  mA
+ idd6 (3) Self-Refresh Current CKE ≤  0.2V        3 3 3  mA
+ Notes:
+1. I dd (max) is specified at the output open condition.
+2. Input signals are changed one time during 30ns. 
+3.  For operation above 85°C, the values for Idd2p and Idd2ps should be derated to 4mA, and the value for Idd6 should be derated to 
+6mA. The Absolute Maximum Ratings should not be violated for the temperature grade in use. 
+DC ELECTRICAL CHARACTERISTICS  2 (Recommended Operation Conditions unless otherwise noted.)
+ Symbol Parameter Test Condition    Min Max Unit
+ iil Input Leakage Current 0V  ≤ Vin ≤ Vdd, with pins other than           -10 10 µA
+   the tested pin at 0V  
+ iol Output Leakage Current Output is disabled, 0V  ≤ Vout ≤ Vdd,            -10 10 µA
+ Voh Output High Voltage Level Ioh  =  -2mA             2.4 — V
+ Vol Output Low Voltage Level Iol  =  2mA             — 0.4 V
+
+PAGE 17
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 17
+Rev. A
+09/16/2024
+AC ELECTRICAL CHARACTERISTICS (1,3)
+ -5 -6 -7
+ Symbol Parameter  Min. Max. Min. Max. Min. Max. Units
+ t ck3 Clock Cycle Time CAS Latency = 3 5 — 6 — 7 — ns 
+ t ck2  CAS Latency = 2 10 — 7.5 — 7.5 — ns
+ t ac3 Access Time From CLK CAS Latency = 3 — 4.8 — 5.4 — 5.4 ns 
+ t ac2  CAS Latency = 2 — 6.5 — 5.5 — 5.5 ns
+ t ch CLK HIGH Level Width  2 — 2.5 — 2.5 — ns
+ t cl CLK LOW Level Width  2 — 2.5 — 2.5 — ns
+ t oh3 Output Data Hold Time CAS Latency = 3 2.5 — 2.5 — 2.5 — ns 
+ t oh2  CAS Latency = 2 2.5 — 2.5 — 2.5 — ns
+ t lz Output LOW Impedance Time  0 — 0 — 0 — ns
+ t hz3 Output HIGH Impedance Time CAS Latency = 3 2.5 5.4 2.5 5.4 2.5 5.4 ns 
+ t hz2  CAS Latency = 2 2.5 6.5 2.5 6.5 2.5 6.5 ns
+ t ds Input Data Setup Time(2)  1.5 — 1.5 — 1.5 — ns
+ t dh Input Data Hold Time(2)  0.8 — 0.8 — 0.8 — ns
+ t as Address Setup Time(2)  1.5 — 1.5 — 1.5 — ns
+ t ah Address Hold Time(2)  0.8 — 0.8 — 0.8 — ns
+ t cks CKE Setup Time(2)  1.5 — 1.5 — 1.5 — ns
+ t ckh CKE Hold Time(2)  0.8 — 0.8 — 0.8 — ns
+ t cms Command Setup Time (CS, RAS, CAS, WE, DQM)(2) 1.5 — 1.5 — 1.5 — ns
+ t cmh Command Hold Time (CS, RAS, CAS, WE, DQM)(2) 0.8 — 0.8 — 0.8 — ns
+ t rc Command Period (REF to REF / ACT to ACT)  55 — 60 — 65 — ns
+ t ras Command Period (ACT to PRE)  40 100K 42 100K 42 100K ns
+ t rp Command Period (PRE to ACT)  15 — 18 — 20 — ns
+ t rcd Active Command To Read / Write Command Delay Time 15 — 18 — 20 — ns
+ t rrd Command Period (ACT [0] to ACT[1])(5)  10 — 12 — 14 — ns
+ t dpl Input Data To Precharge(5)  12 — 12 — 14 — ns 
+   Command Delay time
+ t dal Input Data To Active / Refresh  27 — 30  — 35 — ns 
+   Command Delay time (During Auto-Precharge)
+ t mrd Mode Register Program Time(5)  10 — 12 — 14 — ns
+ t dde Power Down Exit Setup Time  5 — 6 — 7 — ns
+ t xsr Exit Self-Refresh to Active Time (4)  70 — 70 — 70 — ns
+ t t  Transition Time  0.3 1.2 0.3 1.2 0.3 1.2 ns
+ t ref Refresh Cycle Time (4096)          
+    Ta ≤ 70oC  Com., Ind., A1, A2 — 64 — 64 — 64 ms 
+    Ta ≤ 85oC  Ind., A1, A2 — 64 — 64 — 64 ms 
+    Ta > 85oC  A2 — — — 16 — 16 ms
+Notes:
+1. The power-on sequence must be executed before starting memory operation.
+2. measured with tt = 1 ns. If clock rising time is longer than 1ns, (tr /2 - 0.5) ns should be added to the parameter.
+3.  The reference level is 1.4V when measuring input signal timing. Rise and fall times are measured between Vih(min.) and Vil 
+(max). 
+4.  Self-Refresh Mode is not supported for A2 grade with Ta > 85oC.
+5.  A minimum of 2 cycles is required for the timing parameters trrd, tdpl, tmrd. The timing values in this table must also be met.
+
+PAGE 18
+18 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+OPERATING FREQUENCY / LATENCY RELATIONSHIPS
+ SYMBOL PARAMETER  -5 -6 -7 UNITS
+ tck Clock Cycle Time CAS  Latency = 3 5 6 7 ns  
+   CAS  Latency = 2 10 7.5 7.5 ns
+ Freq. Operating Frequency CAS  Latency = 3 200 166 143 MHz  
+   CAS  Latency = 2 100 133 133 MHz
+ trcd Active Command To Read/Write Command Delay Time CAS  Latency = 3 3 3 3 cycle 
+   CAS  Latency = 2 2 2 2 cycle
+ trac RAS Latency (trcd + tcac) CAS  Latency = 3 6 6 6 cycle 
+   CAS  Latency = 2 4 4 4 cycle
+ trc Command Period (REF to REF / ACT to ACT) CAS  Latency = 3 11 10 10 cycle 
+   CAS  Latency = 2 6 8 9 cycle
+ tras Command Period (ACT to PRE) CAS  Latency = 3 8 7 6 cycle 
+   CAS  Latency = 2 4 6 6 cycle
+ trp Command Period (PRE to ACT) CAS  Latency = 3 3 3 3 cycle 
+   CAS  Latency = 2 2 3 3 cycle
+ trrd Command Period (ACT[0] to ACT [1])  2 2 2 cycle
+ tccd Column Command Delay Time  1 1 1 cycle 
+  (READ, READA, WRIT, WRITA)
+ tdpl Input Data To Precharge Command Delay Time CAS  Latency = 3 3 2 2 cycle 
+   CAS  Latency = 2 2 2 2 cycle
+ tdal Input Data To Active/Refresh Command Delay Time CAS  Latency = 3 6 5 5 cycle 
+  (During Auto-Precharge) CAS  Latency = 2 4 5 5 cycle
+ trbd Burst Stop Command To Output in HIGH-Z Delay Time CAS  Latency = 3 3 3 3 cycle 
+  (Read) CAS  Latency = 2 2 2 2 cycle
+ twbd Burst Stop Command To Input in Invalid Delay Time  0 0 0 cycle 
+  (Write) 
+ trql Precharge Command To Output in HIGH-Z Delay Time CAS  Latency = 3 3 3 3 cycle 
+  (Read) CAS  Latency = 2 2 2 2 cycle
+ twdl Precharge Command To Input in Invalid Delay Time  0 0 0 cycle 
+  (Write)
+ tpql Last Output To Auto-Precharge Start Time (Read) CAS  Latency = 3 -2 -2 -2 cycle 
+   CAS  Latency = 2 -1 -1 -1 cycle
+ tqmd DQM To Output Delay Time (Read)  2 2 2 cycle
+ tdmd DQM To Input Delay Time (Write)  0 0 0 cycle
+ tmrd Mode Register Set To Command Delay Time  2 2 2 cycle
+
+PAGE 19
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 19
+Rev. A
+09/16/2024
+AC TEST CONDITIONS 
+Input Load Output Load
+Output
+ Z = 50Ω
+50 pF
+1.4V
+50Ω
+3.0V
+1.4V
+0V
+CLK
+INPUT
+OUTPUT
+tCH
+tCMH
+tAC
+tOH
+tCMS
+tCK
+tCL
+3.0V
+1.4V
+1.4V 1.4V
+0V
+AC TEST CONDITIONS
+ Parameter Rating
+ AC Input Levels 0V to 3.0V
+ Input Rise and Fall Times 1 ns
+ Input Timing Reference Level 1.4V
+ Output Timing Measurement Reference Level 1.4V
+
+PAGE 20
+20 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+FUNCTIONAL DESCRIPTION
+The 128Mb SDRAMs are quad-bank DRAMs which operate 
+at 3.3V and include a synchronous interface (all signals are 
+registered on the positive edge of the clock signal, CLK). 
+Each of the 33,554,432-bit banks is organized as 4,096 
+rows by 256 columns by 32 bits.
+Read and write accesses to the SDRAM are burst oriented; 
+accesses start at a selected location and continue for 
+a programmed number of locations in a programmed 
+sequence. Accesses begin with the registration of an AC-
+TIVE command which is then followed by a READ or WRITE 
+command. The address bits registered coincident with the 
+ACTIVE command are used to select the bank and row to 
+be accessed (BA0 and BA1 select the bank, A0-A11 select the 
+row). The address bits A0-A7 registered coincident with the 
+READ or WRITE command are used to select the starting 
+column location for the burst access. 
+Prior to normal operation, the SDRAM must be initial-
+ized. The following sections provide detailed information 
+covering device initialization, register definition, command  
+descriptions and device operation. 
+Initialization
+SDRAMs must be powered up and initialized in a  
+predefined manner.
+The 128M SDRAM is initialized after the power is applied 
+to Vdd and Vddq (simultaneously) and the clock is stable 
+with DQM High and CKE High. 
+A 100µs delay is required prior to issuing any command 
+other than a COMMAND INHIBIT or a NOP. The COMMAND 
+INHIBIT or NOP may be applied during the 100µs period and 
+should continue at least through the end of the period. 
+With at least one COMMAND INHIBIT or NOP command 
+having been applied, a PRECHARGE command should 
+be applied once the 100µs delay has been satisfied.  All 
+banks must be precharged.  This will leave all banks in an 
+idle state after which at least two AUTO REFRESH cycles 
+must be performed. After the AUTO REFRESH cycles are 
+complete, the SDRAM is then ready for mode register 
+programming.
+The mode register should be loaded prior to applying 
+any operational command because it will power up in an 
+unknown state.
+
+PAGE 21
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 21
+Rev. A
+09/16/2024
+INITIALIZE AND LOAD MODE REGISTER(1)
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0-DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCH tCLtCK
+tCMS tCMH tCMS tCMH tCMS tCMH
+tCKS tCKH
+T0 T1 Tn+1 To+1 Tp+1 Tp+2 Tp+3
+tMRDtRCtRCtRP
+ROW
+ROW
+BANK
+tAS tAH
+tAS tAH
+CODE
+CODE
+ALL BANKS
+SINGLE BANK
+ALL BANKS
+AUTO
+REFRESH
+AUTO
+REFRESH
+Load MODE
+REGISTER
+T = 100µs Min.
+Power-up: VCC
+and CLK stable
+Precharge
+all banks
+AUTO REFRESH Program MODE REGISTER
+NOP PRECHARGE NOP NOP NOP ACTIVE
+T
+(2, 3, 4)AUTO REFRESH
+CODE
+tAS tAH
+Notes:
+1.  If CS is High at clock High time, all commands applied are NOP.
+2.  The Mode register may be loaded prior to the Auto-Refresh cycles if desired.
+3.  JEDEC and PC100 specify three clocks.
+4.  Outputs are guaranteed High-Z after the command is issued.
+
+PAGE 22
+22 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+AUTO-REFRESH CYCLE
+Notes:
+1.  CAS  latency = 2, 3
+tRP tRC tRC
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tAS tAH
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+T0 T1 T2  Tn+1  To+1
+ALL BANKS
+SINGLE BANK
+BANK(s)
+ROW
+ROW
+BANK
+High-Z
+PRECHARGE NOP  NOP NOP ACTIVEAuto Refresh Auto Refresh
+
+PAGE 23
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 23
+Rev. A
+09/16/2024
+SELF-REFRESH CYCLE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tAS tAH
+BANK
+tCLtCHtCK
+tCMS tCMH
+tCKS tCKH
+ALL BANKS
+SINGLE BANK
+tCKS
+Precharge all
+active banks
+CLK stable prior to exiting
+self refresh mode
+Enter self
+refresh mode
+Exit self refresh mode
+(Restart refresh time base)
+T0 T1 T2 Tn+1 To+1 To+2
+High-Z
+Auto
+Refresh
+Auto
+RefreshPRECHARGE NOP  NOP NOP 
+tCKS
+≥ tRAS
+tRP tXSR
+DON'T CARE
+Note:
+1.  Self-Refresh Mode is not supported for A2 grade with Ta > 85oC.
+
+PAGE 24
+24 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+REGISTER DEFINITION
+Mode Register
+The mode register is used to define the specific mode 
+of operation of the SDRAM. This definition includes the 
+selection of a burst length, a burst type, a CAS latency, 
+an operating mode and a write burst mode, as shown in 
+MODE REGISTER DEFINITION. 
+The mode register is programmed via the LOAD MODE 
+REGISTER command and will retain the stored information 
+until it is programmed again or the device loses power.
+Mode register bits M0-M2 specify the burst length, M3 
+specifies the type of burst (sequential or interleaved), M4- M6 
+specify the CAS latency, M7 and M8 specify the operating 
+mode, M9 specifies the WRITE burst mode, and M10 and 
+M11 are reserved for future use.
+The mode register must be loaded when all banks are 
+idle, and the controller must wait the specified time before 
+initiating the subsequent operation. Violating either of these 
+requirements will result in unspecified operation.
+MODE REGISTER DEFINITION
+Latency Mode
+ M6 M5 M4 CAS Latency
+ 0 0 0 Reserved
+ 0 0 1 Reserved
+ 0 1 0 2
+ 0 1 1 3
+ 1 0 0 Reserved
+ 1 0 1 Reserved
+ 1 1 0 Reserved
+ 1 1 1 Reserved
+1. To ensure compatibility with future devices,
+should program BA1, BA0, A11, A10 = "0"
+Write Burst Mode
+ M9 Mode
+ 0 Programmed Burst Length
+ 1 Single Location Access
+Operating Mode
+ M8 M7 M6-M0 Mode
+ 0 0 Defined Standard Operation
+ — — — All Other States Reserved
+Burst Type
+ M3 Type
+ 0 Sequential
+ 1 Interleaved 
+Burst Length
+ M2 M1 M0 M3=0 M3=1
+ 0 0 0 1 1
+ 0 0 1 2 2
+ 0 1 0 4 4
+ 0 1 1 8 8
+ 1 0 0 Reserved Reserved
+ 1 0 1 Reserved Reserved
+ 1 1 0 Reserved Reserved
+ 1 1 1 Full Page Reserved
+Reserved
+Address Bus
+Mode Register (Mx)
+(1)
+  BA1 BA0     A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
+
+PAGE 25
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 25
+Rev. A
+09/16/2024
+BURST DEFINITION
+ Burst  Starting Column    Order of Accesses Within a Burst
+  Length  Address   Type = Sequential  Type = Interleaved
+    A0
+ 2   0  0-1  0-1
+    1  1-0  1-0
+   A1 A0
+   0 0  0-1-2-3  0-1-2-3
+ 4  0 1  1-2-3-0  1-0-3-2
+   1 0  2-3-0-1  2-3-0-1
+   1 1  3-0-1-2  3-2-1-0
+  A2 A1 A0
+  0 0 0  0-1-2-3-4-5-6-7  0-1-2-3-4-5-6-7
+  0 0 1  1-2-3-4-5-6-7-0   1-0-3-2-5-4-7-6
+  0 1  0   2-3-4-5-6-7-0-1  2-3-0-1-6-7-4-5
+ 8 0  1 1   3-4-5-6-7-0-1-2  3-2-1-0-7-6-5-4
+  1 0 0  4-5-6-7-0-1-2-3  4-5-6-7-0-1-2-3
+  1 0 1  5-6-7-0-1-2-3-4  5-4-7-6-1-0-3-2
+  1 1 0  6-7-0-1-2-3-4-5  6-7-4-5-2-3-0-1
+  1 1 1  7-0-1-2-3-4-5-6  7-6-5-4-3-2-1-0
+ Full n = A0-A7    Cn, Cn + 1, Cn + 2  Not Supported 
+ Page     Cn + 3, Cn + 4...
+ (y) (location 0-y)    …Cn - 1,
+      Cn…
+BURST LENGTH
+Read and write accesses to the SDRAM are burst oriented, 
+with the burst length being programmable, as shown in 
+MODE REGISTER DEFINITION. The burst length deter-
+mines the maximum number of column locations that can 
+be accessed for a given READ or WRITE command. Burst 
+lengths of 1, 2, 4 or 8 locations are available for both the 
+sequential and the interleaved burst types, and a full-page 
+burst is available for the sequential type. The full-page 
+burst is used in conjunction with the BURST TERMINATE 
+command to generate arbitrary burst lengths.
+Reserved states should not be used, as unknown operation 
+or incompatibility with future versions may result.
+When a READ or WRITE command is issued, a block of 
+columns equal to the burst length is effectively selected. All 
+accesses for that burst take place within this block, mean-
+ing that the burst will wrap within the block if a boundary 
+is reached. The block is uniquely selected by A1-A7 (x32) 
+when the burst length is set to two; by A2-A7 (x32) when 
+the burst length is set to four; and by A3-A7 (x32) when the 
+burst length is set to eight. The remaining (least significant) 
+address bit(s) is (are) used to select the starting location 
+within the block. Full-page bursts wrap within the page if 
+the boundary is reached.
+Burst Type
+Accesses within a given burst may be programmed to be 
+either sequential or interleaved; this is referred to as the 
+burst type and is selected via bit M3.
+The ordering of accesses within a burst is determined by 
+the burst length, the burst type and the starting column 
+address, as shown in BURST DEFINITION table.
+
+PAGE 26
+26 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DON'T CARE
+UNDEFINED
+CLK
+COMMAND
+DQ
+READ NOP NOP NOP
+CAS Latency - 3
+tAC
+tOH
+DOUT
+T0 T1 T2 T3 T4
+tLZ
+CLK
+COMMAND
+DQ
+READ NOP NOP
+CAS Latency - 2
+tAC
+tOH
+DOUT
+T0 T1 T2 T3
+tLZ
+CAS LATENCY
+CAS Latency
+The CAS latency is the delay, in clock cycles, between 
+the registration of a READ command and the availability of 
+the first piece of output data. The latency can be set to two or 
+three clocks.
+If a READ command is registered at clock edge n, and 
+the latency is m clocks, the data will be available by clock 
+edge n + m. The DQs will start driving as a result of the 
+clock edge one cycle earlier (n + m - 1), and provided that 
+the relevant access times are met, the data will be valid by 
+clock edge n + m. For example, assuming that the clock 
+cycle time is such that all relevant access times are met, 
+if a READ command is registered at T0 and the latency 
+is programmed to two clocks, the DQs will start driving 
+after T1 and the data will be valid by T2, as shown in CAS 
+Latency diagrams. The Allowable Operating Frequency 
+table indicates the operating frequencies at which each 
+CAS latency setting can be used.
+Reserved states should not be used as unknown operation 
+or incompatibility with future versions may result.
+CAS Latency
+Allowable Operating Frequency (MHz)
+ Speed CAS Latency = 2 CAS Latency = 3
+ -5 100 200
+ -6 133 166
+ -7 133 143
+Operating Mode
+The normal operating mode is selected by setting M7 and M8 
+to zero; the other combinations of values for M7 and M8 are 
+reserved for future use and/or test modes. The programmed 
+burst length applies to both READ and WRITE bursts.
+Test modes and reserved states should not be used be-
+cause unknown operation or incompatibility with future 
+versions may result.
+Write Burst Mode
+When M9 = 0, the burst length programmed via M0-M2 
+applies to both READ and WRITE bursts; when M9 = 1, 
+the programmed burst length applies to READ bursts, but 
+write accesses are single-location (nonburst) accesses.
+
+PAGE 27
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 27
+Rev. A
+09/16/2024
+CLK
+CKE
+ROW ADDRESS
+BANK ADDRESS
+CS
+RAS
+CAS
+WE
+A0-A11
+BA0, BA1
+HIGH
+Activating Specific Row Within Specific Bank
+DON'T CARE
+CLK
+COMMAND ACTIVE NOP NOP
+tRCD
+T0 T1 T2 T3 T4
+READ or
+WRITE
+CHIP OPERATION
+BANK/ROW ACTIVATION
+Before any READ or WRITE commands can be issued 
+to a bank within the SDRAM, a row in that bank must be 
+“opened.” This is accomplished via the ACTIVE command, 
+which selects both the bank and the row to be activated 
+(see Activating Specific Row Within Specific Bank).
+After opening a row (issuing an ACTIVE command), a READ 
+or WRITE command may be issued to that row, subject to 
+the trcd specification. Minimum trcd should be divided by 
+the clock period and rounded up to the next whole number 
+to determine the earliest clock edge after the ACTIVE 
+command on which a READ or WRITE command can be 
+entered. For example, a trcd specification of 18ns with a 
+125 MHz clock (8ns period) results in 2.25 clocks, rounded 
+to 3. This is reflected in the following example, which cov-
+ers any case where 2 < [t rcd (MIN)/tck] ≤ 3. (The same 
+procedure is used to convert other specification limits from 
+time units to clock cycles).
+A subsequent ACTIVE command to a different row in the 
+same bank can only be issued after the previous active 
+row has been “closed” (precharged). The minimum time 
+interval between successive ACTIVE commands to the 
+same bank is defined by trc.
+A subsequent ACTIVE command to another bank can be 
+issued while the first bank is being accessed, which results 
+in a reduction of total row-access overhead. The minimum 
+time interval between successive ACTIVE commands to 
+different banks is defined by trrd.
+EXAMPLE: MEETING TRCD (MIN) WHEN 2 < [TRCD (MIN)/TCK] ≤ 3
+
+PAGE 28
+28 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+CLK
+CKE
+HIGH
+COLUMN ADDRESS
+AUTO PRECHARGE
+NO PRECHARGE
+CS
+RAS
+CAS
+WE
+A0-A7
+A10
+BA0, BA1 BANK ADDRESS
+A8,  A9,  A11
+READ COMMANDREADS
+READ bursts are initiated with a READ command, as 
+shown in the READ COMMAND diagram.
+The starting column and bank addresses are provided with 
+the READ command, and auto precharge is either enabled or 
+disabled for that burst access. If auto precharge is enabled, 
+the row being accessed is precharged at the completion of 
+the burst. For the generic READ commands used in the fol-
+lowing illustrations, auto precharge is disabled.
+During READ bursts, the valid data-out element from the 
+starting column address will be available following the 
+CAS latency after the READ command. Each subsequent 
+data-out element will be valid by the next positive clock 
+edge. The CAS Latency diagram shows general timing 
+for each possible CAS latency setting.
+Upon completion of a burst, assuming no other commands 
+have been initiated, the DQs will go High-Z. A full-page burst 
+will continue until terminated. (At the end of the page, it will 
+wrap to column 0 and continue.)
+Data from any READ burst may be truncated with a sub-
+sequent READ command, and data from a fixed-length 
+READ burst may be immediately followed by data from a 
+READ command. In either case, a continuous flow of data 
+can be maintained. The first data element from the new 
+burst follows either the last element of a completed burst 
+or the last desired data element of a longer burst which 
+is being truncated.
+The new READ command should be issued x cycles before 
+the clock edge at which the last desired data element is 
+valid, where x equals the CAS latency minus one. This is 
+shown in Consecutive READ Bursts for CAS latencies of 
+two and three; data element n + 3 is either the last of a 
+burst of four or the last desired of a longer burst. The 128Mb 
+SDRAM uses a pipelined architecture and therefore does 
+not require the 2n rule associated with a prefetch architec-
+ture. A READ command can be initiated on any clock cycle 
+following a previous READ command. Full-speed random 
+read accesses can be performed to the same bank, as 
+shown in Random READ Accesses, or each subsequent 
+READ may be performed to a different bank.
+Data from any READ burst may be truncated with a sub-
+sequent WRITE command, and data from a fixed-length 
+READ burst may be immediately followed by data from a 
+WRITE command (subject to bus turnaround limitations). 
+The WRITE burst may be initiated on the clock edge im-
+mediately following the last (or last desired) data element 
+from the READ burst, provided that I/O contention can be 
+avoided. In a given system design, there may be a pos-
+sibility that the device driving the input data will go Low-Z 
+before the SDRAM DQs go High-Z. In this case, at least 
+a single-cycle delay should occur between the last read 
+data and the WRITE command.
+The DQM input is used to avoid I/O contention, as shown 
+in Figures RW1 and RW2. The DQM signal must be as-
+serted (HIGH) at least three clocks prior to the WRITE 
+command (DQM latency is two clocks for output buffers) 
+to suppress data-out from the READ. Once the WRITE 
+command is registered, the DQs will go High-Z (or remain 
+High-Z), regardless of the state of the DQM signal, provided 
+the DQM was active on the clock just prior to the WRITE 
+command that truncated the READ command. If not, the 
+second WRITE will be an invalid WRITE. For example, if 
+DQM was LOW during T4 in Figure RW2, then the WRITEs 
+at T5 and T7 would be valid, while the WRITE at T6 would 
+be invalid.
+The DQM signal must be de-asserted prior to the WRITE 
+command (DQM latency is zero clocks for input buffers) 
+to ensure that the written data is not masked. 
+A fixed-length READ burst may be followed by, or truncated 
+with, a PRECHARGE command to the same bank (provided 
+that auto precharge was not activated), and a full-page burst 
+may be truncated with a PRECHARGE command to the 
+same bank. The PRECHARGE command should be issued 
+x cycles before the clock edge at which the last desired 
+data element is valid, where x equals the CAS latency 
+minus one. This is shown in the READ to PRECHARGE 
+
+PAGE 29
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 29
+Rev. A
+09/16/2024
+diagram for each possible CAS latency; data element n + 
+3 is either the last of a burst of four or the last desired of 
+a longer burst. Following the PRECHARGE command, a 
+subsequent command to the same bank cannot be issued 
+until trp is met. Note that part of the row precharge time is 
+hidden during the access of the last data element(s).
+In the case of a fixed-length burst being executed to 
+completion, a PRECHARGE command issued at the 
+optimum time (as described above) provides the same 
+operation that would result from the same fixed-length 
+burst with auto precharge. The disadvantage of the PRE-
+CHARGE command is that it requires that the command 
+and address buses be available at the appropriate time to 
+issue the command; the advantage of the PRECHARGE 
+command is that it can be used to truncate fixed-length 
+or full-page bursts.
+Full-page READ bursts can be truncated with the BURST 
+TERMINATE command, and fixed-length READ bursts 
+may be truncated with a BURST TERMINATE command, 
+provided that auto precharge was not activated. The BURST 
+TERMINATE command should be issued x cycles before 
+the clock edge at which the last desired data element is 
+valid, where x equals the CAS latency minus one. This is 
+shown in the READ Burst Termination diagram for each 
+possible CAS latency; data element n + 3 is the last desired 
+data element of a longer burst.
+
+PAGE 30
+30 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DON'T CARE
+CLK
+DQM
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5
+READ NOP NOP NOP NOP WRITE
+BANK,
+COL n
+BANK,
+COL b
+DOUT n DIN  b
+tDS
+tHZ
+CAS Latency - 3
+RW1 - READ to WRITE
+RW2 - READ to WRITE
+DON'T CARE
+CLK
+DQM
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+READ NOP NOP NOP NOP NOP WRITE
+BANK,
+COL n
+DIN  b
+tDS
+tHZ
+BANK,
+COL b
+CAS Latency - 2
+DOUT n DOUT n+1 DOUT n+2
+
+PAGE 31
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 31
+Rev. A
+09/16/2024
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+READ NOP NOP NOP READ NOP NOP
+DOUT n DOUT n+1 DOUT n+2 DOUT n+3 DOUT b
+BANK,
+COL n
+BANK,
+COL b
+CAS Latency - 2
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+READ NOP NOP NOP READ NOP NOP NOP
+DOUT n DOUT n+1 DOUT n+2 DOUT n+3 DOUT b
+BANK,
+COL n
+BANK,
+COL b
+CAS Latency - 3
+CONSECUTIVE READ BURSTS
+
+PAGE 32
+32 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5
+READ READ READ READ NOP NOP
+DOUT n DOUT b DOUT m DOUT x
+BANK,
+COL n
+BANK,
+COL b
+CAS Latency - 2
+BANK,
+COL m
+BANK,
+COL x
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+READ READ READ READ NOP NOP NOP
+DOUT n DOUT b DOUT m DOUT x
+BANK,
+COL n
+BANK,
+COL b
+CAS Latency - 3
+BANK,
+COL m
+BANK,
+COL x
+RANDOM READ ACCESSES
+
+PAGE 33
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 33
+Rev. A
+09/16/2024
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+READ NOP NOP NOP  NOP NOP
+DOUT n DOUT n+1 DOUT n+2 DOUT n+3
+BANK a,
+COL n
+CAS Latency - 2
+x = 1 cycle
+BURST
+TERMINATE
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+READ NOP NOP NOP  NOP NOP NOP
+DOUT n DOUT n+1 DOUT n+2 DOUT n+3
+BANK,
+COL n
+CAS Latency - 3
+x = 2 cycles
+BURST
+TERMINATE
+READ BURST TERMINATION
+
+PAGE 34
+34 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+ALTERNATING BANK READ ACCESSES
+Notes:
+1) CAS latency = 2, Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+BANK 0 BANK 3 BANK 3 BANK 0
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tRCD - BANK 0 CAS Latency - BANK 0 tRCD - BANK 0
+tRAS - BANK 0
+tRC - BANK 0
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+ACTIVE NOP READ NOP ACTIVE NOP READ NOP ACTIVE
+ROW
+ROW
+BANK 0
+ROW ROW
+tRRD tRCD - BANK 3
+tRP - BANK 0
+COLUMN m(2) ROW COLUMN b(2) ROW
+ENABLE AUTO PRECHARGE ENABLE AUTO PRECHARGE
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+tAC
+tOH tOH tOH tOH tOH
+DOUT m DOUT m+1 DOUT m+2 DOUT m+3 DOUT b
+tAC tAC tAC tAC tAC
+tLZ
+CAS Latency - BANK 3
+
+PAGE 35
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 35
+Rev. A
+09/16/2024
+READ - FULL-PAGE BURST
+Notes:
+1) CAS latency = 2, Burst Length = Full Page
+2) x32: A8, A9, A11 = "Don't Care"
+DON'T CARE
+UNDEFINED
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP READ NOP NOP NOP NOP NOP BURST TERM NOP NOP
+tAS tAH
+tAS tAH
+tAS tAH
+ROW
+ROW
+BANK
+COLUMN m(2)
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+BANK
+tRCD CAS Latency
+tAC tACtAC tACtAC tHZ
+tLZ
+tAC
+tOH tOH tOH tOH tOH tOH
+DOUT m DOUT m+1 DOUT m+2 DOUT m-1 DOUT m DOUT m+1
+each row (x4) has
+1,024 locations Full page
+completion
+Full-page burst not self-terminating.
+Use BURST TERMINATE command.
+T0 T1 T2 T3 T4 T5 T6 Tn+1 Tn+2 Tn+3 Tn+4
+
+PAGE 36
+36 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+READ - DQM OPERATION
+DON'T CARE
+UNDEFINED
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP READ NOP NOP NOP NOP NOP NOP
+tAS tAH
+tAS tAH
+tAS tAH
+ENABLE AUTO PRECHARGE
+DISABLE AUTO PRECHARGE
+ROW
+ROW
+BANK
+tRCD CAS Latency
+DOUT m DOUT m+2 DOUT m+3
+COLUMN m(2)
+BANK
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+tOHtOHtOH tACtAC
+tACtHZ tHZ
+tLZ tLZ
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+Notes:
+1) CAS latency = 2, Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 37
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 37
+Rev. A
+09/16/2024
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+READ NOP NOP NOP  NOP ACTIVE NOP
+DOUT n DOUT n+1 DOUT n+2 DOUT n+3
+BANK a,
+COL n
+BANK a,
+ROW
+BANK
+(a or all)
+CAS Latency - 2
+tRP
+PRECHARGE
+tRQL High-Z
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+READ NOP NOP NOP  NOP NOP ACTIVE
+DOUT n DOUT n+1 DOUT n+2 DOUT n+3
+BANK,
+COL n
+BANK,
+COL b
+CAS Latency - 3
+tRP
+tRQL
+BANK a,
+ROW
+PRECHARGE
+High-Z
+READ to PRECHARGE
+
+PAGE 38
+38 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+CLK
+CKE
+HIGH 
+COLUMN ADDRESS
+AUTO PRECHARGE
+BANK ADDRESS
+CS
+RAS
+CAS
+WE
+A0-A7
+A10
+BA0, BA1
+NO PRECHARGE
+A8,  A9,  A11
+WRITE COMMAND
+The starting column and bank addresses are provided with 
+the WRITE command, and auto precharge is either enabled 
+or disabled for that access. If auto precharge is enabled, 
+the row being accessed is precharged at the completion of 
+the burst. For the generic WRITE commands used in the 
+following illustrations, auto precharge is disabled.
+During WRITE bursts, the first valid data-in element will be 
+registered coincident with the WRITE command. Subsequent 
+data elements will be registered on each successive posi-
+tive clock edge. Upon completion of a fixed-length burst, 
+assuming no other commands have been initiated, the 
+DQs will remain High-Z and any additional input data will 
+be ignored (see WRITE Burst). A full-page burst will con-
+tinue until terminated. (At the end of the page, it will wrap 
+to column 0 and continue.)
+Data for any WRITE burst may be truncated with a subse-
+quent WRITE command, and data for a fixed-length WRITE 
+burst may be immediately followed by data for a WRITE 
+command. The new WRITE command can be issued on 
+any clock following the previous WRITE command, and the 
+data provided coincident with the new command applies to 
+the new command.
+An example is shown in WRITE to WRITE diagram. Data 
+n + 1 is either the last of a burst of two or the last desired 
+of a longer burst. The 128Mb SDRAM uses a pipelined 
+architecture and therefore does not require the 2n rule as-
+sociated with a prefetch architecture. A WRITE command 
+can be initiated on any clock cycle following a previous 
+WRITE command. Full-speed random write accesses within 
+a page can be performed to the same bank, as shown in 
+Random WRITE Cycles, or each subsequent WRITE may 
+be performed to a different bank.
+Data for any WRITE burst may be truncated with a subse-
+quent READ command, and data for a fixed-length WRITE 
+burst may be immediately followed by a subsequent READ 
+command. Once the READ com mand is registered, the 
+data inputs will be ignored, and WRITEs will not be ex-
+ecuted. An example is shown in WRITE to READ. Data n 
++ 1 is either the last of a burst of two or the last desired 
+of a longer burst.
+Data for a fixed-length WRITE burst may be followed  
+by, or truncated with, a PRECHARGE command to the 
+same bank (provided that auto precharge was not acti-
+vated), and a full-page WRITE burst may be truncated 
+with a PRECHARGE command to the same bank. The 
+PRECHARGE command should be issued t dpl after the 
+clock edge at which the last desired input data element 
+is registered. The auto precharge mode requires a tdpl of 
+at least one clock plus time, regardless of frequency. In 
+addition, when truncating a WRITE burst, the DQM signal 
+must be used to mask input data for the clock edge prior 
+to, and the clock edge coincident with, the PRECHARGE 
+command. An example is shown in the WRITE to PRE-
+CHARGE diagram. Data n+1 is either the last of a burst 
+of two or the last desired of a longer burst. Following the 
+PRECHARGE command, a subsequent command to the 
+same bank cannot be issued until trp is met.
+In the case of a fixed-length burst being executed to comple-
+tion, a PRECHARGE command issued at the optimum 
+time (as described above) provides the same operation that 
+would result from the same fixed-length burst with auto 
+precharge. The disadvantage of the PRECHARGE command 
+is that it requires that the command and address buses be 
+available at the appropriate time to issue the command; the 
+advantage of the PRECHARGE command is that it can be 
+used to truncate fixed-length or full-page bursts.
+Fixed-length or full-page WRITE bursts can be truncated 
+with the BURST TERMINATE command. When truncat-
+ing a WRITE burst, the input data applied coincident with 
+the BURST TERMINATE command will be ignored. The 
+last data written (provided that DQM is LOW at that time) 
+will be the input data applied one clock previous to the 
+BURST TERMINATE command. This is shown in WRITE 
+Burst Termination, where data n is the last desired data 
+element of a longer burst.
+WRITES
+WRITE bursts are initiated with a WRITE command, as 
+shown in WRITE Command diagram.
+
+PAGE 39
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 39
+Rev. A
+09/16/2024
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3
+WRITE NOP NOP NOP
+DIN n DIN n+1
+BANK,
+COL n
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2
+WRITE NOP WRITE
+DIN n DIN n+1 DIN b
+BANK,
+COL n
+BANK,
+COL b
+DON'T CARE
+WRITE BURST
+WRITE TO WRITE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3
+WRITE WRITE WRITE WRITE
+DIN n DIN b DIN m DIN x
+BANK,
+COL n
+BANK,
+COL b
+BANK,
+COL m
+BANK,
+COL x
+RANDOM WRITE CYCLES
+
+PAGE 40
+40 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+WRITE to READ
+WP1 - WRITE to PRECHARGE
+DON'T CARE
+CLK
+DQM
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+WRITE NOP NOP  NOP ACTIVE NOP
+BANK a,
+COL n
+BANK a,
+ROW
+BANK
+(a or all)
+tDPL
+tRP
+PRECHARGE
+DIN n DIN n+1 DIN n+2
+DON'T CARE
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5
+WRITE NOP READ NOP NOP NOP
+DIN n DIN n+1 DOUT b DOUT b+1
+BANK,
+COL n
+BANK,
+COL b
+CAS Latency - 2
+
+PAGE 41
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 41
+Rev. A
+09/16/2024
+CLK
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2
+WRITE
+DIN n  (DATA)
+BANK,
+COL n
+DON'T CARE
+(ADDRESS)
+BURST
+TERMINATE
+NEXT
+COMMAND
+WRITE Burst Termination
+DON'T CARE
+CLK
+DQM
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+WRITE NOP NOP  NOP NOP ACTIVE
+BANK a,
+COL n
+BANK a,
+ROW
+BANK
+(a or all)
+tDPL
+tRP
+PRECHARGE
+DIN n DIN n+1
+WP2 - WRITE to PRECHARGE
+
+PAGE 42
+42 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP WRITE NOP NOP NOP NOP BURST TERM NOP
+tAS tAH
+tAS tAH
+tAS tAH
+tDS tDH tDS tDH tDS tDH
+ROW
+ROW
+BANK
+tRCD
+DIN m DIN m+1 DIN m+2 DIN m+3 DIN m-1
+COLUMN m(2)
+tCHtCLtCK
+tDS tDH tDS tDH tDS tDH
+tCMS tCMH
+tCKS tCKH
+BANK
+Full page completed
+T0 T1 T2 T3 T4 T5 Tn+1 Tn+2
+WRITE - FULL PAGE BURST
+Notes:
+1) Burst Length = Full Page
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 43
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 43
+Rev. A
+09/16/2024
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP WRITE NOP NOP NOP NOP NOP
+tAS tAH
+tAS tAH
+tAS tAH
+tDS tDH tDS tDH tDS tDH
+ENABLE AUTO PRECHARGE
+DISABLE AUTO PRECHARGE
+ROW
+ROW
+BANK
+tRCD
+DIN m DIN m+2 DIN m+3
+COLUMN m(2)
+BANK
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+T0 T1 T2 T3 T4 T5 T6 T7
+WRITE - DQM OPERATION
+Notes:
+1) Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 44
+44 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+ALTERNATING BANK WRITE ACCESSES
+BANK 0 BANK 1 BANK 1 BANK 0
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tDS tDH tDS tDH tDS tDH
+tRCD - BANK 0 tRCD - BANK 0
+tDPL - BANK 1
+tRAS - BANK 0
+tRC - BANK 0
+tCHtCLtCK
+tDS tDH tDS tDH tDS tDH tDS tDH tDS tDH
+tCMS tCMH
+tCKS tCKH
+ACTIVE NOP WRITE NOP ACTIVE NOP WRITE NOP NOP ACTIVE
+DIN m DIN m+1 DIN m+2 DIN m+3 DIN b DIN b+1 DIN b+2 DIN b+3
+ROW
+ROW
+BANK 0
+ROW ROW
+tRRD tRCD - BANK 1
+tDPL - BANK 0 tRP - BANK 0
+COLUMN m(2) ROW COLUMN b(2) ROW
+ENABLE AUTO PRECHARGE ENABLE AUTO PRECHARGE
+T0 T1 T2 T3 T4 T5 T6 T7 T8 T9
+Notes:
+1) Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 45
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 45
+Rev. A
+09/16/2024
+DON'T CARE
+CLK
+CKE
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5
+NOP WRITE NOP NOP
+BANK a,
+COL n
+DIN n DIN n+1 DIN n+2
+INTERNAL
+CLOCK
+DON'T CARE
+CLK
+CKE
+COMMAND
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6
+READ NOP NOP NOP NOP NOP
+BANK a,
+COL n
+DOUT n DOUT n+1    DOUT n+2    DOUT n+3
+INTERNAL
+CLOCK
+CLOCK SUSPEND
+Clock suspend mode occurs when a column access/burst 
+is in progress and CKE is registered LOW. In the clock 
+suspend mode, the internal clock is deactivated, “freezing” 
+the synchronous logic.
+For each positive clock edge on which CKE is sampled 
+LOW, the next internal positive clock edge is suspended. 
+Any command or data present on the input pins at the time 
+of a suspended internal clock edge is ignored; any data 
+present on the DQ pins remains driven; and burst counters 
+are not incremented, as long as the clock is suspended. 
+(See following examples.)
+Clock suspend mode is exited by registering CKE HIGH; 
+the internal clock and related operation will resume on the 
+subsequent positive clock edge.
+Clock Suspend During WRITE Burst
+Clock Suspend During READ Burst
+
+PAGE 46
+46 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+CLOCK SUSPEND MODE
+Notes:
+1) CAS latency = 3, Burst Length = 2, Auto Precharge is disabled.
+2) x32: A8, A9, A11 = "Don't Care"
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+COLUMN m(2)
+T0 T1 T2 T3 T4 T5 T6 T7 T8 T9
+READ NOP NOP NOP NOP NOP WRITE NOP
+tCKS tCKH
+BANK BANK
+COLUMN n(2)
+tAC tAC
+tOH
+tHZ
+DOUT m DOUT m+1
+tLZ
+UNDEFINED
+DIN e+1
+tDS tDH
+DIN e
+
+PAGE 47
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 47
+Rev. A
+09/16/2024
+CLK
+CKE
+HIGH
+ALL BANKS
+BANK SELECT
+BANK ADDRESS
+CS
+RAS
+CAS
+WE
+A0-A9, A11
+A10
+BA0, BA1
+DON'T CARE
+CLK
+CKE
+COMMAND NOP NOP ACTIVE
+≥ tCKStCKS
+All banks idle
+Enter power-down mode Exit power-down mode
+tRCD
+tRAS
+tRC
+Input buffers gated off
+less than 64ms
+PRECHARGE Command
+POWER-DOWN
+POWER-DOWN
+Power-down occurs if CKE is registered LOW coincident 
+with a NOP or COMMAND INHIBIT when no accesses 
+are in progress. If power-down occurs when all banks are 
+idle, this mode is referred to as precharge power-down; 
+if power-down occurs when there is a row active in either 
+bank, this mode is referred to as active power-down. 
+Entering power-down deactivates the input and output 
+buffers, excluding CKE, for maximum power savings while 
+in standby. The device may not remain in the power-down 
+state longer than the refresh period (64ms) since no refresh 
+operations are performed in this mode.
+The power-down state is exited by registering a NOP or 
+COMMAND INHIBIT and CKE HIGH at the desired clock 
+edge (meeting tcks). See figure below (Power-Down).
+PRECHARGE
+The PRECHARGE command (see figure) is used to deac-
+tivate the open row in a particular bank or the open row in 
+all banks. The bank(s) will be available for a subsequent row 
+access some specified time (trp) after the PRECHARGE 
+command is issued. Input A10 determines whether one or 
+all banks are to be precharged, and in the case where only 
+one bank is to be precharged, inputs BA0, BA1 select the 
+bank. When all banks are to be precharged, inputs BA0, 
+BA1 are treated as “Don’t Care.” Once a bank has been 
+precharged, it is in the idle state and must be activated 
+prior to any READ or WRITE commands being issued to 
+that bank.
+
+PAGE 48
+48 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+POWER-DOWN MODE CYCLE
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tAS tAH
+BANK
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+PRECHARGE NOP NOP NOP ACTIVE
+ALL BANKS
+SINGLE BANK
+ROW
+ROW
+BANK
+tCKStCKS
+Precharge all
+active banks
+All banks idleTwo clock cycles Input buffers gated
+off while in
+power-down modeAll banks idle, enter
+power-down mode Exit power-down mode
+T0 T1 T2 Tn+1 Tn+2
+High-Z
+Note:
+x32: A8, A9, A11 = "Don't Care"
+
+PAGE 49
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 49
+Rev. A
+09/16/2024
+DON'T CARE
+CLK
+COMMAND
+BANK n
+BANK m
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+NOP  NOP  NOP NOP NOP NOP
+DOUT a DOUT a+1 DOUT b DOUT b+1
+BANK n,
+COL a
+CAS Latency - 3 (BANK n)
+CAS Latency - 3 (BANK m)
+tRP - BANK n tRP - BANK m
+READ - AP
+BANK n
+READ - AP
+BANK m
+Page Active READ with Burst of 4 Interrupt Burst, Precharge Idle
+Page Active READ with Burst of 4 Precharge
+Internal States
+BANK n,
+COL b
+DON'T CARE
+CLK
+COMMAND
+BANK n
+BANK m
+ADDRESS
+DQM
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+ NOP NOP NOP  NOP NOP NOP
+DOUT a DIN b DIN b+1 DIN b+2 DIN b+3
+BANK n,
+COL a
+BANK m,
+COL b
+CAS Latency - 3 (BANK n)
+tRP - BANK n tDPL - BANK m
+READ - AP
+BANK n
+WRITE - AP
+BANK m
+ READ with Burst of 4 Interrupt Burst, Precharge Idle
+Page Active WRITE with Burst of 4 Write-Back
+Internal States Page Active
+BURST READ/SINGLE WRITE
+The burst read/single write mode is entered by programming 
+the write burst mode bit (M9) in the mode register to a logic 
+1. In this mode, all WRITE commands result in the access 
+of a single column location (burst of one), regardless of 
+the programmed burst length. READ commands access 
+columns according to the programmed burst length and 
+sequence, just as in the normal mode of operation (M9 
+= 0).
+CONCURRENT AUTO PRECHARGE
+An access command (READ or WRITE) to another bank 
+while an access command with auto precharge enabled is 
+executing is not allowed by SDRAMs, unless the SDRAM 
+supports CONCURRENT AUTO PRECHARGE. ISSI  
+SDRAMs support CONCURRENT AUTO PRECHARGE. 
+Four cases where CONCURRENT AUTO PRECHARGE 
+occurs are defined below.
+READ with Auto Precharge
+1. Interrupted by a READ (with or without auto precharge): 
+A READ to bank m will interrupt a READ on bank n, 
+CAS latency later. The PRECHARGE to bank n will 
+begin when the READ to bank m is registered.
+2. Interrupted by a WRITE (with or without auto precharge): 
+A WRITE to bank m will interrupt a READ on bank n 
+when registered. DQM should be used three clocks prior 
+to the WRITE command to prevent bus contention. The 
+PRECHARGE to bank n will begin when the WRITE to 
+bank m is registered.
+READ With Auto Precharge interrupted by a READ
+READ With Auto Precharge interrupted by a WRITE
+
+PAGE 50
+50 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+DON'T CARE
+CLK
+COMMAND
+BANK n
+BANK m
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+NOP  NOP  NOP NOP NOP NOP
+DIN a DIN a+1 DOUT b DOUT b+1
+BANK n,
+COL a
+BANK m,
+COL b
+CAS Latency - 3 (BANK m)
+tRP - BANK n
+tRP - BANK m
+WRITE - AP
+BANK n
+READ - AP
+BANK m
+Page Active WRITE with Burst of 4 Interrupt Burst, Write-Back Precharge
+Page Active READ with Burst of 4 Precharge
+Internal States tDPL - BANK n
+DON'T CARE
+CLK
+COMMAND
+BANK n
+BANK m
+ADDRESS
+DQ
+T0 T1 T2 T3 T4 T5 T6 T7
+NOP  NOP NOP  NOP NOP NOP
+BANK n,
+COL a
+BANK m,
+COL b
+tRP - BANK n
+tDPL - BANK m
+WRITE - AP
+BANK n
+WRITE - AP
+BANK m
+Page Active WRITE with Burst of 4 Interrupt Burst, Write-Back Precharge
+Page Active WRITE with Burst of 4 Write-Back
+Internal States tDPL - BANK n
+DIN a DIN a+1 DIN a+2 DIN b DIN b+1 DIN b+2 DIN b+3
+WRITE with Auto Precharge
+3. Interrupted by a READ (with or without auto precharge): 
+A READ to bank m will interrupt a WRITE on bank n when 
+registered, with the data-out appearing (CAS latency)  
+later. The PRECHARGE to bank n will begin after tdpl 
+is met, where tdpl begins when the READ to bank m is 
+registered. The last valid WRITE to bank n will be data-in 
+registered one clock prior to the READ to bank m.
+4. Interrupted by a WRITE (with or without auto precharge): 
+AWRITE to bank m will interrupt a WRITE on bank n when 
+registered. The PRECHARGE to bank n will begin after 
+tdpl is met, where tdpl begins when the WRITE to bank 
+m is registered. The last valid data WRITE to bank n 
+will be data registered one clock prior to a WRITE to 
+bank m.
+WRITE With Auto Precharge interrupted by a READ
+ WRITE With Auto Precharge interrupted by a WRITE
+
+PAGE 51
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 51
+Rev. A
+09/16/2024
+READ WITH AUTO PRECHARGE
+DON'T CARE
+UNDEFINED
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP READ NOP NOP NOP NOP NOP ACTIVE
+tAS tAH
+tAS tAH
+tAS tAH
+ROW
+ROW
+BANK
+COLUMN m(2)
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+BANK
+tRCD
+tRAS
+tRC
+CAS Latency
+tAC tAC tAC tAC
+tOH
+tHZ
+tOH
+DOUT m
+tOH
+DOUT m+1
+tOH
+DOUT m+2 DOUT m+3
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+tRP
+ENABLE AUTO PRECHARGE
+ROW
+ROW
+BANK
+tLZ
+Notes:
+1) CAS latency = 2, Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 52
+52 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+READ WITHOUT AUTO PRECHARGE
+DON'T CARE
+UNDEFINED
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP READ NOP NOP NOP PRECHARGE NOP ACTIVE
+tAS tAH
+tAS tAH
+tAS tAH
+ROW
+ROW
+BANK
+COLUMN m(2)
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+BANK
+tRCD CAS Latency
+tAC tAC tAC tAC
+tOH
+tHZ
+tOH
+DOUT m
+tOH
+DOUT m+1
+tOH
+DOUT m+2 DOUT m+3
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+DISABLE AUTO PRECHARGE
+ROW
+ROW
+BANK
+tLZ
+tRAS
+tRC
+tRP
+ALL BANKS
+SINGLE BANK
+BANK
+Notes:
+1) CAS latency = 2, Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 53
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 53
+Rev. A
+09/16/2024
+SINGLE READ WITH AUTO PRECHARGE
+DON'T CARE
+UNDEFINED
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP NOP NOP READ NOP NOP ACTIVE NOP
+tAS tAH
+tAS tAH
+tAS tAH
+ROW
+ROW
+BANK
+COLUMN m(2)
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+BANK
+tRCD
+tRAS
+tRC
+CAS Latency
+tAC
+tHZ
+tOH
+  DOUT m
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+tRP
+ENABLE AUTO PRECHARGE
+ROW
+ROW
+BANK
+Notes:
+1) CAS latency = 2, Burst Length = 1
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 54
+54 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+SINGLE READ WITHOUT AUTO PRECHARGE
+DON'T CARE
+UNDEFINED
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+ACTIVE NOP READ NOP NOP PRECHARGE NOP ACTIVE NOP
+tAS tAH
+tAS tAH
+tAS tAH
+ROW
+ROW
+BANK
+COLUMN m(2)
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+BANK
+tRCD
+tRAS
+tRC
+CAS Latency
+tAC
+tHZ
+tOH
+DOUT m
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+tRP
+DISABLE AUTO PRECHARGE
+ROW
+ROW
+BANK
+tLZ
+ALL BANKS
+SINGLE BANK
+BANK
+Notes:
+1) CAS latency = 2, Burst Length = 1
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 55
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 55
+Rev. A
+09/16/2024
+WRITE - WITH AUTO PRECHARGE
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tRCD
+tRAS
+tRC
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+ACTIVE NOP WRITE NOP NOP NOP NOP NOP NOP ACTIVE
+tDPL tRP
+COLUMN m(2) ROW
+BANK BANK
+ENABLE AUTO PRECHARGE
+ROW
+ROW
+ROW
+BANK
+tDS tDH tDS tDH tDS tDHtDS tDH
+DIN m DIN m+1 DIN m+2 DIN m+3
+T0 T1 T2 T3 T4 T5 T6 T7 T8 T9
+Notes:
+1) Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+
+PAGE 56
+56 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+WRITE - WITHOUT AUTO PRECHARGE
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tRCD
+tRAS
+tRC
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+ACTIVE NOP WRITE NOP NOP NOP PRECHARGE NOP ACTIVE
+tDPL(3) tRP
+COLUMN m(2) ROW
+DISABLE AUTO PRECHARGE
+ROW
+ROW
+ROW
+BANK
+tDS tDH tDS tDH tDS tDHtDS tDH
+DIN m DIN m+1 DIN m+2 DIN m+3
+BANK BANK BANK
+ALL BANKS
+SINGLE BANK
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+Notes:
+1)  Burst Length = 4
+2) x32: A8, A9, A11 = "Don't Care"
+3) tras must not be violated.
+
+PAGE 57
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 57
+Rev. A
+09/16/2024
+SINGLE WRITE WITH AUTO PRECHARGE
+Notes:
+1) Burst Length = 1
+2) x32: A8, A9, A11 = "Don't Care"
+3) tras must not be violated.
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0-DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tDS tDH
+tRCD
+tRAS
+tRC
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+ACTIVE NOP NOP NOP WRITE NOP NOP NOP ACTIVE NOP
+tDPL tRP
+COLUMN m(2) ROW
+BANK BANK
+ENABLE AUTO PRECHARGE
+ROW
+ROW
+ROW
+BANK
+DIN m
+T0 T1 T2 T3 T4 T5 T6 T7 T8 T9
+
+PAGE 58
+58 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+SINGLE WRITE - WITHOUT AUTO PRECHARGE
+DON'T CARE
+CLK
+CKE
+COMMAND
+DQM0 - DQM3
+A0-A9, A11
+A10
+BA0, BA1
+DQ
+tCMS tCMH
+tAS tAH
+tAS tAH
+tAS tAH
+tDS tDH
+tRCD
+tRAS
+tRC
+tCHtCLtCK
+tCMS tCMH
+tCKS tCKH
+ACTIVE NOP WRITE NOP NOP PRECHARGE NOP ACTIVE NOP
+tDPL(3) tRP
+ROW
+ROW
+ROW
+BANK
+DIN m
+COLUMN m(2) ROW
+BANK BANK BANK
+ALL BANKS
+SINGLE BANK
+T0 T1 T2 T3 T4 T5 T6 T7 T8
+DISABLE AUTO PRECHARGE
+Notes:
+1) Burst Length = 1
+2) x32: A8, A9, A11 = "Don't Care"
+3) tras must not be violated.
+
+PAGE 59
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 59
+Rev. A
+09/16/2024
+ORDERING INFORMATION - VDD = 3.3V
+Automotive Range: -40°C to +85°C
+ Frequency Speed (ns) Order Part No. Package
+ 166 MHz 6 IS45S32400J-6TLA1 86-Pin TSOPII, Cu leadframe plated with matte Sn 
+ 166 MHz 6 IS45S32400J-6BLA1 90-ball BGA, SnAgCuBi balls  
+ 143 MHz 7 IS45S32400J-7TLA1 86-Pin TSOPII, Cu leadframe plated with matte Sn 
+ 143 MHz 7 IS45S32400J-7BLA1 90-ball BGA, SnAgCuBi balls
+Automotive Range: -40°C to +105°C
+ Frequency Speed (ns) Order Part No. Package 
+ 166 MHz 6 IS45S32400J-6TLA2 86-Pin TSOPII, Cu leadframe plated with matte Sn
+ 166 MHz 6 IS45S32400J-6BLA2 90-ball BGA, SnAgCuBi balls
+ 143 MHz 7 IS45S32400J-7TLA2 86-Pin TSOPII, Cu leadframe plated with matte Sn 
+ 143 MHz 7 IS45S32400J-7BLA2 90-ball BGA, SnAgCuBi balls
+ORDERING INFORMATION - VDD = 3.3V
+Commercial Range: 0°C to +70°C
+ Frequency Speed (ns) Order Part No. Package
+ 166 MHz 6 IS42S32400J-6TL 86-Pin TSOPII, Cu leadframe plated with matte Sn 
+ 166 MHz 6 IS42S32400J-6BL 90-ball BGA, SnAgCuBi balls  
+ 143 MHz 7 IS42S32400J-7TL 86-Pin TSOPII, Cu leadframe plated with matte Sn 
+ 143 MHz 7 IS42S32400J-7BL 90-ball BGA, SnAgCuBi balls
+Industrial Range: -40°C to +85°C
+ Frequency Speed (ns) Order Part No. Package
+ 166 MHz 6 IS42S32400J-6TLI 86-Pin TSOPII, Cu leadframe plated with matte Sn 
+ 166 MHz 6 IS42S32400J-6BLI 90-ball BGA, SnAgCuBi balls 
+ 143 MHz 7 IS42S32400J-7TLI 86-Pin TSOPII, Cu leadframe plated with matte Sn
+ 143 MHz 7 IS42S32400J-7BLI 90-ball BGA, SnAgCuBi balls
+Note:
+1. All products listed above are green. This refers to the package being RoHS Compliant, Halogen-free and TSCA Compliant. 
+2. Optionally, the code -TR may be appended to a part number to indicate Tape & Reel packing format.
+
+PAGE 60
+60 Integrated Silicon Solution, Inc. - www.issi.com
+Rev. A
+09/16/2024
+IS42S32400J,  IS45S32400J
+
+
+PAGE 61
+IS42S32400J,  IS45S32400J
+Integrated Silicon Solution, Inc. - www.issi.com 61
+Rev. A
+09/16/2024

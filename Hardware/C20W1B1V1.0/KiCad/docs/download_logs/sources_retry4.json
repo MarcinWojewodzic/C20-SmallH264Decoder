@@ -1,0 +1,26 @@
+[
+  {
+    "name": "STM32H753_DS12117_rev9b",
+    "url": "https://www.stmcu.jp/download?dlid=515960_en",
+    "status": "failed",
+    "error": "404 Client Error: Not Found for url: https://www.stmcu.jp/download/?dlid=515960_en"
+  },
+  {
+    "name": "STM32H753_DS12117_rev8",
+    "url": "https://www.stmcu.jp/download?dlid=515962_en",
+    "status": "failed",
+    "error": "404 Client Error: Not Found for url: https://www.stmcu.jp/download/?dlid=515962_en"
+  },
+  {
+    "name": "STM32H753_DS12117_mouser2",
+    "url": "https://www.mouser.com/datasheet/2/389/stm32h753vi-1839589.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.mouser.com', port=443): Read timed out. (read timeout=12)"
+  },
+  {
+    "name": "ISSI_32400J",
+    "url": "https://www.issi.com/WW/pdf/42-45S32400J.pdf?x=20261113",
+    "status": "failed",
+    "error": "not PDF https://www.issi.com/WW/pdf/42-45S32400J.pdf?x=20261113"
+  }
+]

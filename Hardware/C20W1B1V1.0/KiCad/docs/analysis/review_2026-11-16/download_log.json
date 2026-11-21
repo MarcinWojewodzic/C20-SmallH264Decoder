@@ -1,0 +1,28 @@
+[
+  [
+    {
+      "file": "docs\\datasheets\\BME280.pdf",
+      "url": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf",
+      "size": 1663806,
+      "sha256": "a2ccdb449fec94380742fe8eec851a11d9bd4142252d332b34682b4deecd7d89"
+    }
+  ],
+  [
+    {
+      "url": "https://www.st.com/resource/en/datasheet/lsm6dsv80x.pdf",
+      "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=25)"
+    },
+    {
+      "url": "https://www.st.com.cn/resource/en/datasheet/lsm6dsv80x.pdf",
+      "error": "HTTPSConnectionPool(host='www.st.com.cn', port=443): Read timed out. (read timeout=25)"
+    }
+  ],
+  [
+    {
+      "file": "docs\\datasheets\\MMC5983MA.pdf",
+      "url": "https://www.memsic.com/Public/Uploads/uploadfile/files/20220119/MMC5983MADatasheetRevA.pdf",
+      "size": 1183817,
+      "sha256": "d82083b922c2421757035ceb064e6f316a8f8c20b4593277c13ef750115731f7"
+    }
+  ]
+]

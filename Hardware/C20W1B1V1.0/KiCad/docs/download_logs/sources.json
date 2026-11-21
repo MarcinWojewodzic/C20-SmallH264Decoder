@@ -1,0 +1,64 @@
+[
+  {
+    "name": "STM32H753_datasheet",
+    "url": "https://www.st.com/resource/en/datasheet/stm32h753ii.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=50)"
+  },
+  {
+    "name": "RM0433",
+    "url": "https://www.st.com/resource/en/reference_manual/rm0433-stm32h743-753-and-stm32h750-value-line-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=50)"
+  },
+  {
+    "name": "ES0392",
+    "url": "https://www.st.com/resource/en/errata_sheet/es0392-stm32h742xig-and-stm32h743xig-device-limitations-stmicroelectronics.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=50)"
+  },
+  {
+    "name": "AN4938",
+    "url": "https://www.st.com/resource/en/application_note/an4938-getting-started-with-stm32h74xig-and-stm32h75xig-mcu-hardware-development-stmicroelectronics.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=50)"
+  },
+  {
+    "name": "PM0253",
+    "url": "https://www.st.com/resource/en/programming_manual/pm0253-stm32f7-series-and-stm32h7-series-cortexm7-processor-programming-manual-stmicroelectronics.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=50)"
+  },
+  {
+    "name": "IS45S32400J",
+    "url": "https://www.issi.com/WW/pdf/42-45S32400J.pdf",
+    "status": "failed",
+    "error": "Response is not PDF"
+  },
+  {
+    "name": "TPS923610",
+    "url": "https://www.ti.com/lit/ds/symlink/tps923610.pdf",
+    "status": "ok",
+    "bytes": 3193189,
+    "sha256": "e240e9ae48c6561bed38814f7237298d2b6ae6618e6c36ac5a14702264b19791"
+  },
+  {
+    "name": "AOTA-B252008S",
+    "url": "https://abracon.com/datasheets/AOTA-B252008S.pdf",
+    "status": "ok",
+    "bytes": 652708,
+    "sha256": "476b3a269d7a93d07550e65d6a01e7a149a2408777b8ad671c254543d8245ed6"
+  },
+  {
+    "name": "Molex_522710679_drawing",
+    "url": "https://www.molex.com/pdm_docs/sd/522710679_sd.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.molex.com', port=443): Read timed out. (read timeout=50)"
+  },
+  {
+    "name": "Panasonic_low_resistance_ERJ",
+    "url": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C331.pdf",
+    "status": "failed",
+    "error": "404 Client Error: Not Found for url: https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C331.pdf"
+  }
+]

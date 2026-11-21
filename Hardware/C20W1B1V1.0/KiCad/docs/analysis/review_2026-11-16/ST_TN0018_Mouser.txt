@@ -1,0 +1,157 @@
+Introduction
+This technical note provides general guidelines for soldering MEMS sensor products housed in an LGA surface-mount package.
+Note: Information provided in this document is intended for use as reference material for PCB design and soldering 
+processes. For device specifications, refer to the corresponding datasheet.
+Surface mounting guidelines for MEMS sensors in an LGA package
+TN0018
+Technical note
+TN0018 - Rev 7 - June 2023
+For further information contact your local STMicroelectronics sales office.
+www.st.com
+1 General guidelines for soldering surface-mount MEMS sensors
+The following elements must be considered in order to adhere to common PCB design and good industrial 
+practices when soldering MEMS sensors:
+• PCB design should be as symmetrical as possible.
+– Large traces on VDD or GND lines are not required (very low power consumption).
+– No vias or traces below the sensor footprint
+• Solder paste must be as thick as possible (after soldering) in order to:
+– Reduce the decoupling stress from the PCB to the sensor
+– Avoid that the PCB solder mask touches the device package
+• Solder paste thickness must be as uniform as possible (after soldering) to avoid uneven stress:
+– Final volume of soldering paste within 20% among lands is possible using the SPI (solder paste 
+inspection) control technique.
+• PCB placement should avoid locations close to hot spots (microprocessors, graphic controllers, batteries, 
+…), close to pushbuttons, screws and/or PCB anchor points since these locations can produce mechanical 
+stress affecting sensor precision.
+• High-amplitude resonances (vibrations) of the PCB should be avoided or sensors should be placed in 
+positions in which these resonances are minimized.
+• As MEMS devices have a mechanical structure with its own resonant and operating frequencies, the use of 
+ultrasonic processes for cleaning and soldering is NOT recommended due to potential damage to the 
+internal MEMS structure.
+TN0018
+General guidelines for soldering surface-mount MEMS sensors
+TN0018 - Rev 7 page 2/9
+2 PCB design guidelines
+General recommendations for PCB land and solder mask design are shown in Figure 1. Refer to the device 
+datasheet for pad count, size, and pitch.
+• It is recommended to place the solder mask opening outside the PCB land.
+• It is strongly recommended not to place any structure on the top metal layer underneath the sensor (on the 
+same side of the board). This must be defined as a keepout area.
+• Traces connected to pads should be as symmetric as possible. Symmetry and balance for pad connection 
+help component self-alignment and lead to better control of solder paste reduction after reflow.
+• For optimal performance of the device, it is strongly recommended to place screw mounting holes at a 
+distance greater than 2 mm from the sensor.
+• If present, the pin #1 indicator must be left unconnected to ensure proper device functionality.
+• In order to prevent noise coupling and thermomechanical stress, following standard industry design 
+practices for component placement is advised.
+2.1 PCB design rules
+Figure 1. Recommended land and solder mask design for LGA packages
+Package footprint        
+A
+B
+Solder mask opening 
+placed outside of land footprint  
+PCB land
+C
+D
+ 
+ 
+PCB land design and connecting traces should be designed symmetrically.
+For LGA pad spacing greater than 200 µm:
+A = PCB land length = LGA solder pad length + 0.1 mm
+B = PCB land width = LGA solder pad width + 0.1 mm
+For LGA pad spacing equal to or less than 200 µm:
+A = PCB land length = LGA solder pad length
+B = PCB land width = LGA solder pad width
+ 
+C = Solder mask opening length (where applicable) = PCB land length + 0.1 mm
+D = Solder mask opening width = PCB land width + 0.1 mm
+Note: PCB clearance rules must be not violated.
+TN0018
+PCB design guidelines
+TN0018 - Rev 7 page 3/9
+3 Stencil design and solder paste application
+The thickness and the pattern of the soldering paste are important for the proper MEMS sensor mounting 
+process.
+• Stainless steel stencils are recommended for solder paste application.
+• A stencil thickness of 90 - 150 µm (3.5 - 6 mils) is recommended for screen printing.
+• The openings of the stencil for the signal pads should be between 70% and 90% of the PCB pad area.
+• Optionally, for better solder paste release, the aperture walls should be trapezoidal and the corners 
+rounded.
+• The fine pitch of the IC leads requires accurate alignment of the stencil to the printed circuit board. The 
+stencil and printed circuit assembly should be aligned to within 25 µm (1 mil) prior to application of the 
+solder paste.
+TN0018
+Stencil design and solder paste application
+TN0018 - Rev 7 page 4/9
+4 Process considerations
+• The soldering profile depends on the number, size, and placement of components on the application board. 
+For this reason, it is not possible to define a unique soldering profile for the sensor only. The customer 
+should use a time and temperature reflow profile based on PCB design and manufacturing expertise.
+• In order to reduce residual stress on the components, the recommended ramp-down temperature slope 
+should not exceed -3 °C/s.
+• No solder material reflow on the side of the package is allowed since LGA packages show metal traces on 
+the side of the package.
+• If “self-cleaning” solder paste is not used, the board must be properly cleaned after soldering to eliminate 
+any possible source of leakage between adjacent pads due to flux residues.
+• The final volume of soldering paste applied to each PCB land is recommended to be within 20% among 
+(all) the PCB land pads.
+• Based on the JEDEC 9702 standard, a component shows negligible output variation up to stress intensity 
+of 500 me (microstrain).
+TN0018
+Process considerations
+TN0018 - Rev 7 page 5/9
+5 Solder heat resistance and environmental specifications
+In order to meet environmental requirements, ST offers these devices in ECOPACK packages. These packages 
+have a lead-free second level interconnect. The category of second level interconnect is marked on the inner box 
+label, in compliance with JEDEC Standard JESD97. The maximum ratings related to soldering conditions are also 
+marked on the inner box label.
+LGA packages for MEMS sensors are qualified for soldering heat resistance according to JEDEC J-STD-020, 
+check the MDF (Materials Declaration Form) of each product on www.st.com or the reel label.
+TN0018
+Solder heat resistance and environmental specifications
+TN0018 - Rev 7 page 6/9
+Revision history
+Table 1. Document revision history
+Date Version Changes
+12-Oct-2006 1 Initial release
+30-Apr-2008 2 Added appendix with mechanical information
+30-Jul-2013 3
+Updated Section 2: PCB design guidelines
+Updated Section 4: Process considerations
+Removed Appendix A with LGA package drawings and dimensions
+Minor textual updates throughout technical note
+31-Oct-2013 4 Textual update in Note on page 5
+24-Mar-2014 5 Updated Section 2: PCB design guidelines; Section 3: Stencil design and solder paste application; and Section 4: Process considerations
+20-Mar-2017 6 Updated Section 1: General guidelines for soldering surface-mount MEMS sensors
+06-Jun-2023 7
+Updated Section 1 General guidelines for soldering surface-mount MEMS 
+sensors, Section 2.1 PCB design rules, and Section 5 Solder heat resistance 
+and environmental specifications
+TN0018
+TN0018 - Rev 7 page 7/9
+Contents
+1 General guidelines for soldering surface-mount MEMS sensors ....................2
+2 PCB design guidelines.............................................................3
+2.1 PCB design rules...............................................................3
+3 Stencil design and solder paste application ........................................4
+4 Process considerations............................................................5
+5 Solder heat resistance and environmental specifications ...........................6
+Revision history ........................................................................7
+TN0018
+Contents
+TN0018 - Rev 7 page 8/9
+IMPORTANT NOTICE – READ CAREFULLY
+STMicroelectronics NV and its subsidiaries (“ST”) reserve the right to make changes, corrections, enhancements, modifications, and improvements to ST 
+products and/or to this document at any time without notice. Purchasers should obtain the latest relevant information on ST products before placing orders. ST 
+products are sold pursuant to ST’s terms and conditions of sale in place at the time of order acknowledgment.
+Purchasers are solely responsible for the choice, selection, and use of ST products and ST assumes no liability for application assistance or the design of 
+purchasers’ products.
+No license, express or implied, to any intellectual property right is granted by ST herein.
+Resale of ST products with provisions different from the information set forth herein shall void any warranty granted by ST for such product.
+ST and the ST logo are trademarks of ST. For additional information about ST trademarks, refer to www.st.com/trademarks. All other product or service names 
+are the property of their respective owners.
+Information in this document supersedes and replaces information previously supplied in any prior versions of this document.
+© 2023 STMicroelectronics – All rights reserved
+TN0018
+TN0018 - Rev 7 page 9/9

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "ST7701SN",
+    "url": "https://support.newhavendisplay.com/hc/en-us/article_attachments/14549542564631",
+    "status": "ok",
+    "bytes": 8523343,
+    "sha256": "d653ce85ac4181cd21375da7bf4919fb056243ec7aec2e0a97b5ab5400f78aef"
+  },
+  {
+    "name": "FT5426G",
+    "url": "https://support.newhavendisplay.com/hc/en-us/article_attachments/18307582846103",
+    "status": "ok",
+    "bytes": 1202911,
+    "sha256": "93555c1732dbcfaa3b9f1e91878dee8a0aeea4d451689a0345abfa7e7ddb831f"
+  }
+]

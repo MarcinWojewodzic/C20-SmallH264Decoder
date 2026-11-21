@@ -1,0 +1,13 @@
+{
+  "components": 105,
+  "new_components": 47,
+  "DNP": [
+    "R14"
+  ],
+  "DC_shorts_between_named_rails_with_populated_zero_ohms_and_inductors": [],
+  "nominal_regulator_outputs_V": 3.2988461538461538,
+  "nominal_softstart_ms": 0.95625,
+  "channel1_nominal_capacitance_uF": 2154,
+  "nominal_charge_current_A": 7.433411764705882,
+  "scope": "Static DC union excludes IC internals; component values require MPN and PCB validation."
+}

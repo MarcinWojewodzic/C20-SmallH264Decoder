@@ -1,0 +1,16 @@
+[
+  {
+    "file": "TI_SNVA871_output_filter.pdf",
+    "url": "https://www.ti.com/lit/an/snva871/snva871.pdf",
+    "status": "ok",
+    "bytes": 483643,
+    "sha256": "8f303a3f183b16dc0ed07c16d5e915ad67189e3106b381c8e28f6049fc586125"
+  },
+  {
+    "file": "TI_SSZT824_second_stage_filter.pdf",
+    "url": "https://www.ti.com/lit/ta/sszt824/sszt824.pdf",
+    "status": "ok",
+    "bytes": 584145,
+    "sha256": "bdb04e3e6fcd7f34ad1d6170d30dbbd98a8d8469034df9e446f819192ff14c52"
+  }
+]

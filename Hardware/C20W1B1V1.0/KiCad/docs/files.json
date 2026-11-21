@@ -1,0 +1,127 @@
+[
+  {
+    "file": "Amphenol_octopart.pdf",
+    "bytes": 2114866,
+    "sha256": "1b699c03e0ce87f9fa1f46108dee6b06978750a5b40096a2e8bd28a09f08de39"
+  },
+  {
+    "file": "AN4938_mirror.pdf",
+    "bytes": 1126117,
+    "sha256": "28751d3d6c9f49e4b416d06737d7753f1a4f1820d7fd720753397356268100ed"
+  },
+  {
+    "file": "AOTA-B252008S.pdf",
+    "bytes": 652708,
+    "sha256": "476b3a269d7a93d07550e65d6a01e7a149a2408777b8ad671c254543d8245ed6"
+  },
+  {
+    "file": "AOTA-B252010S.pdf",
+    "bytes": 663709,
+    "sha256": "6dbb2c3af86d8672640f5fee5a419fdafdc9b1232205cccbacd315702d5f8437"
+  },
+  {
+    "file": "FT5426G.pdf",
+    "bytes": 1202911,
+    "sha256": "93555c1732dbcfaa3b9f1e91878dee8a0aeea4d451689a0345abfa7e7ddb831f"
+  },
+  {
+    "file": "IS45S32400J_datasheet.pdf",
+    "bytes": 851320,
+    "sha256": "6b9b49dc9fdb93e2eb6b8707a139d4e2040b6462b123c06324a11c695e420932"
+  },
+  {
+    "file": "KEMET_A768.pdf",
+    "bytes": 1088872,
+    "sha256": "a5d13e38f59e0b9e6ac73b319001a71646ac13b6d802850c40a60bb18fbddeaf"
+  },
+  {
+    "file": "Kyocera_KC2520Z12_2880.pdf",
+    "bytes": 571947,
+    "sha256": "873965141bf0c15fc2014402c26fb6c770e9d0bd80efcd5cf9f0491aad7f5e57"
+  },
+  {
+    "file": "Laird_MGAH0603.pdf",
+    "bytes": 390655,
+    "sha256": "588e89fe04384ddd62b71bb52e03beef94f2311680a7206531b4f93590badd02"
+  },
+  {
+    "file": "MAX98357A_MAX98357B.pdf",
+    "bytes": 2648763,
+    "sha256": "abac92d3522a204f093c911257c0e0ffa958d8f8acc1da3103a291d0403e8cd9"
+  },
+  {
+    "file": "MAX98357A_MAX98357B_LilyGO.pdf",
+    "bytes": 4870575,
+    "sha256": "08c8df5d99eda52b415097c2edafd4d78d869db8dfb0a9821d0c23ff1276f251"
+  },
+  {
+    "file": "Molex_product_sheet.pdf",
+    "bytes": 773630,
+    "sha256": "feca3feac72104c289398d28b97371ee777a78748e26ff322c167881ae51fd09"
+  },
+  {
+    "file": "NHD-4.0-480480AF-ASXP-CTP.pdf",
+    "bytes": 1997997,
+    "sha256": "38c84e329b304e604ab93f7bf3cfe5bd6bc1eb37036767e5907b9b2fd71dc6b9"
+  },
+  {
+    "file": "Panasonic_ERJ.pdf",
+    "bytes": 940440,
+    "sha256": "862e7d5fff1ed6e44f61298912bb7a3fc84298e53e17d1348edd7641444a90cc"
+  },
+  {
+    "file": "RM0433_mirror.pdf",
+    "bytes": 40711860,
+    "sha256": "9ba54135736a47a302cdc28fdc7ca8f23c6eed5a646fa0a639af6ed2ad71336e"
+  },
+  {
+    "file": "ST7701SN.pdf",
+    "bytes": 8523343,
+    "sha256": "d653ce85ac4181cd21375da7bf4919fb056243ec7aec2e0a97b5ab5400f78aef"
+  },
+  {
+    "file": "STM32H753_DS12117_octopart.pdf",
+    "bytes": 3368245,
+    "sha256": "b6e326b7fac67f68945816dc2eddac7a62e19e3399eec7b022167de9b670b101"
+  },
+  {
+    "file": "TI_SNVA871_output_filter.pdf",
+    "bytes": 483643,
+    "sha256": "8f303a3f183b16dc0ed07c16d5e915ad67189e3106b381c8e28f6049fc586125"
+  },
+  {
+    "file": "TI_SSZT824_second_stage_filter.pdf",
+    "bytes": 584145,
+    "sha256": "bdb04e3e6fcd7f34ad1d6170d30dbbd98a8d8469034df9e446f819192ff14c52"
+  },
+  {
+    "file": "TPS54495.pdf",
+    "bytes": 1591262,
+    "sha256": "9289a9d2253ce39041ec56c97a38e6f09cad9857454e074c346f88762384914e"
+  },
+  {
+    "file": "TPS54495EVM_user_guide.pdf",
+    "bytes": 991342,
+    "sha256": "1231ca58391c4a6249f6c5e5826742db85bad724992880d80c368063e4973f4d"
+  },
+  {
+    "file": "TPS923610.pdf",
+    "bytes": 3193189,
+    "sha256": "e240e9ae48c6561bed38814f7237298d2b6ae6618e6c36ac5a14702264b19791"
+  },
+  {
+    "file": "TPS923610EVM_user_guide.pdf",
+    "bytes": 1228589,
+    "sha256": "289f81a02e57628869ebeaf7410fab6863fc7af5792c1039636a55ad97bdc63b"
+  },
+  {
+    "file": "W25R256JV.pdf",
+    "bytes": 1741386,
+    "sha256": "15dda766bb32af7084a9bd9877d11e2765c603b187d37199ad7db4d6a5344a06"
+  },
+  {
+    "file": "W25R256JV_RevD.pdf",
+    "bytes": 2334003,
+    "sha256": "8c69554240f883f7f02b74847af507e71b2706796ee75e2230242d01fda41d17"
+  }
+]

@@ -1,0 +1,147 @@
+2026-11-21 23:33:19.332 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+2026-11-21 23:33:19.333 DEBUG  [startup] user-data path : .routing\routerdata  (source: CLI argument --user_data_path)
+2026-11-21 23:33:19.333 DEBUG  [startup] log file       : C:\Users\user\Desktop\C20\Hardware\C20W1B1V1.0\KiCad\.routing\routerdata\freerouting.log
+2026-11-21 23:33:19.334 DEBUG  No freerouting.json found at '.routing\routerdata\freerouting.json' — will create one with default settings.
+2026-11-21 23:33:27.366 DEBUG  Default settings saved to '.routing\routerdata\freerouting.json'.
+2026-11-21 23:33:27.366 DEBUG  Version: 2.2.4,2026-05-13
+2026-11-21 23:33:27.367 DEBUG  Command line arguments: '-de .routing/work.dsn -do .routing/work.ses -inc PowerSkip -mt 0 -mp 25 -da --gui.enabled=false --user_data_path=.routing/routerdata --router.layers.routable=true,false,false,true,false,true'
+2026-11-21 23:33:27.367 DEBUG  Architecture: Windows 11,amd64,10.0
+2026-11-21 23:33:27.367 DEBUG  Java: 25.0.5.1,Eclipse Adoptium
+2026-11-21 23:33:27.367 DEBUG  System Language: pl,pl_PL
+2026-11-21 23:33:27.367 DEBUG  Hardware: 16 CPU cores,7964 MB RAM
+2026-11-21 23:33:27.367 DEBUG  UTC Time: 2026-11-21T22:33:27.366100100Z
+2026-11-21 23:33:27.367 WARN   Unknown settings property: router.layers.routable
+2026-11-21 23:33:27.368 DEBUG  GUI Language: en
+2026-11-21 23:33:27.368 DEBUG  Host: N/A
+2026-11-21 23:33:27.368 DEBUG  Analytics are disabled
+2026-11-21 23:33:28.379 DEBUG  Loaded router settings from: .routing\routerdata\freerouting.json
+2026-11-21 23:33:28.379 DEBUG  Applied CLI router setting: router.max_threads = 0
+2026-11-21 23:33:28.379 DEBUG  Applied CLI router setting: router.max_passes = 25
+2026-11-21 23:33:28.379 WARN   Failed to apply CLI router setting: router.layers.routable: No field found with name or SerializedName: layers
+2026-11-21 23:33:28.379 DEBUG  No router settings found in environment variables
+2026-11-21 23:33:28.380 DEBUG  Merging settings from 4 sources:
+2026-11-21 23:33:28.381 DEBUG    - Default Settings (priority 0): base settings
+2026-11-21 23:33:28.381 DEBUG    - freerouting.json (priority 10): 0 fields changed
+2026-11-21 23:33:28.381 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-11-21 23:33:28.383 DEBUG    - CLI Arguments (priority 60): 1 fields changed
+2026-11-21 23:33:28.383 DEBUG  Settings merged successfully from 4 source(s)
+2026-11-21 23:33:28.450 DEBUG  Set DEFAULT clearance (all layers): 1524 (0.0381 mm) from DSN value 152.4
+2026-11-21 23:33:28.453 DEBUG  Set clearance (all layers): smd_smd = 381 (0.009525 mm), classes [2,2]
+2026-11-21 23:33:28.454 DEBUG  Set default trace width (all layers): DSN=152.4 → board=1524 (0.0381 mm)
+2026-11-21 23:33:28.462 DEBUG  Loaded router settings from DSN file: work.dsn (6 layers)
+2026-11-21 23:33:28.471 DEBUG  Set DEFAULT clearance (all layers): 1524 (0.0381 mm) from DSN value 152.4
+2026-11-21 23:33:28.471 DEBUG  Set clearance (all layers): smd_smd = 381 (0.009525 mm), classes [2,2]
+2026-11-21 23:33:28.471 DEBUG  Set default trace width (all layers): DSN=152.4 → board=1524 (0.0381 mm)
+2026-11-21 23:33:28.472 DEBUG  Loaded router settings from DSN file: work.dsn (6 layers)
+2026-11-21 23:33:28.472 DEBUG  Merging settings from 5 sources:
+2026-11-21 23:33:28.472 DEBUG    - Default Settings (priority 0): base settings
+2026-11-21 23:33:28.472 DEBUG    - freerouting.json (priority 10): 0 fields changed
+2026-11-21 23:33:28.472 DEBUG    - DSN file: work.dsn (priority 20): 4 fields changed
+2026-11-21 23:33:28.472 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-11-21 23:33:28.472 DEBUG    - CLI Arguments (priority 60): 1 fields changed
+2026-11-21 23:33:28.472 DEBUG  Settings merged successfully from 5 source(s)
+2026-11-21 23:33:28.478 DEBUG  Set DEFAULT clearance (all layers): 1524 (0.0381 mm) from DSN value 152.4
+2026-11-21 23:33:28.478 DEBUG  Set clearance (all layers): smd_smd = 381 (0.009525 mm), classes [2,2]
+2026-11-21 23:33:28.478 DEBUG  Set default trace width (all layers): DSN=152.4 → board=1524 (0.0381 mm)
+2026-11-21 23:33:28.544 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.547 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.547 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.548 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.551 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.552 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.552 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.552 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.553 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.553 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.553 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.555 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.557 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.557 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.557 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.557 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.558 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.563 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.564 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.566 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.566 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.569 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.569 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.569 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.570 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.570 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.570 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.570 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.570 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.571 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.573 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.574 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.574 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.574 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.574 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.574 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.575 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.575 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.575 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.575 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.575 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.575 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.576 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.576 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.576 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.576 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.577 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.578 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.580 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.580 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.580 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.580 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.581 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.582 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.584 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.584 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.584 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.584 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.584 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.586 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.586 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.588 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.588 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.589 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.589 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.589 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.591 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.591 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.592 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.592 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.593 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'In3.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.593 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'In3.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.595 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.595 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.595 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.595 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.595 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.597 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.597 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.597 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.597 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.597 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.597 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.599 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.599 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.600 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.602 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.605 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.607 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.607 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.610 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'B.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.615 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.616 DEBUG  Wiring: degenerate wire trace skipped (all 1 corners are identical — zero-length trace) on layer 'F.Cu'. This is likely a DSN export issue in your EDA tool.
+2026-11-21 23:33:28.659 DEBUG  Wiring: normalization of net 'GND' failed
+2026-11-21 23:33:28.663 DEBUG  Wiring: normalization of net '+3V3' failed
+2026-11-21 23:33:29.057 INFO   New version available: v2.5.0

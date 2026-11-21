@@ -1,0 +1,28 @@
+[
+  {
+    "name": "TPS54495",
+    "url": "https://www.ti.com/lit/ds/symlink/tps54495.pdf",
+    "status": "ok",
+    "bytes": 1591262,
+    "sha256": "9289a9d2253ce39041ec56c97a38e6f09cad9857454e074c346f88762384914e"
+  },
+  {
+    "name": "MAX98357A_MAX98357B",
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.analog.com', port=443): Read timed out. (read timeout=25)"
+  },
+  {
+    "name": "AOTA-B252010S",
+    "url": "https://abracon.com/datasheets/AOTA-B252010S.pdf",
+    "status": "ok",
+    "bytes": 663709,
+    "sha256": "6dbb2c3af86d8672640f5fee5a419fdafdc9b1232205cccbacd315702d5f8437"
+  },
+  {
+    "name": "Kyocera_clock_Z_XZ",
+    "url": "https://global.kyocera.com/prdct/electro/product/pdf/clock_z_xz_e.pdf",
+    "status": "failed",
+    "error": "not PDF"
+  }
+]

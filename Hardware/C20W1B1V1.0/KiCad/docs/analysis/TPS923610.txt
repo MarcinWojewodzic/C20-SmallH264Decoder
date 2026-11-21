@@ -1,0 +1,1544 @@
+                                                                                                                    TPS923610, TPS923611, TPS923612
+
+                                                                                                                                 SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+TPS923610/1/2 30V Synchronous Boost LED Driver with Ultra-low Shutdown Current
+                     and 0.1%-ratio PWM Controlled Analog Dimming
+
+1 Features                                     3 Description
+
+· 2.5V to 5.5V input voltage                   The TPS923610/1/2 is a synchronous boost LED
+
+· Integrated 280m/600m LS/HS switch FETs       driver that integrates both low-side and high-side
+
+· Up to 95% efficiency                         switch FETs. It features an ultra-low 130nA shutdown
+
+· 130nA ultra-low shutdown current             current. The TPS923610/1/2 can drive single or
+
+· High-accuracy PWM controlled analog dimming  parallel LED strings for LCD back lighting and general
+
+down to 0.1% dimming ratio                     illumination.
+
+· Drives LED string up to                      The feedback voltage is regulated to 200mV and
+                                               the output current is set by an external sensor
+    ­ 24.5V for TPS923610                      resistor, RSET, as shown in the Simplified Schematic.
+    ­ 30V for TPS923611 and TPS923612          During operation, a PWM signal applied to ADIM
+· Switch current limit                         pin adjusts the feedback voltage proportionally to the
+                                               PWM duty cycle, enabling precise analog dimming.
+    ­ 1.8A for TPS923610 and TPS923611         The TPS923610/1/2 supports PWM controlled analog
+    ­ 2.25A for TPS923612                      dimming with ratio as low as 0.1%, along with FCCM
+· FCCM with 1.1MHz/400KHz switching frequency  operation, avoiding audible noises at the output since
+    options                                    current modulation remains purely analog.
+· 200mV feedback voltage
+· Internal compensation                        The TPS923610/1/2 integrates over-voltage
+· Protection Features                          protection that disables the power stage to prevent
+                                               the output voltage from exceeding the absolute
+    ­ Over-voltage protection                  maximum voltage rating during LED open conditions.
+    ­ Over-current protection                  The TPS923610/1/2 also provides over-current
+    ­ Under-voltage lockout protection         protection, under-voltage lockout protection and
+    ­ Thermal shutdown
+
+2 Applications
+
+· LCD back lighting                            thermal shutdown protection.
+    ­ Smartphone                                                    Package Information
+
+­ Thermostat                                        PART NUMBER(1)  PACKAGE                           PACKAGE SIZE
+­ HMI panel                                                                                                 (NOM)
+
+­ GPS personal navigation device               TPS923610            SOT563 (6)                        1.60mm × 1.60mm
+
+­ Dashboard camera                             TPS923611            SOT563 (6)                        1.60mm × 1.60mm
+
+· General illumination                         TPS923612            WSON (6)                          2.00mm × 2.00mm
+
+­ IP network camera                            (1) For all available packages, see the orderable addendum at
+­ Video doorbell                                       the end of the data sheet.
+­ Vacuum robot
+
+                                              TPS923610/1/2
+
+                                    L    SW         VOUT
+
+              VIN                                                   COUT
+                       CIN
+                                                                                                 ...
+
+                                         VIN                                        ...
+                                                                    ...
+
+                        ENABLE & PWM     ADIM                FB          ...
+
+                        DIMMING CONTROL                             RSET
+
+                                               GND
+
+                                                     Simplified Schematic
+
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+TPS923610, TPS923611, TPS923612                                                          www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+                                                  Table of Contents
+
+1 Features............................................................................1  8 Application and Implementation.................................. 15
+2 Applications..................................................................... 1       8.1 Application Information............................................. 15
+3 Description.......................................................................1       8.2 Typical Application.................................................... 15
+4 Device Comparison Table...............................................3                   8.3 Power Supply Recommendations.............................17
+5 Pin Configuration and Functions...................................3                       8.4 Application Curves.................................................... 18
+6 Specifications.................................................................. 4        8.5 Layout....................................................................... 19
+
+   6.1 Absolute Maximum Ratings........................................ 4                9 Device and Documentation Support............................21
+   6.2 ESD Ratings .............................................................. 4         9.1 Device Support......................................................... 21
+   6.3 Recommended Operating Conditions.........................4                           9.2 Receiving Notification of Documentation Updates....21
+   6.4 Thermal Information....................................................4             9.3 Support Resources................................................... 21
+   6.5 Electrical Characteristics.............................................5             9.4 Trademarks............................................................... 21
+   6.6 Typical Characteristics................................................ 7            9.5 Electrostatic Discharge Caution................................21
+7 Detailed Description......................................................10              9.6 Glossary....................................................................21
+   7.1 Overview................................................................... 10
+   7.2 Functional Block Diagram......................................... 10              10 Revision History.......................................................... 21
+   7.3 Feature Description...................................................11          11 Mechanical, Packaging, and Orderable
+   7.4 Device Functional Modes..........................................14
+                                                                                            Information.................................................................... 21
+
+2  Submit Document Feedback                                                              Copyright © 2026 Texas Instruments Incorporated
+
+                             Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                                                  TPS923610, TPS923611, TPS923612
+
+4 Device Comparison Table                                                    SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+PART NUMBER        MATERIAL                      MAX VOUT              CURRENT LIMIT  SWITCH       PACKAGE
+TPS923610                                                              1.8A           FREQUENCY    SOT563-6
+TPS923611          TPS923610DRLR 24.5V                                 1.8A           1.1MHz       WSON-6
+                   TPS923611DRLR                                                      1.1MHz
+TPS923612                                                              2.25A          400KHz
+                                                  30V                                 1.1MHz
+                   TPS923611LSDRLR                                                    400KHz
+                   TPS923612DRVR
+
+                                                  30V
+                   TPS923612LSDRVR
+
+5 Pin Configuration and Functions
+
+          VIN 1                                  6 SW                        SW 1                  6 VIN
+
+          ADIM 2                                 5 VOUT                      VOUT 2                5 ADIM
+
+             FB 3                                4 GND
+
+                                                                             GND 3                 4 FB
+
+Figure 5-1. SOT563-6 DRL Package(Top View)
+
+                                                                             Figure 5-2. WSON-6 DRV Package(Top View)
+
+                                                          Table 5-1. Pin Functions
+
+    NAME     PIN   DRV                           TYPE(1)                              DESCRIPTION
+VIN          DRL     6
+                                                 I        Supply input pin.
+ADIM           1     5
+                                                 I        Enable, shutdown and PWM controlled analog dimming input pin. FB voltage is
+FB             2     4                                    proportional to the input PWM dutycycle.
+GND                  3
+VOUT           3     2                           I        Feedback pin for output current. Connect the sense resistor from FB to GND.
+               4
+SW             5     1                           G        Ground.
+
+               6                                 P        Output pin.
+
+                                                 P        Switch pin of the converter. The pin is connected to the drain of the internal
+                                                          low-side switch FET and source of the internal high-side switch FET.
+
+(1) I = Input, O = Output, P = Power, G = Ground
+
+Copyright © 2026 Texas Instruments Incorporated                                       Submit Document Feedback                            3
+
+                             Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                                                                                              www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+6 Specifications
+
+6.1 Absolute Maximum Ratings
+
+over operating free-air temperature range (unless otherwise noted)(1)
+
+                                                                                                          MIN       MAX      UNIT
+
+                                      VIN                                                                 ­0.3           6   V
+                                      SW
+                                      SW (transient <10ns)                                                ­1        32       V
+                                      VOUT
+   Voltage range at terminals (2)     FB, PWM                                                             ­1        38       V
+                                      Operating junction temperature
+   TJ (3)                             Storage temperature                                                 ­0.3      32       V
+   Tstg
+                                                                                                          ­0.3      5.5      V
+
+                                                                                                          ­40       150      °C
+
+                                                                                                          ­65       150      °C
+
+(1) Operation outside the Absolute Maximum Ratings may cause permanent device damage. Absolute Maximum Ratings do not imply
+        functional operation of the device at these or any other conditions beyond those listed under Recommended Operating Conditions.
+        If used outside the Recommended Operating Conditions but within the Absolute Maximum Ratings, the device may not be fully
+        functional, and this may affect device reliability, functionality, performance, and shorten the device lifetime.
+
+(2) All voltage values are with respect to network ground terminal.
+(3) High junction temperatures degrade operating lifetime. Operating lifetime is de-rated for junction temperatures greater than 125°C.
+
+6.2 ESD Ratings
+
+   V(ESD)(1) Electrostatic discharge  Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001(2)                       VALUE      UNIT
+                                      Charged-device model (CDM), per JEDEC specification JESD22-C101(3)          ±2000        V
+                                                                                                                   ±500
+
+(1) Electrostatic discharge (ESD) to measure device sensitivity and immunity to damage caused by assembly line electrostatic discharges
+        into the device.
+
+(2) Level listed above is the passing level per ANSI, ESDA, and JEDEC JS-001. JEDEC document JEP155 states that 500-V HBM allows
+        safe manufacturing with a standard ESD control process. Manufacturing with less than 500-V HBM is possible with the necessary
+        precautions.
+
+(3) Level listed above is the passing level per EIA-JEDEC JESD22-C101. JEDEC document JEP157 states that 250-V CDM allows
+        safe manufacturing with a standard ESD control process. Manufacturing with less than 250-V CDM is possible with the necessary
+        precautions.
+
+6.3 Recommended Operating Conditions
+
+over operating free-air temperature range (unless otherwise noted)
+
+                                                                                            MIN           NOM       MAX      UNIT
+
+   VIN       Input voltage                                                                  2.5                        5.5   V
+             Output voltage (TPS923610DRLR)
+   VOUT      Output voltage (TPS923611DRLR, TPS923612DRVR)                                  5.5                     24.5     V
+             Output voltage (TPS923611LSDRLR, TPS923612LSDRVR)
+   CIN       Input capacitance, effective value                                             5.5                          30  V
+   COUT      Output capacitance, effective value
+   TJ        Operating junction temperature                                                 7                            30  V
+
+                                                                                            1                                µF
+
+                                                                                            1                                µF
+
+                                                                                            ­40                     125      °C
+
+6.4 Thermal Information
+
+                                                                       SOT563 DRL                         WSON DRV
+
+                 THERMAL METRIC(1)                                           6 PINS                       6 PINS             UNIT
+
+                                                                      Standard       EVM         Standard         EVM        °C/W
+                                                                                                                             °C/W
+   RJA       Junction-to-ambient thermal resistance                   142.7          87.85       93.71            81.69      °C/W
+   RJC(top)  Junction-to-case (top) thermal resistance                                                                       °C/W
+   RJB       Junction-to-board thermal resistance                     72.6           NA          108.56           64.83
+   JT        Junction-to-top characterization parameter
+                                                                      31.6           NA          54.15            55.55
+
+                                                                      2.3            14.53       11.58            24.91
+
+4        Submit Document Feedback                                                           Copyright © 2026 Texas Instruments Incorporated
+
+                                      Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                                                         TPS923610, TPS923611, TPS923612
+
+                                                                                    SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+                                                                                  SOT563 DRL              WSON DRV
+
+                   THERMAL METRIC(1)                                                6 PINS                       6 PINS                UNIT
+                                                                                                                                       °C/W
+                                                                   Standard                 EVM           Standard       EVM
+
+JB          Junction-to-board characterization parameter                      30.5          57.6          54.27          56.13
+
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+        report, SPRA953.
+
+6.5 Electrical Characteristics
+
+TJ = ­40 to 125°C, VIN = 3.6 V. Typical values are at TJ = 25°C, (unless otherwise noted)
+
+                   PARAMETER                                       TEST CONDITIONS                        MIN            TYP MAX UNIT
+
+POWER SUPPLY
+
+VIN         Input voltage range                                                                                  2.5            5.5    V
+
+VIN_UVLO    VIN under voltage lockout threshold                    VIN rising                                            2.3    2.49   V
+                                                                   VIN falling
+                                                                   Chip enable. No switching.             2.05           2.17          V
+                                                                   ADIM = 0 (IC disabled), TJ = 25 °C
+IQ          Quiescent current into VIN pin                         ADIM = 0 (IC disabled), TJ up to 85°C                 260    300 µA
+
+ISD         Shutdown current into VIN pin                                                                                0.13   0.25 µA
+
+                                                                                                                         0.13   0.5 µA
+
+CONTROL LOGIC
+
+VADIM_H     ADIM Logic high threshold                              TJ up to 85°C                                 1.2                   V
+                                                                   TJ up to 85°C
+VADIM_L     ADIM Logic low threshold                                                                                            0.385  V
+
+RADIM_PD    ADIM pin internal pull down resistor                                                                         600           k
+
+tADIM_EN(1) ADIM first pulse high time to enable device                                                          40                    us
+
+tADIM_SD(1) ADIM logic low time to shutdown                                                                      2.5                   ms
+
+tADIM_PWM(1) ADIM minimum PWM on time for dimming                                                                20                    ns
+
+VOLTAGE REFERENCE
+
+            PWM duty cycle 100% (TPS923610, TPS923611)                                                    195            200    206 mV
+
+                                                                   TJ = 25°C                              198            200    203 mV
+
+                    PWM duty cycle 10% (TPS923610, TPS923611)      TJ = 25°C                              14.5           20.2   25.5 mV
+                                                                   TJ = 25°C
+                    PWM duty cycle 1% (TPS923610, TPS923611)       TJ = 25°C                                     18      20.2   22 mV
+                    PWM duty cycle 0.1% (TPS923610, TPS923611)(1)
+VFB                                                                TJ = 25°C                                     1.7     2.2    2.7 mV
+                    PWM duty cycle 100% (TPS923612)
+                                                                   TJ = 25°C                                             0.3           mV
+                                                                   TJ = 25°C
+                                                                   TJ = 25°C                              198            203    207 mV
+                                                                   VFB=200mV
+                                                                                                          201            203    206 mV
+                                                                   TJ = 25°C
+            PWM duty cycle 10% (TPS923612)                                                                       16      20.6   26 mV
+                                                                   TJ = 25°C
+                                                                                                          18.6           20.6   22.6 mV
+                                                                   TJ = 25°C
+            PWM duty cycle 1% (TPS923612)                                                                 1.75           2.25   2.75 mV
+                                                                   TJ = 25°C
+            PWM duty cycle 0.1% (TPS923612)(1)                                                                           0.3           mV
+
+IFB         FB pin bias current                                                                                                 0.1 uA
+
+SWITCH CONVERTER
+
+            Low-side switch FET on resistance (TPS923610,                                                                280    400 m
+            TPS923611)
+RDSON_LS                                                                                                                 280    300 m
+            Low-side switch FET on resistance (TPS923612)
+                                                                                                                         300    420 m
+
+                                                                                                                         300    320 m
+
+            High-side switch FET on resistance (TPS923610,                                                               600    900 m
+            TPS923611)
+RDSON_HS                                                                                                                 600    680 m
+FSW(1)      High-side switch FET on resistance (TPS923612)
+                                                                                                                         625    925 m
+            Switching frequency (TPS923610DRLR,
+            TPS923611DRLR, TPS923612DRVR)                                                                                625    705 m
+            Switching frequency (TPS923611LSDRLR,
+            TPS923612LSDRVR)                                                                                             1.1           MHz
+
+                                                                                                                         0.4           MHz
+
+Copyright © 2026 Texas Instruments Incorporated                                                           Submit Document Feedback           5
+
+                                            Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                                                                         www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+TJ = ­40 to 125°C, VIN = 3.6 V. Typical values are at TJ = 25°C, (unless otherwise noted)
+
+                          PARAMETER                                       TEST CONDITIONS    MIN  TYP MAX UNIT
+                                                                                           24.25
+              VOUT over-voltage rising threshold (TPS923610)  TJ up to 85°C                       25    25.5  V
+                                                              TJ up to 85°C                 29.6
+   VOVP_R     VOUT over-voltage rising threshold (TPS923611,                                      30.5  31.4  V
+              TPS923612)                                                                    15%
+
+   VOVP_HYS   VOUT over-voltage falling threshold                                                 1           V
+   Dmin
+              Minimum dutycycle of switching
+              operation (TPS923610DRLR, TPS923611DRLR,                                     8%
+              TPS923612DRVR)
+
+              Minimum dutycycle of switching operation
+              ( TPS923611LSDRLR, TPS923612LSDRVR)
+
+   CURRENT LIMIT
+
+              FET switching peak current limit (TPS923610,                                 1.6    1.8   2.1   A
+
+   ILIM       TPS923611)
+
+              FET switching peak current limit (TPS923612)                                 1.95   2.25  2.6   A
+
+   ILIM_START(1) FET switching start-up peak current                                              0.8         A
+   THERMAL SHUTDOWN
+
+   TTSD_R(1)  Thermal shutdown rising threshold               TJ rising                           170         °C
+   TTSD_F(1)  Thermal shutdown falling threshold              TJ falling                          150         °C
+
+(1) Not production tested. Guaranteed by simulation and bench test.
+
+6        Submit Document Feedback                                                          Copyright © 2026 Texas Instruments Incorporated
+
+                                     Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                                                                     TPS923610, TPS923611, TPS923612
+
+                                                                                                SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+6.6 Typical Characteristics
+At TA = 25°C, unless otherwise noted.
+
+                100                                                                        100
+
+                95                                                                         95
+
+                90                                                                         90
+
+                85                                                                         85
+
+Efficiency (%)  80                                                         Efficiency (%)  80
+
+                75                                                                         75
+
+                70                                                                         70
+
+                65                                                                         65
+
+                60                               2 LEDs in series                          60
+
+                55                               4 LEDs in series                          55                4 LEDs in series
+
+                50                               6 LEDs in series                          50                6 LEDs in series
+
+                45                               8 LEDs in series                          45                8 LEDs in series
+                                                 10 LEDs in series                                           10 LEDs in series
+
+                40                                                                         40
+
+                     0 10 20 30 40 50 60 70 80 90 100                                           0 10 20 30 40 50 60 70 80 90 100
+
+                                    Dimming Duty Cycle (%)                                                   Dimming Duty Cycle (%)
+
+                TPS923611DRLR                               10uH Inductor                  TPS923611DRLR                             10uH Inductor
+
+                3.6V Input Voltage  60mA IOUT at 100% Dutycycle                            5V Input Voltage  60mA IOUT at 100% Dutycycle
+
+                Figure 6-1. Efficiency vs Dimming Dutycycle                                Figure 6-2. Efficiency vs Dimming Dutycycle
+
+                100                                                                        100
+
+                95                                                                         95
+
+                90                                                                         90
+
+                85                                                                         85
+
+Efficiency (%)  80                                                         Efficiency (%)  80
+
+                75                                                                         75
+
+                70                                                                         70
+
+                65                                                                         65
+
+                60                               2 LEDs in series                          60
+
+                55                               4 LEDs in series                          55                4 LEDs in series
+
+                50                               6 LEDs in series                          50                6 LEDs in series
+
+                45                               8 LEDs in series                          45                8 LEDs in series
+                                                 10 LEDs in series                                           10 LEDs in series
+
+                40                                                                         40
+
+                     0 10 20 30 40 50 60 70 80 90 100                                           0 10 20 30 40 50 60 70 80 90 100
+
+                                    Dimming Duty Cycle (%)                                                   Dimming Duty Cycle (%)
+
+                TPS923612DRVR                               10uH Inductor                  TPS923612DRVR                             10uH Inductor
+
+                3.6V Input Voltage  120mA IOUT at 100% Dutycycle                           5V Input Voltage  120mA IOUT at 100% Dutycycle
+
+                Figure 6-3. Efficiency vs Dimming Dutycycle                                Figure 6-4. Efficiency vs Dimming Dutycycle
+
+Copyright © 2026 Texas Instruments Incorporated                                                              Submit Document Feedback               7
+
+                                    Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                                                                                                                               www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+                   100                                                                                 100
+
+                   95                                                                                  95
+
+                   90                                                                                  90
+
+                   85                                                                                  85
+
+   Efficiency (%)  80                                                                  Efficiency (%)  80
+
+                   75                                                                                  75
+
+                   70                                                                                  70
+
+                   65                                                                                  65
+
+                   60                                                                                  60
+
+                   55                                       4 LEDs in series                           55                                4 LEDs in series
+
+                   50                                       6 LEDs in series                           50                                6 LEDs in series
+
+                   45                                       8 LEDs in series                           45                                8 LEDs in series
+                                                            10 LEDs in series                                                            10 LEDs in series
+
+                   40                                                                                  40
+
+                        0 10 20 30 40 50 60 70 80 90 100                                                    0 10 20 30 40 50 60 70 80 90 100
+
+                                       Dimming Duty Cycle (%)                                                            Dimming Duty Cycle (%)
+
+                   TPS923611LSDRLR                                     47uH Inductor                   TPS923611LSDRLR                                     47uH Inductor
+
+                   3.6V Input Voltage        60mA IOUT at 100% Dutycycle                               5V Input Voltage       60mA IOUT at 100% Dutycycle
+
+                   Figure 6-5. Efficiency vs Dimming Dutycycle                                         Figure 6-6. Efficiency vs Dimming Dutycycle
+
+                    100                                                                                203
+
+                                                                                                       202.5
+
+                   90                                                                                  202
+
+                                                                                                       201.5
+
+   Efficiency (%)                                                                      FB (mV)         201
+
+                   80                                                                                  200.5
+
+                                                                                                       200
+
+                                                                                                       199.5
+
+                   70                                          4 LEDs in series                        199
+                                                               6 LEDs in series
+                                                               8 LEDs in series                        198.5
+                                                               10 LEDs in series
+                                                                                                       198
+                   60
+                                                                                                            2.5  3       3.5  4          4.5               5  5.5
+                   2.5  3              3.5   4         4.5             5      5.5
+                                                                                                                              VIN (V)
+                                             VIN (V)
+                                                                                                       TPS923611DRLR          60mA IOUT                    10uH Inductor
+                   TPS923611DRLR            60mA IOUT                  10uH Inductor
+
+                        Figure 6-7. Efficiency vs VIN                                                            Figure 6-8. FB vs VIN
+
+                   200                                                                                 20
+
+                   180                                                                                 18
+
+                   160                                                                                 16
+
+                   140                                                                                 14
+
+   FB (mV)         120                                                                 FB (mV)         12
+
+                   100                                                                                 10
+
+                   80                                                                                  8
+
+                   60                                                                                  6
+
+                   40                                                                                  4
+
+                   20                                                                                  2
+
+                   0                                                   80 90 100                       0                                                   8 9 10
+                     0 10 20 30 40 50 60 70                                                              01234567                                          10uH Inductor
+                                               Dimming Duty Cycle (%)   10uH Inductor                                              Dimming Duty Cycle (%)
+
+                   TPS923611DRLR            3.6V VIN                                                   TPS923611DRLR          3.6V VIN
+
+   Figure 6-9. FB vs Dimming Dutycycle 1%~100% Figure 6-10. FB vs Dimming Dutycycle 0.1%~10%
+
+8                  Submit Document Feedback                                                                              Copyright © 2026 Texas Instruments Incorporated
+
+                                                Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                                                                                       TPS923610, TPS923611, TPS923612
+
+                                                                                                                  SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+                   220                                                                                      20
+
+                   200                                                                                      18
+
+                   180                                                                                      16
+
+                   160                                                                                      14
+
+                   140
+
+FB (mV)            120                                                                   FB (mV)            12
+
+                   100                                                                                      10
+
+                   80                                                                                       8
+
+                   60                                                                                       6
+
+                   40                                                                                       4
+
+                   20                                                                                       2
+
+                   0                                                   80 90 100                            0                                                   8 9 10
+                     0 10 20 30 40 50 60 70                                                                   01234567                                          10uH Inductor
+                                               Dimming Duty Cycle (%)   10uH Inductor                                                   Dimming Duty Cycle (%)
+
+                   TPS923612DRVR   3.6V VIN                                                                 TPS923612DRVR   3.6V VIN
+
+Figure 6-11. FB vs Dimming Dutycycle 1%~100%                                             Figure 6-12. FB vs Dimming Dutycycle 0.1%~10%
+
+       1.8                                                                                       2.4
+
+Current Limit (A)  1.78                                                                  Current Limit (A)  2.35
+                   1.76                                                                                      2.3
+                   1.74
+                   1.72                                                                                     2.25
+                                                                                                             2.2
+
+                                                                                                            2.15
+
+                    1.7            20 40 60 80                         100 120 140                           2.1            20 40 60 80                         100 120 140
+                        -40 -20 0     Te mperature (°C)                                                          -40 -20 0     Te mperature (°C)
+                                                                          10uH Inductor                                                                            10uH Inductor
+                   TPS923611DRLR         3.6V VIN                                                           TPS923612DRVR         3.6V VIN
+
+                   Figure 6-13. Current Limit vs Temperature                                                Figure 6-14. Current Limit vs Temperature
+
+Copyright © 2026 Texas Instruments Incorporated                                                                             Submit Document Feedback                              9
+
+                                   Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                                                                                    www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+7 Detailed Description
+
+7.1 Overview
+
+The TPS923610/1/2 is a high-current, high-efficiency, high-output-voltage fully-integrated synchronous boost
+converter in small package size. The device integrates 280m low-side switch FET and 600m high-side switch
+FET and is designed for output voltage up to 30V with a switch peak current limit of 2.25A. The device large
+driving capability can drive single or parallel LED strings for small to large size LCD panel back lighting or
+general illumination.
+
+The TPS923610/1/2 operates in peak current mode (PCM) control with quasi-constant frequency. The device
+is internally compensated for maximum flexibility and stability, which also enables a simple design. During the
+low-side switch FET on-time, the inductor current rises until reaching a threshold value set by the internal GM
+amplifier. Then, the low-side switch FET is turned off and the high-side switch FET is turned on which lets the
+current flow towards the output of the boost converter. The adaptive off-time varies as a function of VIN and
+VOUT, to maintain a nearly constant frequency, which provides better stability for the system over a wider range
+of input voltage and output voltage than conventional boost converters. The TPS923610/1/2 topology also has
+the benefits of providing very good load and line regulations, and excellent line and load transient responses.
+
+The TPS923610/1/2 implements PWM controlled analog dimming by changing feedback (FB) voltage
+proportional to the duty cycle of PWM input signal in 0.1% to 100% range. The feedback loop regulates the
+FB pin to a reference voltage of 200mV for 100% PWM duty cycle, reducing the power dissipation in the current
+sense resistor.
+
+The TPS923610/1/2 is optimized for single-cell lithium-ion battery applications, featuring an ultra-low 130nA
+shutdown current that extends battery life. The device can support 2.5V low VIN when battery near full discharge.
+The TPS923610/1/2 has both 1.1MHz version and 400KHz version switch frequency options. The 1.1MHz
+version supports ultra-compact surface-mount inductors and capacitors, while the 400KHz version is designed
+for applications with EMI constraints near the 1.1MHz frequency band.
+
+7.2 Functional Block Diagram
+
+VIN                                               L
+
+     CIN                     VIN                                     SW
+
+                                                                                VOUT
+
+                             UVLO    To¡             Gate                                   COUT
+                              TSD                    Driver
+                                     Logic                                                                    ...
+
+                                                                             OVP
+
+                                                                                                 ...
+                                                                                      ...
+
+                                                                                      ...
+
+                                                     Current
+
+                                                     Limit
+
+                             Device                              +           -  FB
+                             ON/OFF
+                                                              - Ton      GM
+
+                                                                             +
+
+          ADIM                       Dimming                                          RSET
+                                     Control
+
+                                                                                GND
+
+10 Submit Document Feedback                                                                                         Copyright © 2026 Texas Instruments Incorporated
+                             Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                 TPS923610, TPS923611, TPS923612
+
+            SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+7.3 Feature Description
+
+7.3.1 Enable and Start-up
+
+The ADIM pin performs not only the dimming function, but also the enable/shutdown function. When the VIN
+voltage is above the UVLO threshold, the TPS923610/1/2 can be enabled by driving the ADIM pin higher than
+the threshold voltage VADIM_H for a period longer than tADIM_EN.
+
+Soft-start function is integrated into the device to avoid high inrush current spike during start-up. After the device
+is enabled, the GM amplifier output voltage ramps up very slowly. During this period, the switch current limit is
+set to ILIM_STRAT. After this period, the switch current limit changes back to ILIM and the FB pin voltage ramps up
+to reference voltage slowly. These features maintain the smooth start-up and minimize the inrush current.
+
+7.3.2 Under-Voltage Lockout (UVLO)
+
+The UVLO circuit prevents the device from malfunctioning at low input voltage and the battery from excessive
+discharge. When the input voltage, VIN, falls below the UVLO falling threshold, the device is shut down, and the
+internal switch FETs is turned off. When the input voltage, VIN, rises above the UVLO rising threshold, the device
+starts operating.
+
+7.3.3 Shutdown
+
+The TPS923610/1/2 enters shutdown mode when the ADIM pin voltage is logic low for more than 2.5ms. During
+shutdown, the input supply current for the device is only 130nA typically. Although there is still a path between
+the input and the LEDs through the inductor and body diode of internal high-side FET, the current of this path is
+neglectable since the forward voltage of the LED string added the forward voltage of internal high-side FET body
+diode exceeds the maximum input voltage, VIN, which maintains that the LEDs remain off in shutdown and no
+contribution to shutdown current.
+
+7.3.4 Boost Control Operation
+
+The TPS923610/1/2 uses peak current mode (PCM) control and full internal compensation to provide high
+transient response performance over a wide range of operating conditions.
+
+In the normal operation, at the beginning of each switching cycle, the low-side switch FET is turned on and the
+inductor current ramps up to a peak current determined by the output of the internal GM amplifier. After the
+peak current is reached, the current comparator trips and turns off the low-side switch FET. Then, the inductor
+current goes through the body diode of the high-side switch FET in a dead-time duration and the inductor current
+decreases. After the dead-time duration, the high-side switch FET is turned on and is not turned off until the
+calculated adaptive off-time is reached. The adaptive off-time varies as a function of VIN and VOUT, to maintain
+a nearly constant frequency. After the high-side switch FET is turned off, the inductor current goes through the
+body diode of the high-side switch FET again in another dead-time duration. After the dead-time duration, the
+low-side switch FET is turned on again and the switching cycle is repeated.
+
+In light load condition, the TPS923610/1/2 works in forced continuous conduction mode (FCCM). During FCCM,
+the switching frequency is maintained at an almost constant level over the entire load range. This feature not
+only benefits the small output current accuracy, but also reduces output ripple and avoids audible noise caused
+by switching frequency drop.
+
+Copyright © 2026 Texas Instruments Incorporated                                                             Submit Document Feedback 11
+                                                       Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                   www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+7.3.5 Switching Peak Current Limit
+
+To prevent an over-current stress, the output of the internal GM amplifier has a internal high clamp to set a
+cycle-by-cycle current limit to the inductor peak current. The low-side switch FET is turned off immediately as
+soon as the inductor current touches the current limit, IILIM.
+
+7.3.6 Over-Voltage Protection
+
+The TPS923610/1/2 integrates over-voltage protection preventing over-voltage on the output and securing the
+circuits connected to the output from excessive-voltage damage in fault conditions, such as LED string open
+circuit.
+
+When the voltage of VOUT pin exceeds VOVP_R, the TPS923610/1/2 stops switching immediately until the
+voltage at the VOUT pin drops the hysteresis value to lower than VOVP_R-VOVP_HYS. Then, the switching restarts
+again. After the detection above is triggered 3 times, the TPS923610/1/2 enters over-voltage protection mode,
+in which the switching stops and does not resume switching even if the voltage at the VOUT pin falls below
+VOVP_R-VOVP_HYS. The TPS923610/1/2 remains in over-voltage protection mode until the device is reset by two
+ways, which are shutdown and re-enabling device by the ADIM pin or triggering UVLO by the VIN pin.
+
+7.3.7 Output Current Setting
+
+The FB voltage is regulated to a 200mV reference voltage. The LED current is set externally using a current-
+sense resistor in series with the LED strings. The value of the RSET (R3 on EVM) is calculated using:
+
+IOUT  =  VFB                                      (1)
+         RSET
+
+where
+· ILED = total output current of LED strings
+· VFB = regulated voltage of FB pin
+· RSET = current sense resistor
+The output current tolerance depends on the FB accuracy and the current sensor resistor accuracy.
+R2 is optional resistor paralleled with R3 to fine tune the RSET to target value, or used to balance the total power
+loss on RSET.
+
+12 Submit Document Feedback                                                                                          Copyright © 2026 Texas Instruments Incorporated
+                              Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                     TPS923610, TPS923611, TPS923612
+
+                                SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+7.3.8 Output Current PWM Controlled Analog Dimming
+
+The TPS923610/1/2 implements PWM controlled analog dimming to adjust the brightness of LED strings during
+operation. Pulse width modulation (PWM) signal can be applied at ADIM pin to control the total output current as
+an analog value. When the voltage of the ADIM pin is constantly high, the voltage of the FB pin is regulated to
+the full value, 200mV typically. When the signal applied to the ADIM pin is PWM, the regulation voltage at the FB
+pin is reduced to the full value multiplied by PWM duty cycle, and as a result, the total output current is reduced,
+too. The TPS923610/1/2 supports such dimming method with dimming ratio down to 0.1%.
+
+The relationship between the PWM duty cycle and FB regulation voltage is given by:
+
+VFB = Duty × 200mV                                                                                                     (2)
+
+where
+
+· Duty = Duty cycle of the input PWM signal
+· 200mV = The full value of internal reference voltage
+
+In this way, the user can easily control the LED strings brightness by controlling the duty cycle of the input PWM
+signal.
+
+As shown in Figure 7-1, the TPS923610/1/2 chops up the internal 200mV reference voltage at the duty cycle
+of the PWM signal. The pulse signal is then filtered by an internal low-pass filter. The output of the filter is
+connected to the GM amplifier as the reference voltage for the FB pin regulation. Therefore, although a PWM
+signal is used for brightness dimming, only the LED DC current is modulated, which is often referred as analog
+dimming. This mechanism eliminates the audible noise which often occurs when the LED current is pulsed in
+replica of the frequency and duty cycle of PWM control. Unlike other methods which filter the PWM signal for
+analog dimming, TPS923610/1/2 regulation voltage is independent of the PWM logic voltage level which often
+has large variations.
+
+For optimum performance, use the PWM dimming frequency in the range of 10kHz to 200kHz. If the PWM
+frequency is lower than 10kHz, it is out of the low pass filter's filter range, the FB regulation voltage ripple
+becomes large, causing large output ripple and may generate audible noise.
+
+                                                                    200mV
+
+            ADIM                +                                                                           EA Output
+
+                VADIM_H   HYS     GM
+                 VADIM_L  COMP
+                                -
+
+                                FB
+
+            Figure 7-1. FB Voltage Adjusted by PWM Controlled Analog Dimming
+
+7.3.9 Thermal Shutdown
+
+The TPS923610/1/2 implements thermal shutdown protection to prevent damages due to excessive heat and
+power dissipation. The thermal shutdown happens when the device junction temperature reaches TTSD_R. When
+the thermal shutdown is triggered, the TPS923610/1/2 stops switching until the junction temperature falls below
+TTSD_F, then the device starts switching again.
+
+Copyright © 2026 Texas Instruments Incorporated                                                             Submit Document Feedback 13
+                                                       Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                   www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+7.4 Device Functional Modes
+7.4.1 Normal Operation Mode
+
+The TPS923610/1/2 enters normal operation mode from shutdown mode when the voltage of ADIM pin is higher
+than the threshold voltage VADIM_H for a period longer than tADIM_EN, along with the soft-start process. In normal
+operation mode, the TPS923610/1/2 uses peak current mode (PCM) control and operates in forced continuous
+conduction mode (FCCM) over the entire load range.
+
+7.4.2 Over-Voltage Protection Mode
+
+The TPS923610/1/2 enters over-voltage protection mode in a VOUT pin over-voltage condition and prevent
+device from keep turning on and off switching. If the voltage of VOUT pin is detected rising above VOVP_R and
+then dropping below VOVP_R-VOVP_HYS for 3 times, the TPS923610/1/2 stays in over-voltage protection mode
+until the device is reset by one of two ways, which are shutdown and re-enabling device by the ADIM pin or
+triggering UVLO by the VIN pin. In over-voltage protection mode, the switching stops.
+
+7.4.3 Shutdown Mode
+
+The TPS923610/1/2 enters shutdown mode from normal operation mode or over-voltage protection mode when
+the voltage of ADIM pin is lower than the threshold voltage VADIM_L for a period longer than tADIM_SD. In
+shutdown mode, the input supply current for the device is ISD.
+
+14 Submit Document Feedback                                                                                         Copyright © 2026 Texas Instruments Incorporated
+                             Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                                 TPS923610, TPS923611, TPS923612
+
+                                                            SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+8 Application and Implementation
+
+                                                                 Note
+
+Information in the following applications sections is not part of the TI component specification,
+and TI does not warrant its accuracy or completeness. TI's customers are responsible for
+determining suitability of components for their purposes, as well as validating and testing their design
+implementation to confirm system functionality.
+
+8.1 Application Information
+
+The TPS923610/1/2 is a boost LED driver which can drive single or parallel LED strings for LCD panel back
+lighting or general illumination. This section includes a design procedure (Section 8.2.2) to select component
+values for the TPS923610/1/2 typical application (Figure 8-1).
+
+8.2 Typical Application
+
+                                                             TPS923610
+
+            2.5V to 5.5V             10uH SW                VOUT                                            6S3P
+                              4.7uF               VIN
+                                                                                                            1uF
+
+                                                                                                                                  ...
+
+                                                                                                                            ...
+                                                                                                            ...
+
+                           ENABLE & PWM  ADIM                          FB                                        ...
+
+                     DIMMING CONTROL                                                                        3.33¡
+
+                                                       GND
+
+               Figure 8-1. TPS923610/1/2 60mA Total Output Current Reference Design
+
+8.2.1 Design Requirements
+
+For this design example, use the parameters listed in Table 8-1 as the input parameters.
+
+                                                 Table 8-1. Design Parameters  EXAMPLE VALUE
+                                                                                   2.5V to 5.5V
+                    DESIGN PARAMETER                                                      6
+                      Input voltage range                                                 3
+                                                                                       20mA
+               Output, LED number in a string
+                 Output, LED string number
+
+               Output, LED current per string
+
+8.2.2 Detailed Design Procedure
+8.2.2.1 LED Current Set Resistor
+
+The resistor value to set the LED current (RSET) can be calculated as
+
+RSET        =  VFB                                                                                                                     (3)
+               IOUT
+
+Copyright © 2026 Texas Instruments Incorporated                                                             Submit Document Feedback 15
+                                                       Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                                            www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+8.2.2.2 Inductor Selection
+
+Inductor selection impacts power efficiency, steady-state operation, transient response and loop stability. These
+factors make inductor selction the most important component in power regulator design. There are three
+important inductor specifications, inductor value, DC resistance and saturation current. Considering inductor
+value alone is not enough. The inductor value determines the inductor ripple current. Choose an inductor that
+can handle the necessary peak current without saturating and optimize light load efficiency when using dimming.
+In a boost regulator, the input DC current can be calculated as
+
+       IL DC  =  VOUT × IOUT                                               (4)
+                    VIN × 
+
+where
+· VOUT = boost output voltage
+· IOUT = boost output current
+· VIN = boost input voltage
+·  = power conversion efficiency
+The inductor current peak to peak ripple can be calculated as
+
+       IL P - P  =               1   1       1                             (5)
+                    L×    VOUT -            VIN
+                                    VIN  +       × FS
+
+where
+
+· IL(PP) = inductor peak-to-peak ripple
+· L = inductor value
+· FS = boost switching frequency
+· VOUT = boost output voltage
+· VIN = boost input voltage
+
+Therefore, the peak current IL(P) seen by the inductor is calculated with
+
+       IL P   = IL DC  +  IL  P-  P                                        (6)
+                              2
+
+Also, the valley current IL(V) seen by the inductor is calculated with
+
+       IL V   = IL DC  -  IL  P-  P                                        (7)
+                              2
+
+Inductor values can have ±20% tolerance with no current bias. When the inductor current approaches saturation
+level, inductance can decrease 20% to 35% from the 0A value depending on how the inductor vendor defines
+saturation current. When using an inductor with a smaller inductance value with relative light load, the inductor
+current ramps down to below zero before the end of each switching cycle due to forced continuous condition
+mode (FCCM), which reduces light load efficiency. Large inductance value provides much more output current
+and higher conversion efficiency. Thus, choose a sufficiently large inductor that that maintains a non-negative
+valley current under light-load conditions helps optimize efficiency.
+
+For these reasons, a 10H inductor is recommended based on input voltage, output voltage and output current
+condition of this application, to maintain non-negative current in most of load range by PWM controlled analog
+dimming.
+
+16 Submit Document Feedback                                                                                                    Copyright © 2026 Texas Instruments Incorporated
+                                        Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                         TPS923610, TPS923611, TPS923612
+
+                                    SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+8.2.2.3 Output Capacitor Selection
+
+The output capacitor is mainly selected to meet the requirement for the output ripple and loop stability. This
+ripple voltage is related to capacitance and capacitor equivalent series resistance (ESR). Assuming a capacitor
+with zero ESR, the minimum capacitance needed for a given ripple can be calculated with
+
+COUT =         VOUT - VIN × IOUT                                                                            (8)
+               VOUT × FS × Vripple
+
+where
+
+· Vripple = peak-to-peak output ripple
+The additional part of the ripple caused by ESR is calculated using: Vripple_ESR = IOUT × RESR
+Since the low ESR, Vripple_ESR can be neglected for ceramic capacitors, a 1µF to 4.7µF capacitor is
+recommended for typical application.
+
+8.2.2.4 Thermal Considerations
+
+The allowable IC junction temperature must be considered under normal operating conditions. This restriction
+limits the power dissipation of the TPS923610/1/2. The allowable power dissipation for the device can be
+determined by
+
+PD          =  TJ - TA                                                                                      (9)
+                R JA
+
+where
+
+· TJ is allowable junction temperature given in recommended operating conditions
+· TA is the ambient temperature for the application
+· RJA is the thermal resistance junction-to-ambient given in Power Dissipation Table
+
+8.3 Power Supply Recommendations
+
+The device is designed to operate from an input voltage supply range between 2.5V and 5.5V. This input supply
+must be well regulated. If the input supply is located more than a few inches from the TPS923610/1/2 devices,
+additional bulk capacitance can be required in addition to the ceramic bypass capacitors.
+
+Copyright © 2026 Texas Instruments Incorporated                                                             Submit Document Feedback 17
+                                                       Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                   www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+8.4 Application Curves
+
+Typical application condition is as in Section 8.2, VIN = 3.6V, RSET = 3.33, L = 10µH, COUT = 1µF, 6 LEDs in serial in each
+string and total 3 strings in parallel (unless otherwise specified).
+
+VOUT (10V/div)                                       VOUT (10V/div)
+SW (10V/div)                                          SW (10V/div)
+IOUT (20mA/div)                                       IOUT (20mA/div)
+IL (200mA/div)                                        IL (200mA/div)
+
+Figure 8-2. Switching Dimming Duty = 100%           Figure 8-3. Switching Dimming Duty = 10%
+
+     ADIM (5V/div)                                       ADIM (5V/div)
+     VOUT (5V/div)
+     IOUT (50mA/div)                                     VOUT (5V/div)
+     IL (200mA/div)                                      IOUT (10mA/div)
+                                                         IL (200mA/div)
+  Figure 8-4. Start-up Dimming Duty 100%
+                                                      Figure 8-5. Start-up Dimming Duty 10%
+    ADIM (5V/div)
+    VOUT (5V/div)                                        ADIM (5V/div)
+    IOUT (50mA/div)                                      VOUT (5V/div)
+    IL (200mA/div)                                       IOUT (10mA/div)
+                                                         IL (200mA/div)
+ Figure 8-6. Shutdown Dimming Duty 100%
+                                                     Figure 8-7. Shutdown Dimming Duty 10%
+    ADIM (5V/div)
+    VOUT (5V/div)                                        VOUT (10V/div)
+    IOUT (50mA/div)                                      IOUT (50mA/div)
+                                                         FB (200mV/div)
+    IL (200mA/div)                                       IL (500mA/div)
+
+                   Dimming Duty 90%  1%  90%                                 Trigger 3 times then latch
+
+         Figure 8-8. Dimming Transient            Figure 8-9. Open LED Over-voltage Protection
+
+18 Submit Document Feedback                                                                                         Copyright © 2026 Texas Instruments Incorporated
+                             Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                   TPS923610, TPS923611, TPS923612
+
+                                              SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+ VOUT (10V/div)                                VOUT (10V/div)
+IOUT (100mA/div)                              IOUT (100mA/div)
+FB (200mV/div)                                FB (200mV/div)
+
+    IL (500mA/div)                                IL (500mA/div)
+
+                               TPS923611DRLR                                TPS923612DRVR
+
+Figure 8-10. FB Short-to-ground Over-current  Figure 8-11. FB Short-to-ground Over-current
+                         Protection                                   Protection
+
+8.5 Layout
+
+8.5.1 Layout Guidelines
+
+As for all switching power supplies, especially those high frequency and high current ones, layout is an important
+design step. If layout is not carefully done, the regulator can suffer from instability as well as noise problems.
+Therefore, use wide and short traces for high current paths. Please follow the layout guidelines below.
+
+1. The output capacitor COUT must be put close to VOUT pin. Having the ground of COUT close to the GND
+     pin (GND copper pour) is also beneficial because there is large ground return current flowing between them.
+     This minimizes the switching noise at output.
+
+2. FB resistor must be put close to FB pin and GND pin (GND copper pour). This benefits the output current
+     accuracy.
+
+3. The SW pin carries high current with fast rising and falling edge; therefore, the connection between the SW
+     pin to the inductor must be kept as short and wide as possible.
+
+4. The input capacitor CIN must be close to VIN pin and GND pin to reduce the input ripple seen by the device.
+     If possible, choose a capacitance of higher value.
+
+5. When laying out signal ground, TI recommends using short traces separated from power ground traces and
+     connecting them together at a single point close to the GND pin.
+
+Copyright © 2026 Texas Instruments Incorporated                                                             Submit Document Feedback 19
+                                                       Product Folder Links: TPS923610 TPS923611 TPS923612
+TPS923610, TPS923611, TPS923612                                                                                   www.ti.com
+
+SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+8.5.2 Layout Example
+
+                                   VIN
+
+                                                      L
+
+GND                                           1 VIN            SW               SW-L
+                                              2 ADIM                  Min parasitic resistance
+               CIN                                         SW 6
+                                                                         Benefit efficiency
+          ADIM                                           VOUT 5
+                                                                          VOUT Connect first LED
+
+Connect last LED             FB               3 FB       GND 4     COUT
+
+                                        RSET                                         VOUT-COUT-GND
+                                                                                   min parasitic inductance
+                                                                             Benefit spike and ringing reduction
+
+        FB-RSET-GND                                 GND
+    min parasitic resistance
+Benefit output current accuracy
+
+                                     Figure 8-12. TPS923610/1 SOT563 Layout
+
+                                                                         VIN
+
+                                                                L
+
+                            SW-L                                                        GND
+                  Min parasitic resistance
+                                                                              CIN
+                     Benefit efficiency
+
+                                                    SW
+
+                                                         1         6
+
+VOUT Connect first LED                                   2         5               ADIM
+
+                                              COUT       3         4           FB  Connect last LED
+
+        VOUT-COUT-GND                                                    RSET
+      min parasitic inductance
+Benefit spike and ringing reduction
+
+                                                            GND                       FB-RSET-GND
+                                                                                  min parasitic resistance
+                                                                              Benefit output current accuracy
+
+                                     Figure 8-13. TPS923612 WSON Layout
+
+20 Submit Document Feedback                                                                                                 Copyright © 2026 Texas Instruments Incorporated
+                                     Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                               TPS923610, TPS923611, TPS923612
+
+                          SNVSCN8B ­ SEPTEMBER 2025 ­ REVISED OCTOBER 2026
+
+9 Device and Documentation Support
+9.1 Device Support
+9.2 Receiving Notification of Documentation Updates
+
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on
+Notifications to register and receive a weekly digest of any product information that has changed. For change
+details, review the revision history included in any revised document.
+
+9.3 Support Resources
+
+TI E2ETM support forums are an engineer's go-to source for fast, verified answers and design help -- straight
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do
+not necessarily reflect TI's views; see TI's Terms of Use.
+
+9.4 Trademarks
+TI E2ETM is a trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+9.5 Electrostatic Discharge Caution
+
+                        This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled
+                        with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+
+                        ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may
+                        be more susceptible to damage because very small parametric changes could cause the device not to meet its published
+                        specifications.
+
+9.6 Glossary  This glossary lists and explains terms, acronyms, and definitions.
+TI Glossary
+
+10 Revision History
+
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+
+Changes from Revision A (November 2025) to Revision B (October 2026)                                        Page
+
+· Updated VOUT MIN in Recommended Operation table and Added spec Dmin in Electrical Characteristics
+    table.................................................................................................................................................................... 4
+
+Changes from Revision * (September 2023) to Revision A (November 2025)                                      Page
+
+· Updated data sheet status from Advanced Information to Production Data.......................................................1
+· Delete Schottky Diode Selection session......................................................................................................... 15
+
+       DATE     REVISION                NOTES
+September 2025        *   Advance Information Release
+
+11 Mechanical, Packaging, and Orderable Information
+
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+Copyright © 2026 Texas Instruments Incorporated                                                             Submit Document Feedback 21
+                                                       Product Folder Links: TPS923610 TPS923611 TPS923612
+www.ti.com                                                                                                                                                   PACKAGE OPTION ADDENDUM
+
+                                                                                                                                                                                                                             3-Sep-2026
+
+PACKAGING INFORMATION
+
+Orderable part number  Status Material type  Package | Pins          Package qty | Carrier  RoHS                   Lead finish/        MSL rating/                                       Op temp (°C)  Part marking
+                                                                                                                   Ball material       Peak reflow
+                       (1)     (2)                                                             (3)                                                                                         -40 to 125            (6)
+                                                                                                                             (4)                   (5)                                     -40 to 125
+  TPS923610DRLR        Active  Production    SOT-5X3 (DRL) | 6       4000 | LARGE T&R        Yes                                                                                           -40 to 125       T610
+  TPS923611DRLR        Active  Production    SOT-5X3 (DRL) | 6       4000 | LARGE T&R        Yes                         SN       Level-1-260C-UNLIM                                       -40 to 125       T611
+TPS923611LSDRLR        Active  Production    SOT-5X3 (DRL) | 6       4000 | LARGE T&R        Yes                         SN       Level-1-260C-UNLIM                                       -40 to 125       611L
+ TPS923612DRVR         Active  Production     WSON (DRV) | 6         3000 | LARGE T&R        Yes                         SN       Level-1-260C-UNLIM                                                        T612
+TPS923612LSDRVR        Active  Production     WSON (DRV) | 6         3000 | LARGE T&R        Yes                      NIPDAU      Level-1-260C-UNLIM                                                        612L
+                                                                                                                      NIPDAU      Level-1-260C-UNLIM
+
+(1) Status: For more details on status, see our product life cycle.
+
+(2) Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3) RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4) Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5) MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6) Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+                                                                     Addendum-Page 1
+                                                                     PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                               3-Sep-2026
+
+TAPE AND REEL INFORMATION                                               TAPE DIMENSIONS
+                                                                     K0 P1
+         REEL DIMENSIONS
+
+                                                                                                                             B0 W
+
+                                Reel
+                             Diameter
+
+                                                                     Cavity  A0
+
+                                                   A0 Dimension designed to accommodate the component width
+                                                   B0 Dimension designed to accommodate the component length
+                                                   K0 Dimension designed to accommodate the component thickness
+                                                   W Overall width of the carrier tape
+                                                   P1 Pitch between successive cavity centers
+
+                                          Reel Width (W1)
+                             QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                             Sprocket Holes
+
+                                       Q1 Q2             Q1 Q2               User Direction of Feed
+                                       Q3 Q4             Q3 Q4
+
+                                                   Pocket Quadrants
+
+*All dimensions are nominal
+
+Device                       Package Package Pins  SPQ   Reel Reel A0 B0 K0 P1 W                                                   Pin1
+                               Type Drawing
+                                                   4000  Diameter Width (mm) (mm) (mm) (mm) (mm) Quadrant
+                                                   4000
+                                                   4000  (mm) W1 (mm)
+                                                   3000
+TPS923610DRLR SOT-5X3 DRL 6                        3000  180.0       8.4     1.8 1.8 0.75 4.0 8.0                                  Q3
+
+TPS923611DRLR SOT-5X3 DRL 6                              180.0       8.4     1.8 1.8 0.75 4.0 8.0                                  Q3
+
+TPS923611LSDRLR SOT-5X3 DRL 6                            180.0       8.4     1.8 1.8 0.75 4.0 8.0                                  Q3
+
+TPS923612DRVR                WSON DRV 6                  180.0       8.4     2.3 2.3 1.15 4.0 8.0                                  Q2
+
+TPS923612LSDRVR WSON DRV 6                               180.0       8.4     2.3 2.3 1.15 4.0 8.0                                  Q2
+
+                                                   Pack Materials-Page 1
+www.ti.com                                         PACKAGE MATERIALS INFORMATION
+ TAPE AND REEL BOX DIMENSIONS
+                                                                                                                                                  3-Sep-2026
+
+                                                   Width (mm)
+
+                                                                      H
+
+W                                               L
+
+*All dimensions are nominal  Package Type  Package Drawing Pins  SPQ     Length (mm)  Width (mm)  Height (mm)
+              Device            SOT-5X3                          4000         210.0       185.0        35.0
+                                SOT-5X3    DRL     6             4000         210.0       185.0        35.0
+      TPS923610DRLR             SOT-5X3                          4000         210.0       185.0        35.0
+      TPS923611DRLR               WSON     DRL     6             3000         210.0       185.0        35.0
+     TPS923611LSDRLR              WSON                           3000         210.0       185.0        35.0
+      TPS923612DRVR                        DRL     6
+    TPS923612LSDRVR
+                                           DRV     6
+
+                                           DRV     6
+
+                                                Pack Materials-Page 2
+DRV 6      GENERIC PACKAGE VIEW
+
+       WSON - 0.8 mm max height
+
+                             PLASTIC SMALL OUTLINE - NO LEAD
+
+Images above are just a representation of the package family, actual package may vary.
+Refer to the product data sheet for package details.
+
+                                                                                        4206925/F
+DRL0006A                                                            PACKAGE OUTLINE
+
+                                                                        SOT - 0.6 mm max height
+
+                                              SCALE 8.000
+
+                                                                                                         PLASTIC SMALL OUTLINE
+
+                                1.7
+                                1.5
+
+                                     PIN 1       A
+
+                                     ID AREA
+
+                            1                 6
+                4X 0.5
+        2X 1                                       1.7          2X 0 -10
+                                                   1.5
+                            3                   NOTE 3
+                             B
+                                              4
+
+                                1.3              6X  0.3                       0.05  TYP
+                                1.1                  0.1                       0.00
+
+                                              2X 4 -15
+
+        0.6 MAX
+
+        6X  0.18                                          C
+            0.08                                                SEATING PLANE
+                                SYMM                            0.05 C
+
+            SYMM
+
+                                                     6X   0.27
+                                                          0.15
+
+                                      0.4                 0.1   CAB
+                                      0.2                        C
+                                6X                        0.05
+
+                                                                                          4223266/F 11/2024
+
+NOTES:
+
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+   per ASME Y14.5M.
+
+2. This drawing is subject to change without notice.
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+
+   exceed 0.15 mm per side.
+4. Reference JEDEC registration MO-293 Variation UAAD
+
+                                              www.ti.com
+DRL0006A                                                 EXAMPLE BOARD LAYOUT
+
+                                                                    SOT - 0.6 mm max height
+
+                                                                                              PLASTIC SMALL OUTLINE
+
+                                  6X (0.67)  SYMM
+
+                         1                                      6
+             6X (0.3)                                               SYMM
+
+                4X (0.5)                                        4
+
+                               3
+          (R0.05) TYP
+
+                                                      (1.48)
+
+                                  LAND PATTERN EXAMPLE
+
+                                                  SCALE:30X
+
+0.05 MAX                                     0.05 MIN
+AROUND                                       AROUND
+
+SOLDER MASK                       METAL            METAL UNDER               SOLDER MASK
+OPENING                                            SOLDER MASK               OPENING
+
+          NON SOLDER MASK                                       SOLDER MASK
+                  DEFINED                                           DEFINED
+
+              (PREFERRED)
+
+                                  SOLDERMASK DETAILS
+
+                                                                                                                4223266/F 11/2024
+
+NOTES: (continued)
+
+5. Publication IPC-7351 may have alternate designs.
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+7. Land pattern design aligns to IPC-610, Bottom Termination Component (BTC) solder joint inspection criteria.
+
+                                             www.ti.com
+DRL0006A                                                    EXAMPLE STENCIL DESIGN
+
+                                                                        SOT - 0.6 mm max height
+
+                                                                                                   PLASTIC SMALL OUTLINE
+
+                                     6X (0.67)  SYMM
+                              1
+
+                    6X (0.3)                                                6
+
+                           4X (0.5)                                             SYMM
+                                          3                                 4
+
+                    (R0.05) TYP                                  (1.48)
+
+                                             SOLDER PASTE EXAMPLE
+
+                                             BASED ON 0.1 mm THICK STENCIL
+                                                              SCALE:30X
+
+                                                                                      4223266/F 11/2024
+
+NOTES: (continued)
+
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+   design recommendations.
+
+9. Board assembly site may have different recommendations for stencil design.
+
+                                                www.ti.com
+                                 IMPORTANT NOTICE AND DISCLAIMER
+
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES "AS IS"
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+
+TI's products are provided subject to TI's Terms of Sale, TI's General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI's provision of these resources does not expand or otherwise alter TI's applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+
+TI objects to and rejects any additional or different terms you may propose.
+
+IMPORTANT NOTICE
+
+                                                           Copyright © 2026, Texas Instruments Incorporated
+
+                                                                               Last updated 10/2025
+

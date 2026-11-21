@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Molex_product_sheet",
+    "url": "https://images.100y.com.tw/pdf_file/10-molex-52271-0679.pdf",
+    "status": "ok"
+  },
+  {
+    "name": "ST_no_www",
+    "url": "https://st.com/resource/en/datasheet/stm32h753ii.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=10)"
+  },
+  {
+    "name": "ST_cn",
+    "url": "https://www.st.com.cn/resource/en/datasheet/stm32h753xi.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.st.com.cn', port=443): Read timed out. (read timeout=10)"
+  },
+  {
+    "name": "ISSI_no_www",
+    "url": "https://issi.com/WW/pdf/42-45S32400J.pdf",
+    "status": "failed",
+    "error": "not PDF"
+  },
+  {
+    "name": "Amphenol_static",
+    "url": "https://www.amphenol-cs.com/media/wysiwyg/files/drawing/62684.pdf",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://www.amphenol-cs.com/media/wysiwyg/files/drawing/62684.pdf"
+  },
+  {
+    "name": "Amphenol_octopart",
+    "url": "https://datasheet.octopart.com/62684-502100ALF-Amphenol-Communications-Solutions-datasheet-13508140.pdf",
+    "status": "ok"
+  }
+]

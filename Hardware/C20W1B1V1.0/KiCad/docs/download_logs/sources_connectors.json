@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Amphenol_62684_drawing",
+    "url": "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/62684.pdf",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/62684.pdf"
+  },
+  {
+    "name": "Amphenol_62684_spec",
+    "url": "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/110-450h.pdf",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/110-450h.pdf"
+  },
+  {
+    "name": "Amphenol_FPC_application",
+    "url": "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/gs-20-097.pdf",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/gs-20-097.pdf"
+  },
+  {
+    "name": "Amphenol_OPU_datasheet",
+    "url": "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/flex/flexconnectors_050mm_opu.pdf",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/flex/flexconnectors_050mm_opu.pdf"
+  }
+]

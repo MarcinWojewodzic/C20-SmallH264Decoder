@@ -1,0 +1,27 @@
+[
+  {
+    "name": "KEMET_A768",
+    "url": "https://uploadcdn.oneyac.com/attachments/files/brand_pdf/kemetelectronics/17/BF/KEM_A4088_A768.pdf",
+    "status": "ok",
+    "bytes": 1088872,
+    "sha256": "a5d13e38f59e0b9e6ac73b319001a71646ac13b6d802850c40a60bb18fbddeaf"
+  },
+  {
+    "name": "Laird_MGAH0603",
+    "url": "https://datasheet.lcsc.com/datasheet/pdf/526b028da0a1a4835e8a4ecea4e7a410.pdf",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://datasheet.lcsc.com/datasheet/pdf/526b028da0a1a4835e8a4ecea4e7a410.pdf"
+  },
+  {
+    "name": "Laird_MGAH0603_mouser",
+    "url": "https://www.mouser.com/datasheet/2/987/MGAH0603_2520Series-3043308.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www.mouser.com', port=443): Read timed out. (read timeout=12)"
+  },
+  {
+    "name": "Laird_MGAH0603_qnity",
+    "url": "https://www.qnityelectronics.com/sites/default/files/2022-01/MGAH0603%20Series.pdf",
+    "status": "failed",
+    "error": "404 Client Error: Not Found for url: https://www.qnityelectronics.com/sites/default/files/2022-01/MGAH0603%20Series.pdf"
+  }
+]

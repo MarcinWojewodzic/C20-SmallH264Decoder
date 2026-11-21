@@ -1,0 +1,633 @@
+
+PAGE 1
+Product Speciﬁcation
+RoHS 
+ Compliant
+REACH 
+Compliant
+Newhaven Display International, Inc.
+2661 Galvin Court, Elgin, IL 60124  USA
+Ph: 847.844.8795  |  Fx: 847.844.8796
+www.newhavendisplay.com
+NHD-4.0-480480AF-ASXP-CTP
+
+PAGE 2
+ 
+ 
+1 
+   
+ 
+ Table of Contents 
+Document Revision History .......................................................................................................................... 2 
+Mechanical Drawing .................................................................................................................................... 3 
+Pin Description ............................................................................................................................................ 4 
+RGB Interface Mode .................................................................................................................................... 5 
+SPI Interface Mode ...................................................................................................................................... 7 
+Electrical Characteristics .............................................................................................................................. 8 
+Optical Characteristics ................................................................................................................................. 9 
+Driver/Controller Information ..................................................................................................................... 9 
+Recommended Timing Values ...................................................................................................................... 9 
+Capacitive Touch Panel Registers ............................................................................................................... 10 
+Timing Characteristics- TFT ........................................................................................................................ 13 
+Timing Characteristics- Capacitive Touch Panel .......................................................................................... 16 
+Quality Information ................................................................................................................................... 19 
+ 
+ 
+ 
+ 
+Additional Resources 
+➢ Support Forum: https://support.newhavendisplay.com/hc/en-us/community/topics  
+➢ GitHub: https://github.com/newhavendisplay  
+➢ Example Code: https://support.newhavendisplay.com/hc/en-us/categories/4409527834135-Example-Code/  
+➢ Knowledge Center: https://www.newhavendisplay.com/knowledge_center.html  
+➢ Quality Center: https://www.newhavendisplay.com/quality_center.html  
+➢ Precautions for using LCDs/LCMs: https://www.newhavendisplay.com/specs/precautions.pdf  
+➢ Warranty / Terms & Conditions: https://www.newhavendisplay.com/terms.html  
+  
+
+PAGE 3
+ 
+ 
+2 
+   
+Document Revision History 
+Revision Date Description Changed By 
+- 09/03/2025 Initial Release KL 
+  
+
+PAGE 4
+C
+B
+A
+D
+E
+F
+C
+B
+A
+D
+E
+F
+4321 8765
+4321 8765
+Mechanical Drawing
+Drawn Date:
+Drawing/Part Number:
+Standard Tolerance:
+(Unless otherwise specified)
+Linear:   ±0.3mm 
+Revision:
+Drawn By: K. Lewis Approved By:
+Approved Date: 09/03/202509/03/2025
+K. LewisUnless otherwise specified:
+• Dimensions are in Millimeters
+• Third Angle Projection
+NHD-4.0-480480AF-ASXP-CTP -
+This drawing is solely the property of Newhaven Display International, Inc. 
+The information it contains is not to be disclosed, reproduced or copied in 
+whole or part without written approval from Newhaven Display.
+Component area and stiﬀener will be
+covered by yellow insulation tape
+TFT
+CTP
+Product Description: 4.0” 480x480 IPS TFT w/ Capacitive Touch
+1. Driver IC: ST7701SN TFT, FT5426G CTP
+2. Interface: 24-bit Parallel RGB TFT, 4-Wire SPI, I²C CTP
+3. Power Requirement: 3.3V TFT, 6.1V/140mA Backlight, 3.3V CTP
+4. Optical Features: Normally Black, Transmissive, 850cd/m²
+5. Recommended FFC Connector:
+ TFT: 40pin 0.5mm pitch; Ex. Molex 5051104091
+ CTP: 6pin 1.0mm pitch; Ex. Molex 52271-0679
+6. Key Features: Builit-in EMI Shielding, 10-point Multitouch  
+2
+
+PAGE 5
+ 
+ 
+4 
+   
+Pin Description 
+TFT: 
+Pin No. Symbol External Connection Function Description 
+1 LED_K Power Supply Backlight Cathode (Ground) 
+2 LED_A Power Supply Backlight Anode (140mA @ 6.1V) 
+3 GND Power Supply Ground 
+4 VDD Power Supply Supply Voltage for LCD and Logic (3.3V) 
+5-12 R0-R7 MPU Red Data signals 
+13-20 G0-G7 MPU Green Data signals 
+21-28 B0-B7 MPU Blue Data signals 
+29 GND Power Supply Ground 
+30 PCLK MPU Dot Clock signal for RGB interface  
+31 RESETX MPU Active LOW Reset signal 
+32 HS MPU Line Synchronizing signal for RGB interface 
+33 VS MPU Frame Synchronizing signal for RGB interface 
+34 DE MPU Data Enable signal for RGB interface 
+35 NC - No connect 
+36 GND Power Supply Ground 
+37 CSX MPU Active LOW Chip Select signal 
+38 DCX MPU Data/Command selection for SPI: ‘1’ = Data; ‘0’ = Command  
+39 SCL MPU Serial Clock signal for SPI interface (rising edge) 
+40 SDA MPU Serial Data Input signal for SPI interface 
+Recommended LCD connector: 40pin 0.5mm pitch FFC; Ex. Molex 5051104091 
+ 
+CTP: 
+Pin No. Symbol External Connection Function Description 
+1 VDD Power Supply Supply voltage for Logic (3.3V) 
+2 GND Power Supply Ground 
+3 SCL MPU Serial I2C Clock (Requires 4.7KΩ pull-up resistor) 
+4 SDA MPU Serial I2C Data (Requires 4.7kΩ pull-up resistor) 
+5 INT MPU Interrupt signal from touch panel module to host 
+6 RST MPU Active LOW Reset signal 
+Recommended connector:  6pin, 1.0mm pitch, FFC connector.  Molex P/N 52271-0679 
+ 
+ 
+ 
+ 
+  
+
+PAGE 6
+ 
+ 
+5 
+   
+RGB Interface Mode 
+The ST7701SN driver IC is user configurable for DE Mode (mode 1) and HV Mode (mode 2) RGB interface.  
+ 
+RGB Interface Mode PCLK DE VS HS Blanking Porch Setting 
+DE Mode (mode 1) Used Used Used Used Not used 
+HV Mode (mode 2) Used Not used Used Used Used 
+ 
+ 
+DE Mode is enabled when the DE/HV bit of RGBCTR (0xC3) command is set to “0”, and DE signal is high for valid pixel 
+data. The PCLK, HS, and VS signals are used for clocking the display data and must always be used by host controller.  
+ 
+ 
+ 
+ 
+  
+
+
+PAGE 7
+ 
+ 
+6 
+   
+HV Mode is enabled when the DE/HV bit of RGBCTR (0xC3) command is set to “1”, DE signal is ignored. VS back porch is 
+defined by VBP_HVRGB [7:0] of RGBCTR command, and HS back porch is defined by HBP_HVRGB [7:0] of RGBCTR 
+command. VS front porch is not used in this mode. 
+ 
+ 
+ 
+RGB Input Timing:  
+Parameter Symbol Min. Typ. Max. Unit 
+Horizontal Sync. Width hpw 2 - 255 Clock 
+Horizontal Sync. Back Porch hbp 2 - 255 Clock 
+Horizontal Sync. Front Porch hfp 2 - - Clock 
+Vertical Sync. Width vs 2 - 255 Line 
+Vertical Sync. Back Porch vbp 2 - 255 Line 
+Vertical Sync. Front Porch vfp 2 - - Line 
+ 
+VIPF[2:0] bits of Interface Pixel Format (0x3A) command can be used to select the pixel format. 
+ 
+
+
+PAGE 8
+ 
+ 
+7 
+   
+SPI Interface Mode 
+ST7701SN requires SPI to initialize the display before sending pixel data over RGB data lines. SPI cannot be used for 
+sending pixel data.  
+ 
+4-line serial interface write protocol (write to register with control bit in transmission) 
+ 
+ 
+  
+
+
+PAGE 9
+ 
+ 
+8 
+   
+Electrical Characteristics 
+TFT: 
+Item Symbol Condition Min. Typ. Max. Unit 
+Operating Temperature Range TOP Absolute Max -20 - +70 ⁰C 
+Storage Temperature Range TST Absolute Max -30 - +80 ⁰C 
+Supply Voltage VDD -   2.5 3.3 3.6 V 
+Supply Current  IDD VDD = 3.3V - 39 59 mA 
+“H” Level input VIH - 0.7*VDD - VDD V 
+“L” Level input VIL - VSS - 0.3*VDD V 
+“H” Level output VOH - 0.8*VDD - VDD V 
+“L” Level output VOL - VSS - 0.2*VDD V 
+ 
+Backlight Supply Current ILED - 117 140 168 mA 
+Backlight Supply Voltage VLED ILED = 140mA 
+TOP = 25°C 
+5.4 6.1 6.8 V 
+Backlight Lifetime* - 30,000 - - Hrs. 
+*Backlight lifetime is rated as Hours until half-brightness, under normal operating conditions. The LED of the backlight is driven by current drain; drive  
+voltage is for reference only.  Drive voltage must be selected to ensure backlight current drain is below MAX level stated. 
+ 
+Capacitive Touch Panel: 
+Item Symbol Condition Min. Typ. Max. Unit 
+Operating Temperature Range TOP Absolute Max -20 - +70 ⁰C 
+Storage Temperature Range TST Absolute Max -30 - +80 ⁰C 
+Supply Voltage VDD - 2.7 3.3 3.6 V 
+Supply Current – Operating IDD - - 15.85 - mA 
+“H” Level input VIH - 0.7*VDD - VDD V 
+“L” Level input VIL - VSS - 0.3*VDD V 
+“H” Level output VOH - 0.7*VDD - VDD V 
+“L” Level output VOL - VSS - 0.3*VDD V 
+ 
+  
+
+PAGE 10
+ 
+ 
+9 
+   
+Optical Characteristics 
+Item Symbol Condition Min. Typ. Max. Unit 
+Optimal 
+Viewing 
+Angles 
+Top ϕY+ 
+CR ≥ 10 
+- 80 - ⁰ 
+Bottom ϕY- - 80 - ⁰ 
+Left θX- - 80 - ⁰ 
+Right θX+ - 80 - ⁰ 
+Contrast Ratio CR - 640 800 - - 
+Luminance LV ILED =140mA 595 850 1275 cd/m2 
+Response Time (Rise + Fall) TR + TF TOP = 25°C - 25 35 ms 
+Chromaticity 
+Red XR - 0.58 0.61 0.64 - YR - 0.32 0.35 0.38 - 
+Green XG - 0.28 0.31 0.34 - YG - 0.55 0.58 0.61 - 
+Blue XB - 0.11 0.14 0.17 - YB - 0.06 0.09 0.12 - 
+White XW - 0.26 0.29 0.32 - YW - 0.29 0.32 0.35 - 
+ 
+Driver/Controller Information 
+TFT Display: 
+Built-in ST7701SN Driver: https://support.newhavendisplay.com/hc/en-us/articles/14147699906711-ST7701SN 
+Capacitive Touch Panel: 
+Built-in FT5426G Controller: https://support.newhavendisplay.com/hc/en-us/articles/17688730921367-FT5426G 
+ 
+Recommended Timing Values 
+Recommended RGB Timing Values:  
+HS Total HFP HBP HS Pulse VS Total VFP VBP VS Pulse PCLK Freq 
+790 150 150 10 530 20 20 10 25 MHz 
+ 
+  
+
+PAGE 11
+ 
+ 
+10 
+   
+Capacitive Touch Panel Registers 
+Register No. Access Register Name Bits Value Description 
+01h RO Gesture ID [7:0] 
+1Ch 
+14h 
+10 
+18 
+48 
+49 
+00 
+Swipe Up 
+Swipe Down 
+Swipe Left 
+Swipe Right 
+Zoom In 
+Zoom Out 
+No gesture 
+02h RO Touch Points [7:0] 0-Ah 0: No touch detected A: 10 touch points detected 
+03h RO TOUCH1_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+03h RO TOUCH1_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+04h RO TOUCH1_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+05h RO TOUCH1_YH [3:0] 0 -1 Upper 4 bits of Y touch coordinate 
+06h RO TOUCH1_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+07h RO TOUCH1_Weight [7:0]  Touch Weight 
+08h RO TOUCH1_Misc [3:0] 00-0Fh Touch Area 
+09h RO TOUCH2_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+09h RO TOUCH1_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+0Ah RO TOUCH2_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+0Bh RO TOUCH2_YH [3:0] 0 -1 Upper 4 bits of Y touch coordinate 
+0Ch RO TOUCH2_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+0Dh RO TOUCH2_Weight [7:0]  Touch Weight 
+0Eh RO TOUCH2_Misc [3:0] 00-0Fh Touch Area 
+0Fh RO TOUCH3_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+0Fh RO TOUCH3_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+10 RO TOUCH3_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+11h RO TOUCH3_YH [3:0] 0 -1 Upper 4 bits of Y touch coordinate 
+12h RO TOUCH3_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+13h RO TOUCH3_Weight [7:0]  Touch Weight 
+14h RO TOUCH3_Misc [3:0] 00-0Fh Touch Area 
+15h RO TOUCH4_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+15h RO TOUCH4_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+16h RO TOUCH4_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+17h RO TOUCH4_YH [3:0] 0 -1 Upper 4 bits of Y touch coordinate 
+18h RO TOUCH4_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+1Ah RO TOUCH4_Misc [3:0] 00-0Fh Touch Area 
+1Bh RO TOUCH5_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+ 
+
+PAGE 12
+ 
+ 
+11 
+   
+Register No. Access Register Name Bits Value Description 
+1Bh RO TOUCH5_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+1Ch RO TOUCH5_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+1Dh RO TOUCH5_YH [3:0] 0 -1 Upper 4 bits of Y touch coordinate 
+1Eh RO TOUCH5_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+1Fh RO TOUCH5_Weight [7:0]  Touch Weight 
+20 RO TOUCH5_Misc [3:0] 00-0Fh Touch Area 
+21h RO TOUCH6_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+21h RO TOUCH6_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+22h RO TOUCH6_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+23h RO TOUCH6_YH [3:0] 0 -1 Upper 4 bits of Y touch coordinate 
+24h RO TOUCH6_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+25h RO TOUCH6_Weight [7:0]  Touch Weight 
+26h RO TOUCH6_Misc [3:0] 00-0Fh Touch Area 
+27h RO TOUCH7_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+27h RO TOUCH7_XH [3:0] 0 -1 Upper 4 bits of X touch coordinate 
+28h RO TOUCH7_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+29h RO TOUCH7_YH [3:0] 0 – 1 Upper 4 bits of Y touch coordinate 
+2Ah RO TOUCH7_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+2Bh RO TOUCH7_Weight [7:0]  Touch Weight 
+2Ch RO TOUCH7_Misc [3:0] 00-0Fh Touch Area 
+2Dh RO TOUCH8_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+2Dh RO TOUCH8_XH [3:0] 0 – 1 Upper 4 bits of X touch coordinate 
+2Eh RO TOUCH8_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+2Fh RO TOUCH8_YH [3:0] 0 – 1 Upper 4 bits of Y touch coordinate 
+30 RO TOUCH8_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+31h RO TOUCH8_Weight [7:0]  Touch Weight 
+32h RO TOUCH8_Misc [3:0] 00-0Fh Touch Area 
+33h RO TOUCH9_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+33h RO TOUCH9_XH [3:0] 0 – 1 Upper 4 bits of X touch coordinate 
+34h RO TOUCH9_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+35h RO TOUCH9_YH [3:0] 0 – 1 Upper 4 bits of Y touch coordinate 
+36h RO TOUCH9_YL [7:0] 00 – FFh Lower 8 bits of Y touch coordinate 
+37h RO TOUCH9_Weight [7:0]  Touch Weight 
+38h RO TOUCH9_Misc [3:0] 00 – 0Fh Touch Area 
+39h RO TOUCH10_Event_Flag [7:6] 
+0 
+1 
+2 
+3 
+Put Down 
+Put Up 
+Contact 
+Reserved 
+39h RO TOUCH10_XH [3:0] 0 – 1 Upper 4 bits of X touch coordinate 
+3Ah RO TOUCH10_XL [7:0] 00 – FFh Lower 8 bits of X touch coordinate 
+3Bh RO TOUCH10_YH [3:0] 0 – 1 Upper 4 bits of Y touch coordinate 
+ 
+3Ch RO TOUCH10_YL [7:0] 00 - FFh Lower 8 bits of Y touch coordinate 
+
+PAGE 13
+ 
+ 
+12 
+   
+Register No. Access Register Name Bits Value Description 
+3Dh RO TOUCH10_Weight [7:0] 00-FFh Touch Weight 
+3Eh RO TOUCH10_Misc [3:0] 00-0Fh Touch Area 
+A1h RO ID_G_LIB_VERSION_H [7:0] 00-FFh App library version high-byte Default: 0 
+A2h RO ID_G_LIB_VERSION_L [7:0] 00-FFh App library version low-byte Default: 1h 
+A3h RO ID_G_CHIPER_HIGH [7:0] 00-FFh Chip Vendor ID Default: 54 
+A6h RO ID_G_FIRMID [7:0] 00-FFh Firmware ID Number Default: 2 
+A8h RO ID_G_VENODRID [7:0] 00-FFh CTPM Vendor’s Chip ID Default: 79h 
+  
+
+PAGE 14
+ 
+ 
+13 
+   
+Timing Characteristics- TFT 
+24-bit  RGB Interface Characteristics 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+PAGE 15
+ 
+ 
+14 
+   
+Serial Interface Characteristics (4-wire serial) 
+ 
+ 
+ 
+ 
+ 
+
+
+PAGE 16
+ 
+ 
+15 
+   
+Reset Input Timing 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+PAGE 17
+ 
+ 
+16 
+   
+Timing Characteristics- Capacitive Touch Panel 
+Data Transfer Format 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+PAGE 18
+ 
+ 
+17 
+   
+Power ON/Reset Sequence 
+ 
+ 
+ 
+ 
+  
+
+
+PAGE 19
+ 
+ 
+18 
+   
+Sample code to read touch data: 
+ 
+i2c_start(); 
+i2c_tx(0x70);        //Slave Address (Write) 
+i2c_tx(0x00);        //Start reading address  
+i2c_stop(); 
+ 
+i2c_start(); 
+i2c_tx(0x71);        //Slave Address (Read) 
+for(i=0x00;i<0x1F;i++) 
+{touchdata_buffer[i] = i2c_rx(1);} 
+i2c_stop(); 
+ 
+Sample code to overwrite default register values: 
+ 
+i2c_start(); 
+i2c_tx(0x70);        //Slave Address (Write) 
+i2c_tx(0xA4);        //ID_G_Mode  
+i2c_tx(0x01);        //Disable interrupt status to host  
+i2c_stop(); 
+  
+
+PAGE 20
+ 
+ 
+19 
+   
+Quality Information  
+Test Item Content of Test Test Condition Note 
+High Temperature storage Endurance test applying the high storage 
+temperature for a long time. 
++80⁰C , 240hrs 2 
+Low Temperature storage Endurance test applying the low storage 
+temperature for a long time. 
+-30⁰C , 240hrs 1,2 
+High Temperature 
+Operation 
+Endurance test applying the electric stress 
+(voltage & current) and the high thermal 
+stress for a long time. 
++70⁰C , 120hrs 2 
+Low Temperature 
+Operation 
+Endurance test applying the electric stress 
+(voltage & current) and the low thermal 
+stress for a long time. 
+-20⁰C , 120hrs 1,2 
+High Temperature / 
+Humidity Storage 
+Endurance test applying the electric stress 
+(voltage & current) and the high thermal 
+with high humidity stress for a long time. 
++50⁰C , 90% RH , 120hrs 1,2 
+Thermal Shock resistance Endurance test applying the electric stress 
+(voltage & current) during a cycle of low 
+and high thermal stress.  
+-30⁰C,30min -> 25⁰C,10min -> 
+80⁰C,30min  
+10 cycles 
+ 
+Vibration test Endurance test applying vibration to 
+simulate transportation and use. 
+Frequency range:250r/min 
+Amplitude: 1 inch 
+Time: 45min 
+3 
+Static electricity test Endurance test applying electric static 
+discharge. 
+Air: Vs=±8kV 10 Times  
+Contact: Vs= ±4kV 10 Times 
+Note 1: No condensation to be observed. 
+Note 2: Conducted after 4 hours of storage at 25⁰C, 0%RH. 
+Note 3: Test performed on product itself, not inside a container. 
+ 

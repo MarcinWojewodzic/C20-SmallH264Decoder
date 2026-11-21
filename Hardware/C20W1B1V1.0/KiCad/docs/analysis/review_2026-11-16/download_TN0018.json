@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.st.com/resource/en/technical_note/CD00134799.pdf",
+    "error": "HTTPSConnectionPool(host='www.st.com', port=443): Read timed out. (read timeout=15)"
+  },
+  {
+    "file": "docs\\datasheets\\ST_TN0018_Mouser.pdf",
+    "url": "https://www.mouser.cn/pdfDocs/tn0018-surface-mounting-guidelines-for-mems-sensors-in-an-lga-package-stmicroelectronics.pdf",
+    "size": 213343,
+    "sha256": "94c55af51c66b4c6be2a25d8b4dc73b56a740cc274f2b81dff6d4f7deed0dcb3"
+  },
+  {
+    "file": "docs\\datasheets\\ST_TN0018_Mouser_older.pdf",
+    "url": "https://www.mouser.cn/pdfdocs/enCD00134799.pdf",
+    "size": 219458,
+    "sha256": "649850fd7ef0163f260d2baa194150503136717dc3ba4a4644d96e3d2f18fda5"
+  }
+]

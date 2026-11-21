@@ -1,0 +1,34 @@
+[
+  {
+    "file": "Audio.kicad_sch",
+    "sha256": "cb37a971585564b78fa0566b32c0a05ac55090fd05d1b51a0f55c682e124bfda"
+  },
+  {
+    "file": "C20W1B1V1.0.kicad_sch",
+    "sha256": "376c9d28baaf5207f2a92d1fffece0a60fca66b3e0896539641d8f0790c3c496"
+  },
+  {
+    "file": "Flash.kicad_sch",
+    "sha256": "fae7f2ee35545f657934eb739ee8cad58579f84fc545be8cb9d9c71ae524b2f9"
+  },
+  {
+    "file": "Power.kicad_sch",
+    "sha256": "74bd2f84de1e9ed8f8f5ac93e9ec6803b1e830b5056ae6b4679c6d219984e508"
+  },
+  {
+    "file": "RAM.kicad_sch",
+    "sha256": "e1de086335f34e3ef0ea94364bf49559f89f5c63e30f711e147c4e200985682c"
+  },
+  {
+    "file": "Screen.kicad_sch",
+    "sha256": "063d19a8ae12a0ca39a8bf3e2ec6c196dad27c08a4306535a0b88bd223a9d0dc"
+  },
+  {
+    "file": "Sensors.kicad_sch",
+    "sha256": "2c8584ff5fdcc769593b2885db530b152585f4470cc90faecf651f9e4f0499f3"
+  },
+  {
+    "file": "uC.kicad_sch",
+    "sha256": "9c02b8f2df9956f38c92bb40e40767f767c47d89730867037df31845806221c7"
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "model": "Passive linear filter; ideal voltage source before L2. No closed-loop stability prediction.",
+  "nominal": {
+    "L_H": 1e-06,
+    "DCR_ohm": 0.027,
+    "Cbulk_F": 0.002,
+    "ESR_bulk_equivalent_ohm": 0.0075,
+    "Ccer_F": 8.8e-05,
+    "ESR_cer_equivalent_assumed_ohm": 0.001,
+    "approximate_f0_Hz": 3483.0113082314865,
+    "peak_dB": -1.067613490818399e-05,
+    "Zout_max_ohm": 0.027421209285274677,
+    "one_amp_step_max_sag_mV": 28.238587733661372,
+    "one_amp_step_final_sag_mV": 26.999999999999744
+  },
+  "softstart": [
+    {
+      "C55_nF": 10,
+      "tSS_ms": 0.9562500000000002,
+      "nominal_Icharge_A": 7.430812323137254,
+      "linear_filter_peak_Icharge_A": 7.582147988929272
+    },
+    {
+      "C55_nF": 100,
+      "tSS_ms": 9.562500000000002,
+      "nominal_Icharge_A": 0.7430812323137255,
+      "linear_filter_peak_Icharge_A": 0.7582147988929281
+    },
+    {
+      "C55_nF": 220,
+      "tSS_ms": 21.037500000000005,
+      "nominal_Icharge_A": 0.33776419650623885,
+      "linear_filter_peak_Icharge_A": 0.34464309040587626
+    },
+    {
+      "C55_nF": 330,
+      "tSS_ms": 31.556250000000002,
+      "nominal_Icharge_A": 0.22517613100415926,
+      "linear_filter_peak_Icharge_A": 0.22976206027058405
+    }
+  ],
+  "corner_sweep_note": "Illustrative assumptions, not guaranteed bounds. DCR min and ESR min unspecified; ESL absent.",
+  "max_corner_peak_dB": 2.9210423275951882,
+  "max_corner_Zout_ohm": 0.04382325000863254,
+  "frequency_points": [
+    {
+      "frequency_Hz": 100,
+      "gain_dB": -0.0010702848430436346,
+      "Zout_ohm": 0.02700398216326374,
+      "filter_input_impedance_ohm": 0.7623640275765651
+    },
+    {
+      "frequency_Hz": 1000,
+      "gain_dB": -0.1327647464802775,
+      "Zout_ohm": 0.027300939979703804,
+      "filter_input_impedance_ohm": 0.07773987998628482
+    },
+    {
+      "frequency_Hz": 3500,
+      "gain_dB": -3.3913356175483718,
+      "Zout_ohm": 0.023566435664455123,
+      "filter_input_impedance_ohm": 0.03388163196352281
+    },
+    {
+      "frequency_Hz": 10000,
+      "gain_dB": -15.803038356928473,
+      "Zout_ohm": 0.011087264802545401,
+      "filter_input_impedance_ohm": 0.06454163705806608
+    },
+    {
+      "frequency_Hz": 20000,
+      "gain_dB": -23.834025351939697,
+      "Zout_ohm": 0.008266250812969252,
+      "filter_input_impedance_ohm": 0.1259464330598926
+    },
+    {
+      "frequency_Hz": 100000,
+      "gain_dB": -39.5462218422573,
+      "Zout_ohm": 0.006626273934306771,
+      "filter_input_impedance_ohm": 0.6261736023325454
+    },
+    {
+      "frequency_Hz": 700000,
+      "gain_dB": -65.51394056534019,
+      "Zout_ohm": 0.0023312511490121,
+      "filter_input_impedance_ohm": 4.396482768857217
+    }
+  ],
+  "optional_47mohm_each_bulk_series": {
+    "nominal_peak_dB": -9.770286851441076e-05,
+    "sweep_max_peak_dB": 0.04320607188972112,
+    "nominal_Zout_max_ohm": 0.029190535816648842
+  }
+}
