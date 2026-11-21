@@ -29,10 +29,6 @@ fp-info-cache
 *.dsn
 *.ses
 
-# Exported BOM files
-*.xml
-*.csv
-
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
 
@@ -41,3 +37,105 @@ fp-info-cache
 
 # Local project settings
 *.kicad_prl
+
+# ============================================================
+# KiCad 10 - additional generated / local-only files
+# ============================================================
+
+# Local history, recovery and locks
+.history/
+**/*-backups/
+*.kicad_wks.lck
+*.lck
+_autosave-*
+_saved_*
+*.autosave
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.sch-bak
+*.brd-bak
+
+# Legacy / temporary exchange files
+*.cmp
+
+
+# KiCad reports and export sidecars
+*.rpt
+*.csv.tmp
+
+# NOTE: Keep *.kicad_pro, *.kicad_sch, *.kicad_pcb,
+# *.kicad_dru, *.kicad_jobset, *.kicad_sym, *.kicad_mod,
+# *.kicad_wks, fp-lib-table, sym-lib-table, design-block-lib-table.
+# Do not blanket-ignore *.step / *.stp, PDF or SVG:
+# they may be required project assets or documentation.
+
+# ============================================================
+# STM32CubeIDE / Eclipse - workspace, local caches and builds
+# ============================================================
+
+# Eclipse workspace state (not project configuration)
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+
+# IDE logs, snapshots and local metadata
+*.log
+*.log.*
+*.snap
+*.trace
+
+# Typical STM32CubeIDE build configuration directories
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+
+# Compiler, assembler and linker artifacts
+*.o
+*.obj
+*.d
+*.su
+*.cyclo
+*.crl
+*.a
+*.lib
+*.elf
+*.axf
+*.out
+*.map
+*.lst
+*.list
+*.srec
+*.s19
+*.s28
+*.s37
+*.hex
+*.bin
+*.sym
+*.gcda
+*.gcno
+*.gcov
+
+# Generated compilation databases / dependency indexes
+compile_commands.json
+
+# Optional TouchGFX generated/build outputs
+TouchGFX/build/
+TouchGFX/simulator/msvs/.vs/
+# TouchGFX/generated/  # Uncomment only if these sources are reproducible
+
+# Keep CubeMX/CubeIDE project settings and generated source code:
+# .project, .cproject, .settings/, .mxproject, *.ioc,
+# Core/, Drivers/, Middlewares/, USB_DEVICE/, STM32CubeIDE/.
+# Keep *.launch if shared debug configurations are useful.
+
+# ============================================================
+# OS and editor clutter
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.orig
+*.rej
