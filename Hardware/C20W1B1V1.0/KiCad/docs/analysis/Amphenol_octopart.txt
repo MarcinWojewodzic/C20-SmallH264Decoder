@@ -1,51 +1,0 @@
-62684-502100ALF - FPC/FFC                                                                 www.fci.com
-: OPU Series, 50 Pos 0.5 mm
-                                       No
-    (0.02 in.) Pitch FPC/FFC           Upper
-Connector, Side Entry, Upper           50
-                                       Right Angle
-    Side Contact, SMT, ZIF             OPU
-                                       200V AC for 1 minute
-    Specifications                     0.5A AC/DC
-                                       30 milli ohms max.
-  General                              100 M-ohms min.
-   Cable Lock                          50V AC/DC
-   Contact location                    20 Cycles
-   Number of contacts                  Phosphor Bronze, Gold Flash Plated
-   Orientation                         Glass Filled Thermoplastic, UL94 V-0, Beige
-   Product Series                      Glass Reinforced, UL94 V-0, Black
-  Electrical                           -55°C to +85°C
-   Withstanding Voltage                Contact Resistance 50 milli ohms min., 100 M-ohms max.
-   Current rating                      Contact Resistance 50 milli ohms max.
-   Resistance (Contact)                Contact Resistance 50 milli ohms max.
-   Resistance (Insulation)             No discontinuity > 1 µ second
-   Voltage rating                      Embossed Tape on Reel
-  Mechanical
-   Durability (Mating cycles)
-  Physical
-   Material (Contact)
-   Material (Housing)
-   Material (Slider)
-   Temperature (Operating - range)
-  Approvals / Certifications
-   Damp Heat per JIS C 0022
-   Salt Spray per JIS C 0023
-   Temperature Cycling per JIS C 0025
-   Vibration per JIS C 0040
-  Other Features
-   Packaging (Type)
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-PDM: Rev:AE STATUS:Released Printed: Dec 01, 2011.
-

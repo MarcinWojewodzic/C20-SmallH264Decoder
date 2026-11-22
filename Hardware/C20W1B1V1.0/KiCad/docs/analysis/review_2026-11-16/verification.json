@@ -1,9 +1,0 @@
-{
-  "source_schematics_unchanged": true,
-  "local_report_links_valid": true,
-  "components_checked": 117,
-  "nets": 200,
-  "erc_errors": 67,
-  "erc_warnings": 18,
-  "review_scope": "schematic and assigned footprints; PCB not updated"
-}

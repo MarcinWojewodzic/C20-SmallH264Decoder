@@ -1,0 +1,300 @@
+[
+  {
+    "name": "AN4938_mirror",
+    "source": "https://raw.githubusercontent.com/sparkfun/SparkFun_Qwiic_WAV_Trigger_Pro/main/docs/assets/component_documentation/an4938-getting-started-with-stm32h74xig-and-stm32h75xig-mcu-hardware-development-stmicroelectronics.pdf",
+    "bytes": 1126117,
+    "sha256": "28751d3d6c9f49e4b416d06737d7753f1a4f1820d7fd720753397356268100ed"
+  },
+  {
+    "name": "AOTA-B252008S",
+    "source": "https://abracon.com/datasheets/AOTA-B252008S.pdf",
+    "bytes": 652708,
+    "sha256": "476b3a269d7a93d07550e65d6a01e7a149a2408777b8ad671c254543d8245ed6"
+  },
+  {
+    "name": "AOTA-B252010S",
+    "source": "https://abracon.com/datasheets/AOTA-B252010S.pdf",
+    "bytes": 663709,
+    "sha256": "6dbb2c3af86d8672640f5fee5a419fdafdc9b1232205cccbacd315702d5f8437"
+  },
+  {
+    "name": "Amphenol_octopart",
+    "source": "https://datasheet.octopart.com/62684-502100ALF-Amphenol-Communications-Solutions-datasheet-13508140.pdf",
+    "bytes": 2114866,
+    "sha256": "1b699c03e0ce87f9fa1f46108dee6b06978750a5b40096a2e8bd28a09f08de39"
+  },
+  {
+    "name": "BME280",
+    "source": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf",
+    "bytes": 1663806,
+    "sha256": "a2ccdb449fec94380742fe8eec851a11d9bd4142252d332b34682b4deecd7d89"
+  },
+  {
+    "name": "CTS_228C",
+    "source": "https://www.ctscorp.com/Files/DataSheets/Switches/Tactile-Switches/CTS-Switches-Tactile-228C-Series-Datasheet.pdf",
+    "bytes": 971239,
+    "sha256": "eca9894ee4850b6cf9e8a4a799cae9e20b3d1ac4ea3be2b755a4401f9dd95a36"
+  },
+  {
+    "name": "ECS-327MVATX",
+    "source": "https://helponline.ecsxtal.com/store/pdf/ECS-327MVATX.pdf",
+    "bytes": 1194328,
+    "sha256": "57c2b72773d9e14ba6e0a8c76b1fd168309927fc48442116dbfe70b9e8fc9502"
+  },
+  {
+    "name": "FM24CL04B",
+    "source": "https://www.infineon.com/assets/row/public/documents/10/49/infineon-fm24cl04b-4-kbit-512-8-serial-i2c-f-ram-datasheet-en.pdf",
+    "bytes": 465372,
+    "sha256": "2cd0c6b6f3f5958beb0bb6741478eb1bdcba991c6278fd08eec820cde2238571"
+  },
+  {
+    "name": "FT5426G",
+    "source": "https://support.newhavendisplay.com/hc/en-us/article_attachments/18307582846103",
+    "bytes": 1202911,
+    "sha256": "93555c1732dbcfaa3b9f1e91878dee8a0aeea4d451689a0345abfa7e7ddb831f"
+  },
+  {
+    "name": "IS45S32400J_datasheet",
+    "source": "https://atta.szlcsc.com/upload/public/pdf/source/20241111/FDF8C3E7BCEB7FD1F1BFC63B568651A5.pdf",
+    "bytes": 851320,
+    "sha256": "6b9b49dc9fdb93e2eb6b8707a139d4e2040b6462b123c06324a11c695e420932"
+  },
+  {
+    "name": "KEMET_A768",
+    "source": "https://uploadcdn.oneyac.com/attachments/files/brand_pdf/kemetelectronics/17/BF/KEM_A4088_A768.pdf",
+    "bytes": 1088872,
+    "sha256": "a5d13e38f59e0b9e6ac73b319001a71646ac13b6d802850c40a60bb18fbddeaf"
+  },
+  {
+    "name": "Kyocera_KC2520Z12_2880",
+    "source": "https://ele.kyocera.com/assets/products/crystal-device/specification/KC2520Z12.2880C1KX00_e.pdf",
+    "bytes": 571947,
+    "sha256": "873965141bf0c15fc2014402c26fb6c770e9d0bd80efcd5cf9f0491aad7f5e57"
+  },
+  {
+    "name": "Laird_MGAH0603",
+    "source": "https://www.mouser.cn/datasheet/2/987/MGAH0603_2520Series-3043308.pdf",
+    "bytes": 390655,
+    "sha256": "588e89fe04384ddd62b71bb52e03beef94f2311680a7206531b4f93590badd02"
+  },
+  {
+    "name": "MAX98357A_MAX98357B",
+    "source": "https://cdn-shop.adafruit.com/product-files/3006/MAX98357A-MAX98357B.pdf",
+    "bytes": 2648763,
+    "sha256": "abac92d3522a204f093c911257c0e0ffa958d8f8acc1da3103a291d0403e8cd9"
+  },
+  {
+    "name": "MAX98357A_MAX98357B_LilyGO",
+    "source": "https://raw.githubusercontent.com/Xinyuan-LilyGO/LilyGo-HAL/master/MAX98357A/MAX98357A-MAX98357B.pdf",
+    "bytes": 4870575,
+    "sha256": "08c8df5d99eda52b415097c2edafd4d78d869db8dfb0a9821d0c23ff1276f251"
+  },
+  {
+    "name": "MMC5983MA",
+    "source": "https://www.memsic.com/Public/Uploads/uploadfile/files/20220119/MMC5983MADatasheetRevA.pdf",
+    "bytes": 1183817,
+    "sha256": "d82083b922c2421757035ceb064e6f316a8f8c20b4593277c13ef750115731f7"
+  },
+  {
+    "name": "Molex_product_sheet",
+    "source": "https://images.100y.com.tw/pdf_file/10-molex-52271-0679.pdf",
+    "bytes": 773630,
+    "sha256": "feca3feac72104c289398d28b97371ee777a78748e26ff322c167881ae51fd09"
+  },
+  {
+    "name": "NHD-4.0-480480AF-ASXP-CTP",
+    "source": "https://newhavendisplay.com/content/specs/NHD-4.0-480480AF-ASXP-CTP.pdf",
+    "bytes": 1997997,
+    "sha256": "38c84e329b304e604ab93f7bf3cfe5bd6bc1eb37036767e5907b9b2fd71dc6b9"
+  },
+  {
+    "name": "RM0433_mirror",
+    "source": "https://raw.githubusercontent.com/sparkfun/SparkFun_Qwiic_WAV_Trigger_Pro/main/Documents/dm00314099-stm32h742-stm32h743-753-and-stm32h750-value-line-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf",
+    "bytes": 40711860,
+    "sha256": "9ba54135736a47a302cdc28fdc7ca8f23c6eed5a646fa0a639af6ed2ad71336e"
+  },
+  {
+    "name": "ST7701SN",
+    "source": "https://support.newhavendisplay.com/hc/en-us/article_attachments/14549542564631",
+    "bytes": 8523343,
+    "sha256": "d653ce85ac4181cd21375da7bf4919fb056243ec7aec2e0a97b5ab5400f78aef"
+  },
+  {
+    "name": "STM32H753_DS12117_octopart",
+    "source": "https://datasheet.octopart.com/STM32H753ZIT6-STMicroelectronics-datasheet-159009244.pdf",
+    "bytes": 3368245,
+    "sha256": "b6e326b7fac67f68945816dc2eddac7a62e19e3399eec7b022167de9b670b101"
+  },
+  {
+    "name": "Samtec_FTSH-DV",
+    "source": "https://s3.amazonaws.com/snapeda/datasheet/FTSH-107-01-L-DV-K-A-P-TR_Samtec.pdf",
+    "bytes": 490002,
+    "sha256": "af7cf92f6c7aea3dade5ed54c60e3668b833f5da6372df0124bed651692e1e05"
+  },
+  {
+    "name": "TI_SNVA871_output_filter",
+    "source": "https://www.ti.com/lit/an/snva871/snva871.pdf",
+    "bytes": 483643,
+    "sha256": "8f303a3f183b16dc0ed07c16d5e915ad67189e3106b381c8e28f6049fc586125"
+  },
+  {
+    "name": "TI_SSZT824_second_stage_filter",
+    "source": "https://www.ti.com/lit/ta/sszt824/sszt824.pdf",
+    "bytes": 584145,
+    "sha256": "bdb04e3e6fcd7f34ad1d6170d30dbbd98a8d8469034df9e446f819192ff14c52"
+  },
+  {
+    "name": "TPS54495",
+    "source": "https://www.ti.com/lit/ds/symlink/tps54495.pdf",
+    "bytes": 1591262,
+    "sha256": "9289a9d2253ce39041ec56c97a38e6f09cad9857454e074c346f88762384914e"
+  },
+  {
+    "name": "TPS54495EVM_user_guide",
+    "source": "https://www.ti.com/lit/ug/slvu745a/slvu745a.pdf",
+    "bytes": 991342,
+    "sha256": "1231ca58391c4a6249f6c5e5826742db85bad724992880d80c368063e4973f4d"
+  },
+  {
+    "name": "TPS923610",
+    "source": "https://www.ti.com/lit/ds/symlink/tps923610.pdf",
+    "bytes": 3382227,
+    "sha256": "08e4690752f45d6cc0c5fa0bf8e1f41d9afa84a094150016ef4a69154a7fe228"
+  },
+  {
+    "name": "TPS923610EVM_user_guide",
+    "source": "https://www.ti.com/lit/ug/slvudi4/slvudi4.pdf",
+    "bytes": 1228589,
+    "sha256": "289f81a02e57628869ebeaf7410fab6863fc7af5792c1039636a55ad97bdc63b"
+  },
+  {
+    "name": "Vishay_XO22C",
+    "source": "https://www.vishay.com/docs/35065/xo22c.pdf",
+    "bytes": 80261,
+    "sha256": "e5f2b3c3c42d0d6648fc76c19bfe27383ab841335d2fb69cc6997085618794a0"
+  },
+  {
+    "name": "W25R256JV",
+    "source": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/7957/256_W25R256JVEIQ.pdf",
+    "bytes": 1741386,
+    "sha256": "15dda766bb32af7084a9bd9877d11e2765c603b187d37199ad7db4d6a5344a06"
+  },
+  {
+    "name": "W25R256JV_RevD",
+    "source": "https://www.mouser.cn/datasheet/2/949/W25R256JV_RevD_06162020-1879221.pdf",
+    "bytes": 2334003,
+    "sha256": "8c69554240f883f7f02b74847af507e71b2706796ee75e2230242d01fda41d17"
+  },
+  {
+    "name": "Amphenol_62684_drawing",
+    "unavailable": [
+      "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/62684.pdf",
+      "https://datasheet.ersaelectronics.com/static/datasheets/amphenol-communications-solutions/amphenol-communications-solutions-62684-402100ahlf.pdf"
+    ]
+  },
+  {
+    "name": "LSM6DSV80X",
+    "source": "https://www.mouser.cn/pdfDocs/lsm6dsv80x-2.pdf",
+    "bytes": 9277185,
+    "sha256": "211ba999342aca9a0890d3b7251908c4bfd7c66e31d9ec889918343df9a7bbfb"
+  },
+  {
+    "name": "LSM6DSV80X_Rev1_DigiKey",
+    "source": "HEAD:Hardware/C20W1B1V1.0/KiCad/docs/datasheets/LSM6DSV80X_Rev1_DigiKey.pdf",
+    "bytes": 9271632,
+    "sha256": "f1b06caee3bca7b19b9249bc25c9a75c9879c8a2afc2a6cd950f765adbbb7e5a"
+  },
+  {
+    "name": "Molex_522710679_drawing",
+    "unavailable": [
+      "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/522/52271/522710679_sd.pdf",
+      "https://www.mouser.com/datasheet/2/276/522710679_sd-232670.pdf",
+      "https://www.molex.com/pdm_docs/sd/522710679_sd.pdf",
+      "https://www.mouser.cn/datasheet/2/276/522710679_sd-232670.pdf"
+    ]
+  },
+  {
+    "name": "Panasonic_ERJ",
+    "source": "HEAD:Hardware/C20W1B1V1.0/KiCad/docs/datasheets/Panasonic_ERJ.pdf",
+    "bytes": 940440,
+    "sha256": "862e7d5fff1ed6e44f61298912bb7a3fc84298e53e17d1348edd7641444a90cc"
+  },
+  {
+    "name": "STM32H753_AN4938",
+    "fallback": "AN4938_mirror",
+    "unavailable": [
+      "https://www.st.com/resource/en/application_note/an4938-getting-started-with-stm32h74xig-and-stm32h75xig-mcu-hardware-development-stmicroelectronics.pdf",
+      "https://www.st.com.cn/resource/en/application_note/an4938-getting-started-with-stm32h74xig-and-stm32h75xig-mcu-hardware-development-stmicroelectronics.pdf"
+    ]
+  },
+  {
+    "name": "STM32H753_DS12117",
+    "fallback": "STM32H753_DS12117_octopart",
+    "unavailable": [
+      "https://www.st.com/resource/en/datasheet/stm32h753ii.pdf",
+      "https://www.st.com.cn/resource/en/datasheet/stm32h753ii.pdf"
+    ]
+  },
+  {
+    "name": "STM32H753_ES0392",
+    "source": "https://www.stmcu.jp/wp/wp-content/uploads/2017/08/ES0392_Rev15.pdf",
+    "bytes": 3278533,
+    "sha256": "effe23b2b79ec4ee33a8ab42b1b934cdd34100775cd6ca6b8dc8f3f2f01a1f9e"
+  },
+  {
+    "name": "STM32H753_PM0253",
+    "source": "https://www.stmcu.jp/wp/wp-content/uploads/2017/08/DocID028474-Rev-4.pdf",
+    "bytes": 5360564,
+    "sha256": "1179db7c07ec70f91017aee5ef62cd565fb443227db39ccdd6f1f5f9d6650b06"
+  },
+  {
+    "name": "STM32H753_RM0433",
+    "fallback": "RM0433_mirror",
+    "unavailable": [
+      "https://www.st.com/resource/en/reference_manual/rm0433-stm32h743-753-and-stm32h750-value-line-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf",
+      "https://www.st.com.cn/resource/en/reference_manual/rm0433-stm32h743-753-and-stm32h750-value-line-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf"
+    ]
+  },
+  {
+    "name": "ST_TN0018_Mouser",
+    "source": "HEAD:Hardware/C20W1B1V1.0/KiCad/docs/datasheets/ST_TN0018_Mouser.pdf",
+    "bytes": 213343,
+    "sha256": "94c55af51c66b4c6be2a25d8b4dc73b56a740cc274f2b81dff6d4f7deed0dcb3"
+  },
+  {
+    "name": "ST_TN0018_Mouser_older",
+    "source": "HEAD:Hardware/C20W1B1V1.0/KiCad/docs/datasheets/ST_TN0018_Mouser_older.pdf",
+    "bytes": 219458,
+    "sha256": "649850fd7ef0163f260d2baa194150503136717dc3ba4a4644d96e3d2f18fda5"
+  },
+  {
+    "name": "ST_UM2910",
+    "source": "https://www.stmcu.jp/wp/wp-content/uploads/2022/06/UM2910_Rev3.pdf",
+    "bytes": 879249,
+    "sha256": "6df450a4424e21d2cd82627923521a49c1e60d087716d569e105607f4a1c0def"
+  },
+  {
+    "name": "W25R256JV_RevE",
+    "unavailable": [
+      "https://static6.arrow.com/aropdfconversion/5119136c1181785a4815dd38be975c04ef908305/w25r256jvreve03162022.pdf"
+    ]
+  },
+  {
+    "name": "IM69D130",
+    "source": "https://www.infineon.com/assets/row/public/documents/30/49/infineon-im69d130-datasheet-en.pdf",
+    "bytes": 2268081,
+    "sha256": "7d6c2bebd1da22cec7376747a6cad97b2d1548825e917f51ba3b73939bd8b541"
+  },
+  {
+    "name": "IM69D130_product_brief",
+    "source": "https://www.infineon.cn/assets/row/public/documents/30/45/infineon-im69d130-pb--productbrief-en.pdf",
+    "bytes": 206249,
+    "sha256": "b21af7342e60a26db233a05b4f536a95ff6043cb5418a0269c1672b99dfbdcc6"
+  },
+  {
+    "name": "Samtec_FTSH-DV_footprint",
+    "source": "https://suddendocs.samtec.com/prints/ftsh-1xx-xx-xxx-dv-xxx-footprint.pdf",
+    "bytes": 179677,
+    "sha256": "caa205b92560423f3b0aea9c69d6c38340d1b7f01b0655092994450e935edcb3"
+  }
+]
