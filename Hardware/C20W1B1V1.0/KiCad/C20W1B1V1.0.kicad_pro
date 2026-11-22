@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 1.27
+          "drill": 0.0,
+          "height": 0.6,
+          "width": 0.5
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -213,7 +213,9 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.25,
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -736,6 +738,90 @@
       "FMC_~{WE}": [
         "50Om"
       ],
+      "LTDC_B0": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B1": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B2": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B3": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B4": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B5": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B6": [
+        "50Om_FLASH"
+      ],
+      "LTDC_B7": [
+        "50Om_FLASH"
+      ],
+      "LTDC_CLK": [
+        "50Om_FLASH"
+      ],
+      "LTDC_DE": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G0": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G1": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G2": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G3": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G4": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G5": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G6": [
+        "50Om_FLASH"
+      ],
+      "LTDC_G7": [
+        "50Om_FLASH"
+      ],
+      "LTDC_HS": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R0": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R1": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R2": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R3": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R4": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R5": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R6": [
+        "50Om_FLASH"
+      ],
+      "LTDC_R7": [
+        "50Om_FLASH"
+      ],
+      "LTDC_VS": [
+        "50Om_FLASH"
+      ],
       "QSPI_CLK": [
         "50Om_FLASH"
       ],
@@ -752,6 +838,18 @@
         "50Om_FLASH"
       ],
       "QSPI_IO3": [
+        "50Om_FLASH"
+      ],
+      "TFT_CLK_SPI": [
+        "50Om_FLASH"
+      ],
+      "TFT_DATA_SPI": [
+        "50Om_FLASH"
+      ],
+      "TFT_DC": [
+        "50Om_FLASH"
+      ],
+      "~{TFT_CS}": [
         "50Om_FLASH"
       ]
     },

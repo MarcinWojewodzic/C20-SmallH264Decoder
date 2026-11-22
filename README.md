@@ -31,6 +31,10 @@ H.265/HEVC is a tentative follow-up. Once H.264 playback can be profiled on the 
 - **Hardware** — Open the [KiCad project](Hardware/C20W1B1V1.0/KiCad/C20W1B1V1.0.kicad_pro) to browse the [schematic](Hardware/C20W1B1V1.0/KiCad/C20W1B1V1.0.kicad_sch) and [PCB layout](Hardware/C20W1B1V1.0/KiCad/C20W1B1V1.0.kicad_pcb).
 - **Firmware** — Import [Software/C20](Software/C20/) as an existing STM32CubeIDE project. The [CubeMX configuration](Software/C20/C20.ioc) defines the MCU and peripheral setup.
 
+## AI assistance
+
+I use OpenAI Codex as a reviewer. It helps me review schematics, question assumptions, and edit documentation. I make the architecture and implementation decisions myself. I'm building C20 for fun and to learn how video decoding works on a microcontroller. I measure performance to understand what the hardware can do and where it runs out of headroom.
+
 ## License
 
 The project is released under the [MIT License](LICENSE).
